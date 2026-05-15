@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+import { AuditRequestForm } from "@/components/AuditRequestForm";
+
 const auditHref = "#auditoria";
 
 function Header() {
@@ -5,12 +9,12 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6">
         <div className="flex items-center justify-between gap-4 sm:justify-start">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="font-mono text-sm font-semibold tracking-[0.2em] text-white"
           >
             PLEXAI
-          </a>
+          </Link>
           <a
             href={auditHref}
             className="rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-3 py-2 text-xs font-medium text-white shadow-lg shadow-violet-500/20 transition hover:opacity-95 sm:hidden"
@@ -68,11 +72,11 @@ function SectionTitle({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-balance text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+      <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-pretty text-sm leading-relaxed text-zinc-400 sm:text-base">
+        <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
           {description}
         </p>
       ) : null}
@@ -89,7 +93,7 @@ export default function Home() {
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-white/5 px-4 pb-20 pt-12 sm:px-6 sm:pb-28 sm:pt-16">
           <div
-            aria-hidden
+            aria-hidden={true}
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(139,92,246,0.22),transparent)]"
           />
           <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-8">
@@ -97,12 +101,12 @@ export default function Home() {
               <p className="text-xs font-medium uppercase tracking-widest text-violet-400/90">
                 Automatización con criterio
               </p>
-              <h1 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
+              <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
                 Automatiza lo que realmente hace crecer tu negocio
               </h1>
-              <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-zinc-400">
-                En PLEXAI analizamos tus procesos, detectamos tareas repetitivas
-                y diseñamos soluciones con IA solo donde aportan valor real.
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-zinc-400">
+                En PLEXAI analizamos tus procesos, detectamos tareas repetitivas y
+                diseñamos soluciones con IA solo donde aportan valor real.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
@@ -121,7 +125,7 @@ export default function Home() {
             </div>
             <div className="relative lg:justify-self-end">
               <div
-                aria-hidden
+                aria-hidden={true}
                 className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-violet-500/20 via-transparent to-fuchsia-500/10 blur-2xl"
               />
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/60 p-6 shadow-xl shadow-black/40">
@@ -433,7 +437,7 @@ export default function Home() {
                     {i < arr.length - 1 ? (
                       <span
                         className="hidden text-zinc-600 sm:inline"
-                        aria-hidden
+                        aria-hidden={true}
                       >
                         →
                       </span>
@@ -483,26 +487,20 @@ export default function Home() {
           className="scroll-mt-24 border-b border-white/5 px-4 py-20 sm:px-6"
         >
           <div className="mx-auto max-w-4xl rounded-3xl border border-violet-500/30 bg-gradient-to-br from-violet-950/50 via-zinc-950 to-fuchsia-950/30 p-8 text-center shadow-2xl shadow-violet-950/40 sm:p-12">
-            <h2 className="text-balance text-2xl font-semibold text-white sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-white sm:text-3xl">
               Pide una auditoría gratuita
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-zinc-300 sm:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-zinc-300 sm:text-base">
               Revisamos captación, atención al cliente potencial y seguimiento
               comercial para detectar oportunidades reales de orden y
               automatización — sin prometer integraciones que aún no tocan tu
               proyecto.
             </p>
             <p className="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-zinc-500">
-              Todavía no activamos formulario ni guardamos datos en esta versión.
-              Cuando lo habilitemos, te pediremos solo información comercial
-              mínima.
+              Envía estos datos solo con información general de tu negocio. Aquí no
+              recogemos datos clínicos ni de pacientes.
             </p>
-            <a
-              href={auditHref}
-              className="mt-8 inline-flex rounded-full bg-white px-8 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
-            >
-              Pide una auditoría gratuita
-            </a>
+            <AuditRequestForm />
           </div>
         </section>
 
