@@ -3,92 +3,112 @@
 ## Project identity
 
 - Nombre del proyecto: ai-clinic-growth-web
-- Marca provisional: PLEXAI
+- Marca: PLEXAI
+- Nivel: Nivel 3 (Cursor / AI Building System — PLEXAI)
 - Tipo: web comercial propia / marca personal tecnológica
-- Origen técnico: copia limpia desde CURSOR.p1
+- Base original: copia limpia desde CURSOR.p1 (`CURSOR.p1`)
 - No es business-assistant-mvp
 - No se construye dentro de CURSOR.p1
 
 ## Current status
 
-Landing PLEXAI MVP 1 completada.
+**MVP 2 — Audit Request Form completado localmente.**
 
-Commit:
+- Landing MVP (MVP 1): completada y documentada.
+- Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
 
-`0eb0f81` feat: add plexai landing MVP
+Commits de referencia (MVP auditoría):
+
+- `4489752` — db: add audit requests schema  
+- `781e2d9` — feat: add audit request API  
+- `e6df33d` — feat: add audit request form UI  
+
+Commit de referencia (landing inicial):
+
+- `0eb0f81` feat: add plexai landing MVP
 
 ## Implemented so far
 
-- Landing en ruta `/`
-- Header con navegación por anclas
-- Hero principal
-- Bloque de problema
-- Propuesta de valor
-- Audiencias objetivo
-- Áreas de automatización
-- Método de trabajo
-- Demo conceptual no funcional
-- Servicios
-- Bloque de auditoría gratuita
-- FAQ honesta
-- CTA final
-- Metadata/lang ajustados en layout
-- Smooth scroll y ajuste global mínimo en CSS
+**Landing `/` (MVP 1)**
+
+- Header con navegación por anclas, hero, problema, propuesta de valor, audiencias, automatización, método, demo conceptual, servicios, bloque de auditoría, FAQ, CTA final
+- Metadata/lang en layout; smooth scroll y ajustes globales mínimos en CSS
+
+**MVP 2 — Audit request**
+
+- Formulario en la landing (captura de solicitudes de auditoría gratuita)
+- API `POST /api/audit-requests` (respuesta HTTP 200 verificada)
+- Tabla `public.audit_requests` en Supabase (schema aplicado en proyecto)
+- Validaciones básicas en cliente/servidor según implementación actual
+- Consentimiento básico y advertencia visible: no incluir datos clínicos ni información de pacientes
+- Prueba manual desde navegador e inserción confirmada en Supabase (p. ej. fila de prueba manual tipo «Demo Formulario PLEXAI Manual»)
+- Problema de hidratación corregido en la UI del formulario
 
 ## Current capabilities
 
-- La web muestra la propuesta comercial de PLEXAI.
-- Permite navegar por secciones.
-- Presenta el CTA «Pide una auditoría gratuita».
-- Explica servicios y enfoque.
-- No captura datos todavía.
-- No tiene backend nuevo.
-- No tiene chatbot funcional todavía.
-- No tiene automatizaciones activas.
+- La web presenta la propuesta comercial de PLEXAI y enlaces/anclas por secciones.
+- El visitante puede enviar una solicitud de auditoría gratuita vía formulario; los datos pueden persistirse en Supabase vía API.
+- **No están activados:** n8n, email transaccional, WhatsApp, calendario, chatbot ni voz.
+- **No hay:** login, dashboard, multi-tenant ni deployment público automatizado desde este estado documentado.
 
 ## Not implemented yet
 
-- Formulario real de auditoría
-- Guardado de leads en Supabase
-- Chatbot integrado
-- APIs nuevas
-- n8n
-- Google Sheets
-- Email automático
-- WhatsApp
-- Calendario
-- Voz
-- Login
-- Dashboard privado
-- Multi-tenant
-- Deployment
-- Dominio
-- Sistema clínico
+- Gestión interna de leads / flujo de revisión post-envío (más allá del guardado)
+- Automatización `lead.created` (n8n, hojas, notificaciones)
+- Deployment (Vercel u otro), dominio dedicado y legal/pages legales en producción
+- Integraciones de mensajería, agenda o asistentes
+- Variables de entorno reales documentadas en repo (por diseño: no deben aparecer valores secretos)
 
-## Verification
+## Environment (sin valores)
 
-- `npm.cmd ci`: OK
-- `npm.cmd run lint`: OK
-- `npx tsc --noEmit`: OK
-- Git status final tras commit: limpio
+- `web/.env.local` puede existir en máquinas de desarrollo para ejecutar API y cliente; **no debe versionarse** ni documentarse con valores reales.
+- No exponer ni listar secretos en documentación ni en commits.
+
+## Verification (último checkpoint documentado)
+
+- `npm.cmd run lint`: OK  
+- `npx tsc --noEmit`: OK  
+- `POST /api/audit-requests`: OK (HTTP 200)  
+- Prueba manual del formulario en UI: OK  
 
 ## Safety notes
 
-- No se usan datos clínicos.
-- No se capturan datos de pacientes.
-- No se debe presentar PLEXAI como sistema clínico.
-- No se deben prometer integraciones no implementadas.
-- No se deben leer ni versionar `.env`, `.env.local` ni `web/.env.local`.
-- Las integraciones futuras requieren SPEC previa.
+- No se usan datos clínicos ni datos de pacientes en el alcance pretendido del formulario; el usuario debe advertirse en UI.
+- No presentar PLEXAI como sistema clínico.
+- No prometer integraciones no implementadas.
+- No leer, imprimir ni versionar `.env`, `.env.local` ni `web/.env.local`.
+- Integraciones nuevas requieren SPEC previa.
 
-## Next recommended phase
+## Siguiente fase recomendada
 
-**MVP 2 — Formulario de auditoría gratuita**
+**Decisión pendiente:** no se ha elegido todavía entre las líneas siguientes.
 
-Objetivo futuro:
+| Ref. | Dirección |
+|------|-----------|
+| **MVP 3 — Lead Management / Review Workflow** | Flujo interno para revisar solicitudes |
+| **MVP 3 — Automatización `lead.created`** | Eventos y orquestación tras crear `audit_request` |
 
-- Crear SPEC del formulario.
-- Definir datos mínimos comerciales.
-- Crear endpoint y persistencia solo si se aprueba.
-- Guardar leads comerciales en Supabase en una fase posterior.
-- No manejar datos clínicos.
+**Opción A — Lead Management interno mínimo**
+
+- Ver solicitudes recibidas  
+- Estados p. ej. `new` / `contacted` / `qualified` / `discarded`  
+- Notas internas  
+- Login elaborado inicialmente opcional (según decisión de producto)
+
+**Opción B — Automatización `lead.created`**
+
+- Emitir evento al crearse un `audit_request`  
+- Enviar a n8n  
+- Registrar en Google Sheets  
+- Posible email interno  
+- **Pendiente de SPEC**
+
+**Opción C — Deployment**
+
+- Publicar landing y formulario  
+- Preparar Vercel (u otro host)  
+- Configurar variables de entorno en el proveedor  
+- Dominio y legal básico  
+- **Pendiente de SPEC**
+
+Tras decidir MVP 3, actualizar este documento y la SPEC correspondiente antes de ampliar alcance.
