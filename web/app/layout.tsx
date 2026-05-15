@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CURSOR / AI Building System",
-  description: "App web del AI Building System (Next.js App Router).",
+  title: "PLEXAI — Automatización inteligente para negocios locales",
+  description:
+    "Analizamos procesos, detectamos tareas repetitivas y diseñamos automatizaciones con IA donde aportan valor. Auditoría gratuita.",
 };
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
