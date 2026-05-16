@@ -1,0 +1,40 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-label="PLEXAI animated flowing background" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="plexai-main-gradient" x1="-240" y1="300" x2="1760" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.92" />
+      <stop offset="0.48" stop-color="#d946ef" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0.66" />
+    </linearGradient>
+    <linearGradient id="plexai-blue-gradient" x1="-220" y1="135" x2="1680" y2="315" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb" stop-opacity="0.78" />
+      <stop offset="0.54" stop-color="#38bdf8" stop-opacity="0.76" />
+      <stop offset="1" stop-color="#c084fc" stop-opacity="0.56" />
+    </linearGradient>
+    <filter id="plexai-soft-blur" x="-24%" y="-52%" width="148%" height="204%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="15" />
+    </filter>
+  </defs>
+
+  <g opacity="0.95">
+    <g id="plexai-blue-ribbon">
+      <animateTransform attributeName="transform" type="translate" values="120 0; -90 0; 120 0" dur="16s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" />
+      <path d="M-260 206C-78 140 92 258 286 226C504 190 594 96 798 154C994 210 1116 306 1390 222C1548 174 1666 154 1830 198L1830 312C1648 284 1538 318 1398 360C1122 442 988 320 790 268C592 216 520 314 300 346C94 376-72 254-260 326Z" fill="url(#plexai-blue-gradient)" filter="url(#plexai-soft-blur)" opacity="0.34">
+        <animate attributeName="d" dur="10.5s" repeatCount="indefinite" values="M-260 206C-78 140 92 258 286 226C504 190 594 96 798 154C994 210 1116 306 1390 222C1548 174 1666 154 1830 198L1830 312C1648 284 1538 318 1398 360C1122 442 988 320 790 268C592 216 520 314 300 346C94 376-72 254-260 326Z;M-260 238C-88 176 96 216 284 194C498 168 606 144 812 192C1012 238 1132 276 1394 194C1548 146 1668 174 1830 232L1830 340C1646 306 1542 292 1394 338C1124 420 1004 350 800 306C594 262 520 344 304 370C96 394-76 298-260 358Z;M-260 184C-82 104 108 286 298 250C514 208 584 76 782 134C1000 198 1108 330 1390 248C1546 202 1682 134 1830 184L1830 304C1652 266 1550 348 1404 388C1118 468 1004 346 792 286C588 228 514 336 292 374C94 408-82 242-260 312Z;M-260 206C-78 140 92 258 286 226C504 190 594 96 798 154C994 210 1116 306 1390 222C1548 174 1666 154 1830 198L1830 312C1648 284 1538 318 1398 360C1122 442 988 320 790 268C592 216 520 314 300 346C94 376-72 254-260 326Z" />
+      </path>
+      <path d="M-230 224C-42 168 104 250 302 222C512 192 598 126 800 174C1008 224 1136 288 1382 226C1536 188 1688 178 1810 224" fill="none" stroke="#7dd3fc" stroke-width="18" stroke-linecap="round" opacity="0.22">
+      </path>
+    </g>
+
+    <g id="plexai-main-ribbon">
+      <animateTransform attributeName="transform" type="translate" values="-110 0; 95 0; -110 0" dur="18s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" />
+      <path d="M-320 392C-128 286 78 302 278 360C484 420 590 520 780 438C966 358 1008 238 1216 306C1384 360 1510 424 1710 348C1848 296 1952 284 2060 332L2060 548C1908 500 1816 526 1680 580C1482 660 1340 590 1198 526C1002 438 950 548 770 594C574 644 454 520 276 478C88 434-112 472-320 588Z" fill="url(#plexai-main-gradient)" filter="url(#plexai-soft-blur)" opacity="0.72">
+        <animate attributeName="d" dur="8.8s" repeatCount="indefinite" values="M-320 392C-128 286 78 302 278 360C484 420 590 520 780 438C966 358 1008 238 1216 306C1384 360 1510 424 1710 348C1848 296 1952 284 2060 332L2060 548C1908 500 1816 526 1680 580C1482 660 1340 590 1198 526C1002 438 950 548 770 594C574 644 454 520 276 478C88 434-112 472-320 588Z;M-320 426C-136 320 54 250 270 330C478 406 612 480 792 404C988 320 1022 282 1228 338C1408 386 1514 478 1708 390C1846 328 1948 260 2060 310L2060 528C1910 486 1820 558 1684 612C1484 692 1354 558 1200 510C1000 448 928 578 760 626C560 684 452 558 260 508C68 458-124 510-320 626Z;M-320 360C-136 242 86 324 286 376C492 430 580 552 762 470C972 374 982 218 1200 282C1390 338 1520 400 1722 330C1866 280 1966 306 2060 370L2060 574C1912 522 1818 504 1680 560C1486 638 1340 624 1190 548C994 448 972 522 782 576C574 636 450 486 276 450C82 410-124 444-320 560Z;M-320 392C-128 286 78 302 278 360C484 420 590 520 780 438C966 358 1008 238 1216 306C1384 360 1510 424 1710 348C1848 296 1952 284 2060 332L2060 548C1908 500 1816 526 1680 580C1482 660 1340 590 1198 526C1002 438 950 548 770 594C574 644 454 520 276 478C88 434-112 472-320 588Z" />
+      </path>
+      <path d="M-320 398C-126 300 76 318 278 370C488 424 588 504 784 430C970 360 1016 264 1212 318C1380 364 1510 416 1710 356C1848 314 1956 304 2060 350L2060 510C1906 472 1810 502 1680 548C1478 620 1344 562 1196 508C1002 438 950 520 770 560C574 604 456 500 274 462C86 424-118 466-320 548Z" fill="url(#plexai-main-gradient)" opacity="0.46">
+      </path>
+      <path d="M-180 420C34 334 226 456 450 412C654 372 754 312 966 370C1174 428 1302 474 1540 386C1694 330 1850 350 1980 404" fill="none" stroke="#f5d0fe" stroke-width="4" stroke-linecap="round" stroke-dasharray="14 24" opacity="0.42">
+        <animate attributeName="stroke-dashoffset" values="0;-152" dur="4s" repeatCount="indefinite" />
+      </path>
+    </g>
+  </g>
+</svg>

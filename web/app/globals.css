@@ -28,3 +28,360 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+.plexai-float {
+  animation: plexai-float 7s ease-in-out infinite;
+}
+
+.plexai-scan {
+  animation: plexai-scan 4s ease-in-out infinite;
+}
+
+.plexai-pulse-dot {
+  animation: plexai-pulse-dot 2.4s ease-in-out infinite;
+}
+
+.plexai-organic {
+  animation: plexai-organic 14s ease-in-out infinite;
+  will-change: border-radius, transform;
+}
+
+.plexai-hero-svg-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.plexai-hero-svg-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  opacity: 0.65;
+  pointer-events: none;
+  transform: scale(1.05);
+  transform-origin: center;
+}
+
+.plexai-motion-orb {
+  position: absolute;
+  left: 0;
+  top: 38%;
+  height: 220px;
+  width: 480px;
+  border-radius: 44% 56% 62% 38% / 48% 42% 58% 52%;
+  background:
+    radial-gradient(circle at 24% 34%, rgba(255, 255, 255, 0.36), transparent 18%),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.95), rgba(236, 72, 153, 0.9), rgba(56, 189, 248, 0.75));
+  filter: blur(16px);
+  will-change: transform, opacity;
+}
+
+.plexai-motion-orb-hero {
+  animation: plexai-motion-cross-hero 8s linear infinite;
+}
+
+.plexai-motion-orb-soft {
+  animation: plexai-motion-cross-soft 12s linear infinite;
+  filter: blur(22px);
+  height: 170px;
+  opacity: 0.42;
+  top: 18%;
+  width: 360px;
+}
+
+.plexai-motion-orb-cta {
+  animation: plexai-motion-cross-cta 10s linear infinite;
+  filter: blur(20px);
+  height: 210px;
+  opacity: 0.72;
+  top: 24%;
+  width: 460px;
+}
+
+.plexai-motion-dot {
+  position: absolute;
+  left: 0;
+  top: 28%;
+  height: 18px;
+  width: 18px;
+  border-radius: 999px;
+  background: rgba(216, 180, 254, 0.95);
+  box-shadow: 0 0 26px rgba(168, 85, 247, 0.7);
+  will-change: transform, opacity;
+}
+
+.plexai-motion-dot-hero {
+  animation: plexai-motion-dot-cross 5s linear infinite;
+}
+
+.plexai-motion-dot-soft,
+.plexai-motion-dot-cta {
+  display: none;
+}
+
+.plexai-flow-dust {
+  background-image:
+    radial-gradient(circle at 18% 38%, rgba(168, 85, 247, 0.22) 0 1px, transparent 2px),
+    radial-gradient(circle at 48% 62%, rgba(56, 189, 248, 0.18) 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 42%, rgba(217, 70, 239, 0.2) 0 1px, transparent 2px);
+  background-size: 140px 120px, 190px 150px, 170px 130px;
+  animation: plexai-flow-dust 18s linear infinite;
+}
+
+.plexai-flow-runner {
+  animation: plexai-flow-runner 4.8s ease-in-out infinite;
+  left: 2rem;
+  will-change: transform, opacity;
+}
+
+@keyframes plexai-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-8px, 10px, 0);
+  }
+}
+
+@keyframes plexai-scan {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translateY(118px);
+  }
+}
+
+@keyframes plexai-pulse-dot {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes plexai-organic {
+  0%,
+  100% {
+    border-radius: 42% 58% 64% 36% / 46% 42% 58% 54%;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+
+  33% {
+    border-radius: 58% 42% 38% 62% / 54% 58% 42% 46%;
+    transform: translate3d(12px, -10px, 0) rotate(4deg) scale(1.04);
+  }
+
+  66% {
+    border-radius: 38% 62% 56% 44% / 42% 50% 50% 58%;
+    transform: translate3d(-10px, 8px, 0) rotate(-3deg) scale(0.98);
+  }
+}
+
+@keyframes plexai-motion-cross-hero {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate3d(-60vw, 30px, 0) rotate(-10deg) scale(0.9);
+  }
+
+  8% {
+    opacity: 0.85;
+  }
+
+  35% {
+    opacity: 0.9;
+    transform: translate3d(-10vw, -20px, 0) rotate(4deg) scale(1.05);
+  }
+
+  65% {
+    opacity: 0.85;
+    transform: translate3d(30vw, 35px, 0) rotate(-4deg) scale(1.1);
+  }
+
+  92% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(85vw, -15px, 0) rotate(10deg) scale(0.95);
+  }
+}
+
+@keyframes plexai-motion-cross-soft {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate3d(-55vw, 10px, 0) rotate(-8deg) scale(0.82);
+  }
+
+  12% {
+    opacity: 0.42;
+  }
+
+  50% {
+    opacity: 0.48;
+    transform: translate3d(8vw, -14px, 0) rotate(3deg) scale(0.95);
+  }
+
+  88% {
+    opacity: 0.34;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(84vw, 8px, 0) rotate(8deg) scale(0.84);
+  }
+}
+
+@keyframes plexai-motion-cross-cta {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate3d(-58vw, 22px, 0) rotate(-9deg) scale(0.88);
+  }
+
+  10% {
+    opacity: 0.68;
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: translate3d(8vw, -18px, 0) rotate(4deg) scale(1.06);
+  }
+
+  90% {
+    opacity: 0.62;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(86vw, 18px, 0) rotate(9deg) scale(0.9);
+  }
+}
+
+@keyframes plexai-motion-dot-cross {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate3d(-52vw, 0, 0) scale(0.8);
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate3d(12vw, 24px, 0) scale(1.1);
+  }
+
+  88% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(86vw, -16px, 0) scale(0.85);
+  }
+}
+
+@keyframes plexai-flow-dust {
+  to {
+    background-position:
+      140px 120px,
+      -190px 150px,
+      170px -130px;
+  }
+}
+
+@keyframes plexai-flow-runner {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0) scale(0.8);
+  }
+
+  14% {
+    opacity: 1;
+  }
+
+  78% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(calc(100vw - 14rem), -50%, 0) scale(1.1);
+  }
+}
+
+@media (max-width: 640px) {
+  .plexai-hero-svg-iframe {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+
+  .plexai-motion-orb {
+    filter: blur(14px);
+    height: 150px;
+    opacity: 0.62;
+    width: 320px;
+  }
+
+  .plexai-motion-orb-hero {
+    animation-duration: 8s;
+  }
+
+  .plexai-motion-orb-soft {
+    height: 120px;
+    opacity: 0.32;
+    width: 260px;
+  }
+
+  .plexai-motion-orb-cta {
+    height: 140px;
+    opacity: 0.52;
+    width: 300px;
+  }
+
+  .plexai-motion-dot-hero {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .plexai-float,
+  .plexai-scan,
+  .plexai-pulse-dot,
+  .plexai-organic,
+  .plexai-motion-orb,
+  .plexai-motion-dot,
+  .plexai-flow-dust,
+  .plexai-flow-runner {
+    animation: none;
+  }
+
+  .plexai-hero-svg-iframe {
+    opacity: 0.35;
+  }
+}

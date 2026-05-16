@@ -4,50 +4,147 @@ import { AuditRequestForm } from "@/components/AuditRequestForm";
 
 const auditHref = "#auditoria";
 
+const improvements = [
+  {
+    title: "Captación de solicitudes",
+    body: "Convierte formularios y consultas en oportunidades más claras desde el primer contacto.",
+  },
+  {
+    title: "Seguimiento de oportunidades",
+    body: "Reduce contactos olvidados con próximos pasos visibles para el equipo.",
+  },
+  {
+    title: "Organización de contactos",
+    body: "Ordena la información mínima necesaria para actuar sin depender de memoria o notas sueltas.",
+  },
+  {
+    title: "Automatización de tareas repetitivas",
+    body: "Alivia avisos, registros y coordinación interna cuando aportan eficiencia real.",
+  },
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Analizamos tu proceso",
+    body: "Entendemos cómo llegan las solicitudes, quién las gestiona y dónde se pierde contexto.",
+  },
+  {
+    step: "02",
+    title: "Detectamos cuellos de botella",
+    body: "Priorizamos tareas repetitivas con impacto operativo, no ideas bonitas sin uso real.",
+  },
+  {
+    step: "03",
+    title: "Diseñamos una automatización útil",
+    body: "Proponemos un flujo pequeño, comprensible y alineado con la forma de trabajar del equipo.",
+  },
+  {
+    step: "04",
+    title: "Medimos y mejoramos",
+    body: "Revisamos si funciona, ajustamos lo necesario y escalamos solo cuando tiene sentido.",
+  },
+];
+
+const sectors = [
+  "Clínicas dentales",
+  "Centros de estética",
+  "Academias",
+  "Negocios locales de servicios",
+];
+
+const flowItems = [
+  {
+    label: "Formulario",
+    title: "Nueva solicitud",
+    body: "El contacto deja los datos necesarios para revisar el caso.",
+  },
+  {
+    label: "Registro",
+    title: "Información ordenada",
+    body: "La oportunidad queda preparada para consultarla sin perder contexto.",
+  },
+  {
+    label: "Aviso interno",
+    title: "Equipo informado",
+    body: "La persona adecuada sabe que hay una acción pendiente.",
+  },
+  {
+    label: "Seguimiento",
+    title: "Próximo paso definido",
+    body: "El flujo deja claro qué hacer después y cuándo revisarlo.",
+  },
+];
+
+const reasons = [
+  {
+    title: "Automatización con criterio",
+    body: "No todo debe automatizarse. Elegimos procesos donde el beneficio es claro y medible.",
+  },
+  {
+    title: "Implementación progresiva",
+    body: "Empezamos por un MVP concreto antes de ampliar sistemas o añadir complejidad.",
+  },
+  {
+    title: "Control humano",
+    body: "La automatización ordena y acelera, pero las decisiones importantes siguen en manos del equipo.",
+  },
+];
+
+const faqs = [
+  {
+    q: "¿Sirve solo para clínicas?",
+    a: "No. Las clínicas son un ejemplo, pero PLEXAI está pensado para negocios de servicios con solicitudes, seguimiento y tareas repetitivas.",
+  },
+  {
+    q: "¿Sustituye al equipo?",
+    a: "No. El objetivo es reducir carga manual, mejorar el orden y mantener el control humano en las decisiones relevantes.",
+  },
+  {
+    q: "¿Por dónde se empieza?",
+    a: "Por una auditoría gratuita: revisamos un proceso concreto y detectamos si merece la pena automatizarlo.",
+  },
+  {
+    q: "¿Se puede adaptar a mi negocio?",
+    a: "Sí, si hay un flujo repetitivo y medible. La propuesta se adapta al proceso real, no al revés.",
+  },
+];
+
 function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/75 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6">
         <div className="flex items-center justify-between gap-4 sm:justify-start">
           <Link
             href="/"
-            className="font-mono text-sm font-semibold tracking-[0.2em] text-white"
+            className="font-mono text-sm font-semibold tracking-[0.24em] text-white"
           >
             PLEXAI
           </Link>
           <a
             href={auditHref}
-            className="rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-3 py-2 text-xs font-medium text-white shadow-lg shadow-violet-500/20 transition hover:opacity-95 sm:hidden"
+            className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-zinc-950 shadow-lg shadow-violet-500/20 transition hover:-translate-y-0.5 hover:bg-violet-100 sm:hidden"
           >
             Auditoría gratis
           </a>
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-zinc-400 sm:justify-start sm:text-sm">
-          <a
-            href="#problema"
-            className="transition-colors hover:text-white"
-          >
-            Problema
-          </a>
-          <a
-            href="#soluciones"
-            className="transition-colors hover:text-white"
-          >
-            Soluciones
+          <a href="#mejoras" className="transition-colors hover:text-white">
+            Mejoras
           </a>
           <a href="#metodo" className="transition-colors hover:text-white">
             Método
           </a>
-          <a
-            href={auditHref}
-            className="transition-colors hover:text-white"
-          >
-            Auditoría
+          <a href="#sectores" className="transition-colors hover:text-white">
+            Sectores
+          </a>
+          <a href="#flujo" className="transition-colors hover:text-white">
+            Flujo
           </a>
         </nav>
         <a
           href={auditHref}
-          className="hidden shrink-0 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-violet-500/20 transition hover:opacity-95 sm:inline-flex"
+          className="hidden shrink-0 rounded-full bg-white px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg shadow-violet-500/20 transition hover:-translate-y-0.5 hover:bg-violet-100 sm:inline-flex"
         >
           Pide una auditoría gratuita
         </a>
@@ -60,26 +157,180 @@ function SectionTitle({
   eyebrow,
   title,
   description,
+  theme = "dark",
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
+  theme?: "dark" | "light";
 }) {
+  const isLight = theme === "light";
+
   return (
     <div className="mx-auto max-w-2xl text-center">
       {eyebrow ? (
-        <p className="mb-3 text-xs font-medium uppercase tracking-widest text-violet-400/90">
+        <p
+          className={`mb-3 text-xs font-semibold uppercase tracking-[0.22em] ${
+            isLight ? "text-violet-700" : "text-violet-300"
+          }`}
+        >
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+      <h2
+        className={`text-2xl font-semibold tracking-tight sm:text-4xl ${
+          isLight ? "text-zinc-950" : "text-white"
+        }`}
+      >
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
+        <p
+          className={`mt-4 text-sm leading-relaxed sm:text-base ${
+            isLight ? "text-zinc-600" : "text-zinc-400"
+          }`}
+        >
           {description}
         </p>
       ) : null}
+    </div>
+  );
+}
+
+function HeroVisual() {
+  return (
+    <div className="relative mx-auto max-w-lg lg:ml-auto">
+      <div
+        aria-hidden={true}
+        className="absolute -inset-8 rounded-full bg-violet-500/25 blur-3xl"
+      />
+      <div
+        aria-hidden={true}
+        className="plexai-float absolute -right-3 top-10 h-24 w-24 rounded-full border border-violet-300/20 bg-violet-400/10 blur-sm"
+      />
+      <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.07] p-4 shadow-2xl shadow-violet-950/50 backdrop-blur">
+        <div className="rounded-[1.5rem] border border-white/10 bg-zinc-950/90 p-5">
+          <div className="flex items-center gap-2 border-b border-white/10 pb-4">
+            <span className="h-2.5 w-2.5 rounded-full bg-violet-400" />
+            <span className="h-2.5 w-2.5 rounded-full bg-fuchsia-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-zinc-600" />
+            <span className="ml-auto rounded-full border border-white/10 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+              Flow OS
+            </span>
+          </div>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-2xl border border-violet-400/20 bg-violet-400/10 p-4">
+              <p className="text-xs font-medium uppercase tracking-widest text-violet-200">
+                Solicitudes
+              </p>
+              <p className="mt-3 text-3xl font-semibold text-white">24</p>
+              <p className="mt-1 text-xs text-zinc-400">
+                6 requieren seguimiento
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+              <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+                Estado
+              </p>
+              <div className="mt-4 space-y-2">
+                {["Registrado", "Aviso interno", "Siguiente paso"].map(
+                  (item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-2 text-xs text-zinc-300"
+                    >
+                      <span className="plexai-pulse-dot h-2 w-2 rounded-full bg-violet-300" />
+                      {item}
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mt-4 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div
+              aria-hidden={true}
+              className="plexai-scan absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-300 to-transparent"
+            />
+            <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+              Flujo sugerido
+            </p>
+            <div className="mt-4 space-y-3">
+              {[
+                "Formulario recibido",
+                "Contacto creado",
+                "Equipo avisado",
+              ].map((item, index) => (
+                <div key={item} className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-xs font-semibold text-zinc-950">
+                    {index + 1}
+                  </span>
+                  <div className="h-2 flex-1 rounded-full bg-white/10">
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-violet-400 to-fuchsia-300"
+                      style={{ width: `${82 - index * 14}%` }}
+                    />
+                  </div>
+                  <span className="w-28 text-xs text-zinc-300">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AmbientBlob({
+  className,
+  variant = "primary",
+}: {
+  className: string;
+  variant?: "primary" | "light" | "blue";
+}) {
+  const palette = {
+    primary:
+      "from-violet-500/45 via-fuchsia-400/25 to-blue-400/25 mix-blend-screen",
+    light: "from-violet-200/70 via-fuchsia-100/65 to-sky-200/60",
+    blue: "from-blue-400/30 via-violet-400/35 to-fuchsia-300/25 mix-blend-screen",
+  };
+
+  return (
+    <div
+      aria-hidden={true}
+      className={`plexai-organic absolute rounded-[42%_58%_64%_36%/46%_42%_58%_54%] bg-gradient-to-br ${palette[variant]} blur-3xl ${className}`}
+    />
+  );
+}
+
+function MotionBackground({
+  className,
+  variant = "hero",
+}: {
+  className: string;
+  variant?: "hero" | "soft" | "cta";
+}) {
+  const orbClassName = {
+    hero: "plexai-motion-orb plexai-motion-orb-hero",
+    soft: "plexai-motion-orb plexai-motion-orb-soft",
+    cta: "plexai-motion-orb plexai-motion-orb-cta",
+  }[variant];
+  const dotClassName = {
+    hero: "plexai-motion-dot plexai-motion-dot-hero",
+    soft: "plexai-motion-dot plexai-motion-dot-soft",
+    cta: "plexai-motion-dot plexai-motion-dot-cta",
+  }[variant];
+
+  return (
+    <div
+      aria-hidden={true}
+      className={`pointer-events-none absolute overflow-hidden ${className}`}
+    >
+      <div className={orbClassName} />
+      <div className={dotClassName} />
     </div>
   );
 }
@@ -90,507 +341,378 @@ export default function Home() {
       <Header />
 
       <main>
-        {/* Hero */}
-        <section className="relative overflow-hidden border-b border-white/5 px-4 pb-20 pt-12 sm:px-6 sm:pb-28 sm:pt-16">
+        <section className="plexai-hero-section relative isolate overflow-hidden px-4 py-20 sm:px-6 sm:py-28">
           <div
             aria-hidden={true}
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(139,92,246,0.22),transparent)]"
+            className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_10%,rgba(168,85,247,0.28),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(217,70,239,0.18),transparent_26%),linear-gradient(135deg,#09090b_0%,#181020_48%,#09090b_100%)]"
           />
-          <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-8">
+          <div className="plexai-hero-svg-frame" aria-hidden={true}>
+            <iframe
+              src="/plexai-flow-hero.svg"
+              title="PLEXAI animated background"
+              tabIndex={-1}
+              className="plexai-hero-svg-iframe"
+            />
+          </div>
+          <div
+            aria-hidden={true}
+            className="absolute inset-0 z-[2] bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:72px_72px] opacity-20"
+          />
+          <div className="relative z-10 mx-auto grid max-w-6xl gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
             <div>
-              <p className="text-xs font-medium uppercase tracking-widest text-violet-400/90">
-                Automatización con criterio
+              <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-violet-100">
+                Automatización inteligente
               </p>
-              <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
-                Automatiza lo que realmente hace crecer tu negocio
+              <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.02]">
+                Automatización inteligente para negocios que quieren crecer con
+                más orden
               </h1>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-zinc-400">
-                En PLEXAI analizamos tus procesos, detectamos tareas repetitivas y
-                diseñamos soluciones con IA solo donde aportan valor real.
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
+                Analizamos tus procesos, detectamos tareas repetitivas y
+                diseñamos automatizaciones útiles, medibles y bajo control
+                humano.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href={auditHref}
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:opacity-95"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 shadow-xl shadow-violet-500/25 transition hover:-translate-y-0.5 hover:bg-violet-100"
                 >
                   Pide una auditoría gratuita
                 </a>
                 <a
                   href="#metodo"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-zinc-200 transition hover:border-white/25 hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:border-violet-200/50 hover:bg-white/10"
                 >
                   Ver cómo funciona
                 </a>
               </div>
+              <p className="mt-5 max-w-lg text-xs leading-relaxed text-zinc-500">
+                Empezamos por un proceso concreto. Sin sistemas gigantes. Sin
+                promesas vacías.
+              </p>
             </div>
-            <div className="relative lg:justify-self-end">
-              <div
-                aria-hidden={true}
-                className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-violet-500/20 via-transparent to-fuchsia-500/10 blur-2xl"
-              />
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/60 p-6 shadow-xl shadow-black/40">
-                <div className="flex items-center gap-2 border-b border-white/10 pb-4">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400/90" />
-                  <span className="h-2 w-2 rounded-full bg-amber-400/90" />
-                  <span className="h-2 w-2 rounded-full bg-zinc-600" />
-                  <span className="ml-auto font-mono text-[10px] text-zinc-500">
-                    flujo · concepto
-                  </span>
-                </div>
-                <div className="mt-5 space-y-3 font-mono text-xs text-zinc-300 sm:text-sm">
-                  <div className="rounded-lg border border-white/5 bg-zinc-950/50 px-3 py-2">
-                    <span className="text-violet-400">→</span> consultas y
-                    solicitudes ordenadas
-                  </div>
-                  <div className="rounded-lg border border-white/5 bg-zinc-950/50 px-3 py-2">
-                    <span className="text-fuchsia-400">→</span> tareas repetivas
-                    identificadas
-                  </div>
-                  <div className="rounded-lg border border-white/5 bg-zinc-950/50 px-3 py-2">
-                    <span className="text-emerald-400/90">→</span> MVP pequeño,
-                    medible y con control humano
-                  </div>
-                </div>
-                <p className="mt-5 text-xs leading-relaxed text-zinc-500">
-                  Visual conceptual. Las soluciones reales se definen contigo en
-                  la auditoría.
-                </p>
-              </div>
-            </div>
+            <HeroVisual />
           </div>
         </section>
 
-        {/* Problema */}
         <section
-          id="problema"
-          className="scroll-mt-24 border-b border-white/5 px-4 py-20 sm:px-6"
+          id="mejoras"
+          className="relative scroll-mt-24 overflow-hidden bg-zinc-50 px-4 py-20 text-zinc-950 sm:px-6 sm:py-24"
         >
-          <div className="mx-auto max-w-6xl">
+          <AmbientBlob
+            className="-left-28 top-12 h-72 w-96 opacity-80"
+            variant="light"
+          />
+          <div
+            aria-hidden={true}
+            className="absolute right-[-12rem] top-16 h-80 w-80 rounded-full bg-[conic-gradient(from_160deg,rgba(124,58,237,0.16),rgba(56,189,248,0.12),rgba(217,70,239,0.14),transparent_72%)] blur-2xl"
+          />
+          <MotionBackground
+            className="inset-0"
+            variant="soft"
+          />
+          <div
+            aria-hidden={true}
+            className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-violet-300/60 to-transparent"
+          />
+          <div className="relative mx-auto max-w-6xl">
             <SectionTitle
-              eyebrow="Diagnóstico"
-              title="Muchos negocios pierden oportunidades por cómo están organizados los procesos"
-              description="No siempre falta personal: a veces falta orden y automatización donde realmente compensa."
+              eyebrow="Qué puede mejorar PLEXAI"
+              title="Menos fricción en los procesos que más se repiten"
+              description="PLEXAI ayuda a ordenar solicitudes, contactos y tareas operativas para que tu equipo tenga más claridad y menos trabajo manual."
+              theme="light"
             />
-            <ul className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                "Consultas y mensajes sin responder a tiempo",
-                "Seguimiento comercial manual y disperso",
-                "Tareas repetitivas que comen horas cada semana",
-                "Información en varios sitios sin un flujo claro",
-                "Procesos sin sistema: cada persona lo hace distinto",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="rounded-xl border border-white/10 bg-zinc-900/40 px-4 py-4 text-sm leading-relaxed text-zinc-300"
-                >
-                  <span className="mr-2 text-violet-400">·</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-10 text-center">
-              <a
-                href={auditHref}
-                className="text-sm font-medium text-violet-400 underline-offset-4 hover:text-violet-300 hover:underline"
-              >
-                Pide una auditoría gratuita
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Propuesta de valor → Soluciones */}
-        <section
-          id="soluciones"
-          className="scroll-mt-24 border-b border-white/5 px-4 py-20 sm:px-6"
-        >
-          <div className="mx-auto max-w-6xl">
-            <SectionTitle
-              eyebrow="Enfoque"
-              title="No automatizamos por moda: primero analizamos, luego priorizamos"
-              description="Analizamos los procesos de tu negocio, detectamos tareas repetitivas y diseñamos automatizaciones con IA solo donde realmente aportan valor."
-            />
-            <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
-              {[
-                {
-                  title: "Criterio antes de herramientas",
-                  body: "Evitamos automatizar por impulso. Si no mejora algo medible o reduce carga real, no lo forzamos.",
-                },
-                {
-                  title: "Propuestas útiles y realistas",
-                  body: "Te decimos qué tiene sentido ahora y qué puede esperar a una segunda fase.",
-                },
-                {
-                  title: "Empezar pequeño",
-                  body: "Un MVP acotado que puedas validar rápido, sin comprometer todo tu día a día.",
-                },
-                {
-                  title: "Control humano",
-                  body: "En lo sensible, la decisión sigue siendo tuya. La IA apoya; no sustituye tu criterio.",
-                },
-              ].map((card) => (
+            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {improvements.map((card) => (
                 <article
                   key={card.title}
-                  className="rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 p-6 shadow-lg shadow-black/20"
+                  className="group rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-violet-200 hover:shadow-xl hover:shadow-violet-950/10"
                 >
-                  <h3 className="text-lg font-semibold text-white">
+                  <div className="mb-8 h-10 w-10 rounded-2xl bg-gradient-to-br from-violet-600 to-fuchsia-500 shadow-lg shadow-violet-500/20 transition group-hover:scale-105" />
+                  <h3 className="text-lg font-semibold tracking-tight text-zinc-950">
                     {card.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-600">
                     {card.body}
                   </p>
                 </article>
               ))}
             </div>
-            <div className="mt-10 text-center">
-              <a
-                href={auditHref}
-                className="inline-flex rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10"
-              >
-                Pide una auditoría gratuita
-              </a>
-            </div>
           </div>
         </section>
 
-        {/* Para quién */}
-        <section className="border-b border-white/5 px-4 py-20 sm:px-6">
-          <div className="mx-auto max-w-6xl">
-            <SectionTitle
-              eyebrow="Audiencia"
-              title="Pensado para negocios locales con procesos repetitivos"
-              description="Si tu valor es la atención cercana, la automatización debe apoyarte: menos tareas repetitivas y más margen para lo importante."
-            />
-            <div className="mx-auto mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                "Clínicas dentales",
-                "Podólogos",
-                "Clínicas de estética",
-                "Fisioterapeutas y osteópatas",
-                "Clínicas privadas pequeñas",
-                "Academias y centros de formación",
-                "Negocios locales de servicios",
-              ].map((label) => (
-                <div
-                  key={label}
-                  className="rounded-xl border border-white/10 bg-zinc-900/35 px-5 py-4 text-center text-sm font-medium text-zinc-200"
-                >
-                  {label}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Qué podemos automatizar */}
-        <section className="border-b border-white/5 px-4 py-20 sm:px-6">
-          <div className="mx-auto max-w-6xl">
-            <SectionTitle
-              eyebrow="Ámbitos"
-              title="Qué podemos automatizar (si encaja con tu operación)"
-              description="Las integraciones concretas dependen del proyecto. Algunas son fase inicial; otras, futuras y se acuerdan con transparencia."
-            />
-            <div className="mx-auto mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  title: "Respuestas frecuentes",
-                  body: "Base de respuestas y plantillas con revisión humana cuando hace falta.",
-                },
-                {
-                  title: "Captación de leads",
-                  body: "Ordenar solicitudes entrantes y preparar siguientes pasos comerciales.",
-                },
-                {
-                  title: "Organización de contactos",
-                  body: "Estructurar información comercial sin convertirlo en un CRM “gigante” de primeras.",
-                },
-                {
-                  title: "Seguimiento comercial",
-                  body: "Recordatorios internos y preparación de mensajes; tú decides cuándo enviar.",
-                },
-                {
-                  title: "Recordatorios internos",
-                  body: "Alertas para el equipo sobre pasos pendientes (administrativos, no clínicos).",
-                },
-                {
-                  title: "Preparación de mensajes",
-                  body: "Borradores y clasificación para que respondas más rápido con criterio.",
-                },
-                {
-                  title: "Conexión futura con herramientas",
-                  body: "Diseño pensando en integraciones progresivas cuando tenga sentido técnico y de negocio.",
-                },
-              ].map((card) => (
-                <article
-                  key={card.title}
-                  className="flex flex-col rounded-xl border border-white/10 bg-zinc-900/40 p-5"
-                >
-                  <h3 className="text-sm font-semibold text-white">
-                    {card.title}
-                  </h3>
-                  <p className="mt-2 flex-1 text-xs leading-relaxed text-zinc-400">
-                    {card.body}
-                  </p>
-                </article>
-              ))}
-            </div>
-            <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-zinc-500">
-              En esta fase no tratamos datos clínicos ni de pacientes en la web.
-              Los alcances sanitarios o médicos quedan fuera del alcance de esta
-              landing.
-            </p>
-            <div className="mt-8 text-center">
-              <a
-                href={auditHref}
-                className="text-sm font-medium text-violet-400 underline-offset-4 hover:text-violet-300 hover:underline"
-              >
-                Pide una auditoría gratuita
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Cómo trabajamos */}
         <section
           id="metodo"
-          className="scroll-mt-24 border-b border-white/5 px-4 py-20 sm:px-6"
+          className="relative scroll-mt-24 overflow-hidden border-y border-white/10 bg-zinc-950 px-4 py-20 sm:px-6 sm:py-24"
         >
-          <div className="mx-auto max-w-6xl">
+          <div
+            aria-hidden={true}
+            className="absolute left-1/2 top-36 h-px w-[76rem] -translate-x-1/2 bg-gradient-to-r from-transparent via-violet-300/30 to-transparent"
+          />
+          <div
+            aria-hidden={true}
+            className="plexai-flow-dust absolute inset-0 opacity-40"
+          />
+          <div className="relative mx-auto max-w-6xl">
             <SectionTitle
-              eyebrow="Método"
-              title="Cómo trabajamos"
-              description="Un camino claro, en fases, para reducir incertidumbre y medir antes de escalar."
+              eyebrow="Cómo funciona"
+              title="Un proceso simple, útil y por fases"
+              description="La auditoría evita empezar por la herramienta. Primero entendemos qué ocurre, luego decidimos qué automatización merece la pena."
             />
-            <ol className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
-              {[
-                {
-                  step: "1",
-                  title: "Auditoría",
-                  body: "Revisión de captación, atención y seguimiento para detectar oportunidades reales (sin humo).",
-                },
-                {
-                  step: "2",
-                  title: "Mapa de procesos",
-                  body: "Visualizamos cómo fluye el trabajo hoy y dónde se pierde tiempo o calidad.",
-                },
-                {
-                  step: "3",
-                  title: "MVP funcional",
-                  body: "Construimos algo pequeño que puedas usar y evaluar en semanas, no meses eternos.",
-                },
-                {
-                  step: "4",
-                  title: "Mejora progresiva",
-                  body: "Ajustamos con datos y experiencia; la siguiente iteración solo si tiene sentido para ambos.",
-                },
-              ].map((item) => (
+            <ol className="mt-12 grid gap-4 lg:grid-cols-4">
+              {processSteps.map((item) => (
                 <li
                   key={item.step}
-                  className="relative flex gap-4 rounded-2xl border border-white/10 bg-zinc-900/45 p-6"
+                  className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition duration-300 hover:-translate-y-1 hover:border-violet-300/40 hover:bg-white/[0.07]"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-violet-500/20 font-mono text-sm font-semibold text-violet-300">
+                  <div
+                    aria-hidden={true}
+                    className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-violet-500/10 blur-2xl transition group-hover:bg-violet-500/20"
+                  />
+                  <span className="font-mono text-xs font-semibold text-violet-300">
                     {item.step}
                   </span>
-                  <div>
-                    <h3 className="font-semibold text-white">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-zinc-400">
-                      {item.body}
-                    </p>
-                  </div>
+                  <span
+                    aria-hidden={true}
+                    className="plexai-pulse-dot absolute right-6 top-6 h-2 w-2 rounded-full bg-sky-300/80 shadow-lg shadow-sky-300/30"
+                  />
+                  <h3 className="mt-8 text-lg font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                    {item.body}
+                  </p>
                 </li>
               ))}
             </ol>
-            <div className="mt-10 text-center">
-              <a
-                href={auditHref}
-                className="inline-flex rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10"
-              >
-                Pide una auditoría gratuita
-              </a>
+          </div>
+        </section>
+
+        <section
+          id="sectores"
+          className="relative scroll-mt-24 overflow-hidden bg-white px-4 py-20 text-zinc-950 sm:px-6 sm:py-24"
+        >
+          <div
+            aria-hidden={true}
+            className="absolute -right-24 bottom-10 h-72 w-[28rem] rounded-[60%_40%_35%_65%/45%_55%_45%_55%] bg-gradient-to-br from-violet-100 via-fuchsia-50 to-sky-100 opacity-80 blur-3xl"
+          />
+          <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-700">
+                Dónde aporta valor
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+                Pensado para equipos de servicios con mucho trabajo operativo
+              </h2>
+              <p className="mt-5 text-sm leading-relaxed text-zinc-600 sm:text-base">
+                Los sectores son ejemplos, no una caja cerrada. PLEXAI encaja
+                mejor cuando hay solicitudes, coordinación diaria y seguimiento
+                que hoy consumen demasiado tiempo.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {sectors.map((sector) => (
+                <div
+                  key={sector}
+                  className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-violet-200 hover:bg-white hover:shadow-xl hover:shadow-violet-950/10"
+                >
+                  <span className="mb-10 block h-1.5 w-12 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-400" />
+                  <p className="text-lg font-semibold text-zinc-950">
+                    {sector}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Demo conceptual */}
-        <section className="border-b border-white/5 px-4 py-20 sm:px-6">
-          <div className="mx-auto max-w-6xl">
+        <section
+          id="flujo"
+          className="relative scroll-mt-24 overflow-hidden bg-zinc-100 px-4 py-20 text-zinc-950 sm:px-6 sm:py-24"
+        >
+          <AmbientBlob
+            className="left-[18%] top-8 h-80 w-[34rem] opacity-60"
+            variant="light"
+          />
+          <div className="relative mx-auto max-w-6xl">
             <SectionTitle
-              eyebrow="Ejemplo"
-              title="Demo conceptual (no es un chatbot real todavía)"
-              description="Ilustración de flujo genérico. La implementación real se define contigo."
+              eyebrow="Cómo se ve en la práctica"
+              title="De una solicitud suelta a un flujo con seguimiento"
+              description="Una automatización bien diseñada puede registrar una solicitud, avisar al equipo y dejar claro qué acción viene después."
+              theme="light"
             />
-            <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-950/40 to-zinc-950/80 p-8 shadow-xl shadow-violet-950/30">
-              <p className="text-center text-sm font-medium text-zinc-300">
-                Flujo tipo
-              </p>
-              <div className="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-2">
-                {[
-                  "Consulta recibida",
-                  "IA prepara borrador",
-                  "Humano revisa",
-                  "Seguimiento registrado",
-                ].map((label, i, arr) => (
-                  <div key={label} className="flex items-center gap-2">
-                    <span className="rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-center text-xs font-medium text-zinc-200 sm:text-sm">
-                      {label}
-                    </span>
-                    {i < arr.length - 1 ? (
+            <div className="mt-12 rounded-[2rem] border border-zinc-200 bg-white p-5 shadow-2xl shadow-zinc-950/10 sm:p-8">
+              <div
+                aria-hidden={true}
+                className="relative mb-6 hidden h-12 overflow-hidden rounded-full border border-violet-100 bg-gradient-to-r from-violet-50 via-white to-sky-50 lg:block"
+              >
+                <span className="absolute left-8 right-8 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-violet-300 via-fuchsia-300 to-sky-300" />
+                <span className="plexai-flow-runner absolute left-8 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-violet-600 shadow-lg shadow-violet-500/40" />
+              </div>
+              <div className="grid gap-4 lg:grid-cols-4">
+                {flowItems.map((item, index) => (
+                  <article
+                    key={item.label}
+                    className="relative rounded-3xl border border-zinc-200 bg-zinc-50 p-5"
+                  >
+                    {index < flowItems.length - 1 ? (
                       <span
-                        className="hidden text-zinc-600 sm:inline"
                         aria-hidden={true}
+                        className="absolute -right-3 top-1/2 z-10 hidden h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-zinc-950 text-xs text-white lg:flex"
                       >
                         →
                       </span>
                     ) : null}
-                  </div>
+                    <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-violet-700">
+                      {item.label}
+                    </p>
+                    <h3 className="mt-8 text-lg font-semibold text-zinc-950">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-zinc-600">
+                      {item.body}
+                    </p>
+                  </article>
                 ))}
               </div>
-              <p className="mt-8 text-center text-xs leading-relaxed text-zinc-500">
-                Esto es un ejemplo visual. No hay conversación en vivo ni captura
-                de datos en esta página.
-              </p>
             </div>
           </div>
         </section>
 
-        {/* Servicios */}
-        <section className="border-b border-white/5 px-4 py-20 sm:px-6">
+        <section className="relative overflow-hidden bg-zinc-950 px-4 py-20 sm:px-6 sm:py-24">
+          <div
+            aria-hidden={true}
+            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-300/60 to-transparent"
+          />
           <div className="mx-auto max-w-6xl">
             <SectionTitle
-              eyebrow="Servicios"
-              title="Qué podemos hacer contigo"
-              description="Oferta de alto nivel. El detalle técnico se acota en la auditoría y en cada propuesta."
+              eyebrow="Por qué PLEXAI"
+              title="Automatización práctica, sin perder criterio"
+              description="La tecnología debe ordenar el trabajo, no añadir ruido. El foco está en procesos concretos, adopción progresiva y decisiones bajo control humano."
             />
-            <ul className="mx-auto mt-12 grid max-w-4xl gap-3 sm:grid-cols-2">
-              {[
-                "Auditoría de automatización",
-                "Chatbots bajo control humano",
-                "Automatización de seguimiento",
-                "Integraciones progresivas",
-                "Sistemas internos a medida",
-              ].map((service) => (
-                <li
-                  key={service}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-zinc-900/35 px-4 py-3 text-sm text-zinc-200"
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              {reasons.map((reason) => (
+                <article
+                  key={reason.title}
+                  className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.03] p-6 shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-violet-300/40"
                 >
-                  <span className="text-violet-400">✓</span>
-                  {service}
-                </li>
+                  <h3 className="text-lg font-semibold text-white">
+                    {reason.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                    {reason.body}
+                  </p>
+                </article>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
-        {/* Auditoría gratuita */}
-        <section
-          id="auditoria"
-          className="scroll-mt-24 border-b border-white/5 px-4 py-20 sm:px-6"
-        >
-          <div className="mx-auto max-w-4xl rounded-3xl border border-violet-500/30 bg-gradient-to-br from-violet-950/50 via-zinc-950 to-fuchsia-950/30 p-8 text-center shadow-2xl shadow-violet-950/40 sm:p-12">
-            <h2 className="text-2xl font-semibold text-white sm:text-3xl">
-              Pide una auditoría gratuita
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-zinc-300 sm:text-base">
-              Revisamos captación, atención al cliente potencial y seguimiento
-              comercial para detectar oportunidades reales de orden y
-              automatización — sin prometer integraciones que aún no tocan tu
-              proyecto.
-            </p>
-            <p className="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-zinc-500">
-              Envía estos datos solo con información general de tu negocio. Aquí no
-              recogemos datos clínicos ni de pacientes.
-            </p>
-            <AuditRequestForm />
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="border-b border-white/5 px-4 py-20 sm:px-6">
+        <section className="bg-zinc-50 px-4 py-20 text-zinc-950 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-3xl">
-            <SectionTitle eyebrow="FAQ" title="Preguntas frecuentes" />
+            <SectionTitle
+              eyebrow="FAQ"
+              title="Preguntas rápidas"
+              description="Respuestas breves antes de pedir la auditoría."
+              theme="light"
+            />
             <div className="mt-10 space-y-3">
-              {[
-                {
-                  q: "¿PLEXAI sustituye a mi equipo?",
-                  a: "No. Diseñamos procesos más ordenados y con menos fricción para que el equipo pueda enfocarse en lo que aporta valor. La tecnificación apoya; no elimina personas.",
-                },
-                {
-                  q: "¿Necesito saber de tecnología?",
-                  a: "No hace falta ser experto. Explicamos las decisiones en lenguaje claro y documentamos lo esencial para tu día a día.",
-                },
-                {
-                  q: "¿Todo se automatiza?",
-                  a: "No. Automatizar con criterio significa dejar fuera lo que es frágil o poco rentable. Priorizamos lo que más te alivia con riesgo acotado.",
-                },
-                {
-                  q: "¿Funciona ya con WhatsApp?",
-                  a: "Hoy no vendemos WhatsApp como producto activo. Si en tu proyecto encaja, las integraciones con canales de mensajería se plantean como fase futura y con alcance definido.",
-                },
-                {
-                  q: "¿Es para clínicas?",
-                  a: "Trabajamos con negocios locales, incluidas clínicas, como organización comercial y operativa. PLEXAI no es un sistema clínico, software médico ni historial de pacientes.",
-                },
-                {
-                  q: "¿La IA toma decisiones sola?",
-                  a: "No. La IA prepara, clasifica o sugiere; las decisiones sensibles las controlas tú o tu equipo.",
-                },
-              ].map((item) => (
+              {faqs.map((item) => (
                 <details
                   key={item.q}
-                  className="group rounded-xl border border-white/10 bg-zinc-900/40 px-4 py-3 [&_summary::-webkit-details-marker]:hidden"
+                  className="group rounded-2xl border border-zinc-200 bg-white px-5 py-4 shadow-sm [&_summary::-webkit-details-marker]:hidden"
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-2 text-sm font-medium text-white">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-zinc-950">
                     {item.q}
-                    <span className="text-zinc-500 transition group-open:rotate-180">
+                    <span className="text-violet-700 transition group-open:rotate-180">
                       ▾
                     </span>
                   </summary>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-600">
                     {item.a}
                   </p>
                 </details>
               ))}
             </div>
-            <p className="mt-10 text-center">
-              <a
-                href={auditHref}
-                className="text-sm font-medium text-violet-400 underline-offset-4 hover:text-violet-300 hover:underline"
-              >
-                Pide una auditoría gratuita
-              </a>
-            </p>
           </div>
         </section>
 
-        {/* CTA final */}
-        <section className="px-4 py-20 sm:px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-xl font-semibold text-white sm:text-2xl">
-              Siguiente paso
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-zinc-400">
-              Compromiso claro: automatización útil, control humano y propuestas
-              alineadas con tu negocio local — sin prometer un SaaS gigante ni
-              funciones que aún no están en tu alcance.
-            </p>
-            <a
-              href={auditHref}
-              className="mt-8 inline-flex rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:opacity-95"
-            >
-              Pide una auditoría gratuita
-            </a>
+        <section
+          id="auditoria"
+          className="relative scroll-mt-24 overflow-hidden bg-zinc-950 px-4 py-20 sm:px-6 sm:py-24"
+        >
+          <div
+            aria-hidden={true}
+            className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(124,58,237,0.28),transparent_30%),radial-gradient(circle_at_78%_15%,rgba(56,189,248,0.16),transparent_28%),linear-gradient(180deg,#09090b_0%,#120b1f_55%,#09090b_100%)]"
+          />
+          <AmbientBlob className="-bottom-24 left-10 h-[340px] w-[520px] opacity-40" />
+          <AmbientBlob
+            className="-right-24 top-14 h-[380px] w-[520px] opacity-45"
+            variant="blue"
+          />
+          <MotionBackground
+            className="inset-0"
+            variant="cta"
+          />
+          <div className="relative mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.07] p-8 shadow-2xl shadow-violet-950/30 backdrop-blur">
+              <div
+                aria-hidden={true}
+                className="absolute -right-20 -top-24 h-52 w-52 rounded-full bg-violet-400/15 blur-3xl"
+              />
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-300">
+                CTA final
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                Empieza por una auditoría gratuita
+              </h2>
+              <p className="mt-5 text-sm leading-relaxed text-zinc-300 sm:text-base">
+                Detecta qué procesos merece la pena automatizar antes de
+                invertir en soluciones innecesarias.
+              </p>
+              <a
+                href={auditHref}
+                className="mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 shadow-lg shadow-violet-500/25 transition hover:-translate-y-0.5 hover:bg-violet-100"
+              >
+                Solicitar auditoría gratuita
+              </a>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[2rem] border border-violet-400/25 bg-gradient-to-br from-violet-950/70 via-zinc-950/95 to-fuchsia-950/40 p-6 text-center shadow-2xl shadow-violet-950/40 backdrop-blur sm:p-8">
+              <div
+                aria-hidden={true}
+                className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-violet-200/80 to-transparent"
+              />
+              <div
+                aria-hidden={true}
+                className="absolute -right-16 top-20 h-44 w-44 rounded-[55%_45%_62%_38%/45%_60%_40%_55%] bg-fuchsia-400/10 blur-3xl"
+              />
+              <h3 className="text-2xl font-semibold text-white">
+                Pide una auditoría gratuita
+              </h3>
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-zinc-300">
+                Cuéntanos cómo llegan tus solicitudes y qué tareas se repiten
+                más. Revisaremos si hay una primera automatización útil, clara y
+                medible.
+              </p>
+              <p className="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-zinc-500">
+                Envía información general de tu negocio. No incluyas datos
+                sensibles en el formulario.
+              </p>
+              <AuditRequestForm />
+            </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-white/5 px-4 py-10 sm:px-6">
+      <footer className="border-t border-white/10 bg-zinc-950 px-4 py-10 sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-center text-xs text-zinc-500 sm:flex-row sm:text-left">
-          <span className="font-mono font-semibold tracking-[0.15em] text-zinc-400">
+          <span className="font-mono font-semibold tracking-[0.18em] text-zinc-300">
             PLEXAI
           </span>
           <p>
-            Automatización inteligente para negocios locales. No somos sistema
-            clínico ni software médico.
+            Automatización inteligente para negocios, procesos y equipos que
+            quieren operar con más orden.
           </p>
         </div>
       </footer>
