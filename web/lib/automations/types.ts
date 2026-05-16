@@ -5,16 +5,43 @@ export type AutomationEventName =
   | "conversation.title_generated"
   | "conversation.summary_updated"
   | "lead.detected"
-  | "human_followup_requested";
+  | "human_followup_requested"
+  | "audit_request.created";
 
 export const AUTOMATION_EVENT_SOURCE = "cursor-ai-building-system" as const;
+export const PLEXAI_AUTOMATION_SOURCE = "plexai_landing" as const;
 
-export type AutomationEventPayload = {
-  event: AutomationEventName;
+/** Eventos con envelope heredado (`data`), origen sistema base. */
+export type StandardAutomationEventPayload = {
+  event: Exclude<AutomationEventName, "audit_request.created">;
   occurred_at: string;
   source: typeof AUTOMATION_EVENT_SOURCE;
   data: Record<string, unknown>;
 };
+
+/** Lead auditoría PLEXAI: envelope alineado con SPEC (sin `data`, sin metadatos extra). */
+export type AuditRequestCreatedAutomationPayload = {
+  event: "audit_request.created";
+  occurred_at: string;
+  source: typeof PLEXAI_AUTOMATION_SOURCE;
+  audit_request: {
+    id: string;
+    name: string;
+    email: string;
+    phone: string | null;
+    business_type: string;
+    city: string | null;
+    website_or_instagram: string | null;
+    main_problem: string;
+    improvement_area: string;
+    status: string;
+    created_at: string;
+  };
+};
+
+export type AutomationEventPayload =
+  | StandardAutomationEventPayload
+  | AuditRequestCreatedAutomationPayload;
 
 export type AutomationSendError =
   | "disabled"

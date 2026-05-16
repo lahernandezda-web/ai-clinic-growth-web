@@ -1,14 +1,13 @@
 import {
   AUTOMATION_EVENT_SOURCE,
-  type AutomationEventName,
-  type AutomationEventPayload,
   type AutomationSendResult,
   type EmitConversationCreatedEventInput,
+  type StandardAutomationEventPayload,
 } from "./types";
 import { sendAutomationEvent } from "./client";
 
 export type CreateAutomationEventParams = {
-  event: AutomationEventName;
+  event: StandardAutomationEventPayload["event"];
   data: Record<string, unknown>;
 };
 
@@ -17,7 +16,7 @@ export type CreateAutomationEventParams = {
  */
 export function createAutomationEvent(
   params: CreateAutomationEventParams,
-): AutomationEventPayload {
+): StandardAutomationEventPayload {
   return {
     event: params.event,
     occurred_at: new Date().toISOString(),

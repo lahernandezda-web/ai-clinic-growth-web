@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { emitAuditRequestCreatedEvent } from "@/lib/audit-requests/automation";
 import { auditRequestErrorMessages } from "@/lib/audit-requests/types";
 import { insertAuditRequest } from "@/lib/audit-requests/persistence";
 import { validateAuditRequestBody } from "@/lib/audit-requests/validate-input";
@@ -25,6 +26,22 @@ export async function POST(request: Request) {
   const saved = await insertAuditRequest(validation.input);
   if (!saved.ok) {
     return NextResponse.json({ error: SERVER_ERROR_MESSAGE }, { status: 500 });
+  }
+
+  try {
+    const emitResult = await emitAuditRequestCreatedEvent(saved.data);
+    if (
+      !emitResult.ok &&
+      emitResult.error !== "disabled" &&
+      emitResult.error !== "not_configured"
+    ) {
+      console.warn(
+        "[automation] audit_request.created not delivered:",
+        emitResult.error,
+      );
+    }
+  } catch {
+    console.warn("[automation] audit_request.created emit failed unexpectedly");
   }
 
   return NextResponse.json({ request: saved.data });
