@@ -12,11 +12,12 @@
 
 ## Current status
 
-**MVP 3A — Lead Event Emitter completado localmente.**
+**MVP 3B — n8n Lead Notification Workflow completado, verificado en local y funcionando de extremo a extremo.**
 
 - Landing MVP (MVP 1): completada y documentada.
 - Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
-- Emisión server-side del evento `audit_request.created`: implementada y verificada con automatización desactivada.
+- Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
+- Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
 
 Commits de referencia (MVP auditoría):
 
@@ -65,42 +66,130 @@ Commit de referencia (MVP 3A):
   - `web/lib/automations/types.ts`
 - La automatización queda desactivada por defecto si `AUTOMATIONS_ENABLED` no es `"true"` o si faltan variables requeridas.
 - Si la automatización falla, no rompe el guardado del lead ni la respuesta exitosa del endpoint.
-- No se activó n8n.
-- No se envían emails todavía.
-- No se conecta Google Sheets todavía.
+- En el checkpoint MVP 3A todavía no se había activado n8n.
+- En el checkpoint MVP 3A todavía no se enviaban emails.
+- En el checkpoint MVP 3A todavía no se conectaba Google Sheets.
 - No se ha hecho deployment.
 - No se han documentado valores reales de variables.
 - `web/.env.local` sigue siendo local y no versionable.
+
+**MVP 3B — n8n Lead Notification Workflow**
+
+Estado: **COMPLETADO, VERIFICADO EN LOCAL Y FUNCIONANDO DE EXTREMO A EXTREMO.**
+
+Flujo confirmado:
+
+`Formulario PLEXAI local`
+→ `POST /api/audit-requests`
+→ `Supabase public.audit_requests`
+→ `emit audit_request.created`
+→ `n8n Production Webhook`
+→ `Validate Security mediante X-Automation-Secret`
+→ `Validate Payload`
+→ `Send Internal Email`
+→ `Append Lead to Google Sheets`
+→ `Respond Success`
+
+Workflow n8n:
+
+- Nombre: `PLEXAI — Audit Request Created`
+
+Nodos configurados:
+
+- `Webhook Trigger`
+- `Validate Security`
+- `Check Security`
+- `Validate Payload`
+- `Send Internal Email`
+- `Append Lead to Google Sheets`
+- `Respond Success`
+- `Respond Unauthorized`
+- `Respond Error`
+
+Seguridad:
+
+- La integración usa `X-Automation-Secret`.
+- El secreto real no está documentado.
+- El secreto real solo vive en n8n y en `web/.env.local`.
+- `web/.env.local` no está versionado.
+- No se deben imprimir ni commitear secretos.
+- La URL real del webhook no debe documentarse.
+
+Variables locales necesarias, solo nombres y sin valores:
+
+- `AUTOMATIONS_ENABLED`
+- `N8N_WEBHOOK_URL`
+- `N8N_WEBHOOK_SECRET`
+
+Verificación realizada:
+
+- Prueba manual desde `http://localhost:3000/#auditoria`.
+- UI mostró éxito.
+- Supabase recibió fila.
+- n8n recibió ejecución correcta.
+- Email interno llegó.
+- Google Sheets añadió fila.
+- `npm.cmd run lint`: OK.
+- `npx tsc --noEmit`: OK.
+- `git status --short`: limpio antes de documentar.
+- No se leyeron secretos.
+
+Fuera de alcance:
+
+- Deployment.
+- Dominio.
+- WhatsApp.
+- Calendario.
+- Chatbot PLEXAI.
+- Dashboard interno.
+- Gestión avanzada de leads.
+- Datos clínicos o de pacientes.
 
 ## Current capabilities
 
 - La web presenta la propuesta comercial de PLEXAI y enlaces/anclas por secciones.
 - El visitante puede enviar una solicitud de auditoría gratuita vía formulario; los datos pueden persistirse en Supabase vía API.
-- Tras guardar un lead, el backend puede emitir el evento `audit_request.created` hacia el cliente de automatizaciones si la integración está configurada y activada.
-- **No están activados:** n8n, email transaccional, Google Sheets, WhatsApp, calendario, chatbot ni voz.
+- Tras guardar un lead, el backend emite el evento `audit_request.created` hacia n8n cuando la integración está configurada y activada.
+- n8n puede validar seguridad, validar payload, enviar email interno, registrar el lead en Google Sheets y responder éxito.
+- **No están activados:** WhatsApp, calendario, chatbot ni voz.
 - **No hay:** login, dashboard, multi-tenant ni deployment público automatizado desde este estado documentado.
 
 ## Not implemented yet
 
 - Gestión interna de leads / flujo de revisión post-envío (más allá del guardado)
-- Workflow n8n real para `audit_request.created` (email interno y registro opcional en Google Sheets)
 - Deployment (Vercel u otro), dominio dedicado y legal/pages legales en producción
 - Integraciones de mensajería, agenda o asistentes
+- Chatbot PLEXAI
+- Dashboard interno de leads
+- Gestión avanzada de leads
 - Variables de entorno reales documentadas en repo (por diseño: no deben aparecer valores secretos)
+- Datos clínicos o de pacientes en pruebas o flujos
 
 ## Environment (sin valores)
 
 - `web/.env.local` puede existir en máquinas de desarrollo para ejecutar API y cliente; **no debe versionarse** ni documentarse con valores reales.
 - No exponer ni listar secretos en documentación ni en commits.
+- Variables locales necesarias para MVP 3B, solo nombres:
+  - `AUTOMATIONS_ENABLED`
+  - `N8N_WEBHOOK_URL`
+  - `N8N_WEBHOOK_SECRET`
 
 ## Verification (último checkpoint documentado)
 
-- `npm.cmd run lint`: OK  
-- `npx tsc --noEmit`: OK  
-- `POST /api/audit-requests`: OK (HTTP 200) con automatización desactivada  
-- Prueba manual del formulario en UI: OK  
+- Prueba manual desde `http://localhost:3000/#auditoria`: OK
+- UI mostró éxito.
+- `POST /api/audit-requests`: OK.
+- Supabase recibió fila en `public.audit_requests`.
+- n8n recibió ejecución correcta.
+- Validación de `X-Automation-Secret`: OK.
+- `Validate Payload`: OK.
+- Email interno llegó.
+- Google Sheets añadió fila.
+- `Respond Success`: OK.
+- `npm.cmd run lint`: OK
+- `npx tsc --noEmit`: OK
+- `git status --short`: limpio antes de documentar.
 - Sin lectura ni exposición de secretos.
-- Sin activación de integraciones externas.
 
 ## Safety notes
 
@@ -112,15 +201,14 @@ Commit de referencia (MVP 3A):
 
 ## Siguiente fase recomendada
 
-**MVP 3B — Configure n8n workflow for internal email and Google Sheets**
+**MVP 4 — Demo Polish / Zoom Demo Script**
 
-Pendiente de SPEC/BUILD separado. El siguiente bloque debe:
+Descripción: preparar una demo comercial vendible para enseñar PLEXAI:
 
-- Configurar manualmente n8n.
-- Probar el webhook con datos ficticios.
-- Enviar email interno.
-- Opcionalmente registrar el lead en Google Sheets.
-- Añadir variables manualmente en `web/.env.local` sin imprimir valores.
-- Verificar que `AUTOMATIONS_ENABLED=true` solo se active cuando el workflow esté listo.
+- Narrativa de la demo.
+- Qué mostrar en la landing.
+- Cómo enseñar formulario, email y Google Sheets.
+- Cómo explicar valor para clínica dental, estética, podología, fisioterapia, academia o negocio local.
+- Límites honestos de lo que ya está implementado y lo que todavía no.
 
 No activar integraciones externas ni ampliar alcance sin SPEC previa.
