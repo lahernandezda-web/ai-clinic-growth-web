@@ -12,13 +12,14 @@
 
 ## Current status
 
-**MVP 4 — Demo Comercial: pack documental completo (SPEC, one-pager, guion imprimible, checklist operativo, brief Canva/PDF one-pager, brief/guion vídeo corto) creado, commiteado y pusheado a `origin/main`. Legal Data Readiness: SPEC legal, páginas `/aviso-legal` y `/privacidad` con datos confirmados, validadas (lint/tsc), commiteadas (`8fbf0f9`) y pusheadas. Corrección técnica hydration mismatch hero SVG background: iframe decorativo extraído a Client Component (`e58d36b`), validada (lint/tsc), commiteada y pusheada; repo `main` sincronizado con `origin/main`. Sin deployment; Vercel no conectado; proyecto sin publicación en producción.**
+**MVP 4 — Demo Comercial: pack documental completo (SPEC, one-pager, guion imprimible, checklist operativo, brief Canva/PDF one-pager, brief/guion vídeo corto) creado, commiteado y pusheado a `origin/main`. Legal Data Readiness: SPEC legal, páginas `/aviso-legal` y `/privacidad` con datos confirmados, validadas (lint/tsc), commiteadas (`8fbf0f9`) y pusheadas. Corrección técnica hydration mismatch hero SVG background: iframe decorativo extraído a Client Component (`e58d36b`), validada (lint/tsc), commiteada y pusheada. Validación local de producción pre-deploy: lint/tsc/build OK, revisión en `next start` (puerto 3001 por EADDRINUSE en 3000); rutas `/`, `/#auditoria`, `/privacidad` y `/aviso-legal` OK; sin errores visuales detectados; repo `main` sincronizado con `origin/main`. Sin deployment; Vercel no conectado; proyecto sin publicación en producción.**
 
 - Landing MVP (MVP 1): completada y documentada.
 - Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
 - Deployment readiness — SPEC creada (`4a23225`); Bloque A + B reducido implementado (`9e27e50`): rutas legales, footer y consentimiento del formulario; Bloque C completado (`97bf97e`): plantilla `web/.env.example` versionada y variables de producción documentadas por nombre (sin valores reales); Bloque D completado a nivel documental (`3ec7d55`): checklist Vercel / deployment en `docs/checklist-vercel-deployment-mvp.md`; sin deployment; Vercel no conectado.
 - Legal Data Readiness — SPEC (`9c57ef5`): `docs/spec-legal-data-readiness-mvp.md`; implementación mínima en páginas legales (`8fbf0f9`): `/aviso-legal` y `/privacidad` con datos confirmados del titular; sin placeholders legales principales; domicilio no publicado en MVP; email profesional del dominio pendiente; `npm.cmd run lint` y `npx tsc --noEmit` OK; pusheado a `origin/main`; sin deployment; Vercel no conectado.
 - Hydration mismatch hero SVG background — corrección mínima (`e58d36b`): `web/components/HeroSvgBackground.tsx` (Client Component); iframe animado del hero ya no se renderiza directamente en SSR; `web/app/page.tsx` sustituye bloque inline por `<HeroSvgBackground />`; sin cambio de copy, formulario, páginas legales ni APIs; sin dependencias nuevas; lint/tsc OK; verificación local OK; pusheado a `origin/main`; sin deployment; Vercel no conectado.
+- Validación local de producción pre-deploy — checkpoint documentado: `npm.cmd run lint`, `npx tsc --noEmit` y `npm.cmd run build` OK; `npm.cmd run start` falló en `:3000` (EADDRINUSE); `npx next start -p 3001` OK; revisión en modo producción local de `/`, `/#auditoria`, `/privacidad` y `/aviso-legal` sin errores visuales; Git limpio antes y después; sin modificación de archivos; sin deployment; Vercel no conectado; proyecto más preparado para decidir preview deploy, aún no ejecutado.
 - Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
 - Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
@@ -485,7 +486,57 @@ Estado Git:
 
 Próximo paso posible (no ejecutado):
 
-- Decidir primer preview deploy en Vercel según `docs/checklist-vercel-deployment-mvp.md` cuando corresponda (proyecto más preparado técnicamente para esa decisión; aún no ejecutado).
+- Validación local de producción pre-deploy (ver checkpoint siguiente); decisión preview deploy en Vercel aún pendiente.
+
+## Checkpoint — Validación local de producción pre-deploy
+
+**Estado: VALIDACIÓN LOCAL DE PRODUCCIÓN COMPLETADA (sin modificar archivos, sin deployment, sin Vercel conectado, sin publicación en producción).**
+
+Contexto:
+
+- Post Legal Data Readiness (`8fbf0f9`), corrección hydration mismatch hero (`e58d36b`) y pack comercial MVP 4 documental cerrado.
+- Objetivo: validar build y servidor de producción local antes de decidir preview deploy en Vercel.
+
+Estado Git:
+
+- Inicial: `## main...origin/main` (limpio).
+- Final: `## main...origin/main` (limpio).
+- No se modificaron archivos durante la validación.
+
+Verificación técnica:
+
+- `npm.cmd run lint`: OK
+- `npx tsc --noEmit`: OK
+- `npm.cmd run build`: OK
+- `npm.cmd run start`: falló en puerto 3000 (`EADDRINUSE: address already in use :::3000`)
+- Servidor de producción local: `npx next start -p 3001`: OK
+
+Revisión local en modo producción:
+
+- URL usada: `http://localhost:3001`
+- Landing (`/`): OK
+- `#auditoria` (`/#auditoria`): OK
+- `/privacidad`: OK
+- `/aviso-legal`: OK
+- Errores visuales detectados: ninguno
+- Errores en terminal: solo `EADDRINUSE` en `:3000`; producción estable en `:3001`
+
+Fuera de alcance de esta validación:
+
+- Lectura o modificación de `web/.env.local`.
+- Modificación de código, `web/`, formulario, páginas legales, APIs, Supabase, n8n o `.env.example`.
+- Instalación de dependencias.
+- Deployment y conexión a Vercel.
+
+Estado del bloque:
+
+- Build de producción verificado localmente.
+- Rutas comerciales y legales revisadas en servidor `next start` (puerto alternativo por ocupación de `:3000`).
+- El proyecto queda **más preparado para decidir** preview deploy en Vercel según `docs/checklist-vercel-deployment-mvp.md`, pero **aún no se ha ejecutado** preview deploy ni conexión a Vercel.
+
+Próximo paso posible (no ejecutado):
+
+- Ver «Siguiente fase recomendada» (opciones A / B).
 
 ## Checkpoint — MVP 4 Demo Comercial (SPEC)
 
@@ -757,6 +808,19 @@ Verificación:
 
 ## Verification (último checkpoint documentado)
 
+**Validación local de producción pre-deploy (2026-05-23):**
+
+- `npm.cmd run lint`: OK
+- `npx tsc --noEmit`: OK
+- `npm.cmd run build`: OK
+- `npm.cmd run start` en `:3000`: EADDRINUSE
+- `npx next start -p 3001`: OK
+- Revisión en modo producción: `/`, `/#auditoria`, `/privacidad`, `/aviso-legal` — OK; sin errores visuales detectados
+- `git status -sb` inicial y final: `## main...origin/main` (limpio)
+- Sin modificación de archivos durante la validación
+- Sin lectura ni exposición de `web/.env.local`
+- Sin deployment ni conexión a Vercel
+
 **Rediseño landing (`2b5c185`):**
 
 - `npm.cmd run lint`: OK
@@ -793,13 +857,12 @@ Verificación:
 
 ## Siguiente fase recomendada
 
-**Inmediato (post Legal Data Readiness y corrección hydration mismatch hero — `8fbf0f9`, `e58d36b`; ambos pusheados; repo sincronizado con `origin/main`):**
+**Inmediato (post validación local de producción pre-deploy; Legal Data Readiness `8fbf0f9`, hydration mismatch hero `e58d36b`; repo sincronizado con `origin/main`):**
 
 Decidir el siguiente paso entre estas opciones (no mutuamente excluyentes en el medio plazo, pero conviene priorizar una):
 
-- **A. Revisión visual local final pre-deploy** — `npm.cmd run dev` y comprobar `/`, `/#auditoria`, `/aviso-legal` y `/privacidad` (incl. ausencia de overlay de hydration mismatch del hero en desarrollo).
-- **B. Materiales comerciales opcionales fuera del repo** — según `docs/spec-demo-commercial-mvp.md` sección 13: posible creación real en Canva/PDF del one-pager (brief `7d6fb05`), posible conversión PDF de guion/checklist, posible grabación/edición real del vídeo corto (brief `694ca7f`; pack documental: SPEC `f127ea1`, one-pager `8f19de6`, guion `b88237c`, checklist `ab1c4f8`, brief Canva `7d6fb05`, brief vídeo `694ca7f`).
-- **C. Decidir primer preview deploy en Vercel (aún no ejecutado)** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy. Precondición legal mínima cumplida (`8fbf0f9`); corrección técnica hydration mismatch hero aplicada (`e58d36b`); el proyecto queda más preparado para esta decisión, pero **no se ha hecho deployment ni se ha conectado Vercel**; pendiente email profesional del dominio si se desea antes de producción.
+- **A. Preparar SPEC de preview deploy en Vercel** — documentar alcance, precondiciones y pasos de ejecución antes de conectar Vercel o desplegar (referencia: `docs/checklist-vercel-deployment-mvp.md`; datos legales en páginas `8fbf0f9`; hydration hero `e58d36b`; build y `next start` local OK — ver checkpoint Validación local de producción pre-deploy). **No implica deployment ni conexión a Vercel por sí sola.**
+- **B. Seguir sin deployment y trabajar assets comerciales externos** — según pack MVP 4 y `docs/spec-demo-commercial-mvp.md` sección 13: posible creación real en Canva/PDF del one-pager (brief `7d6fb05`), posible conversión PDF de guion/checklist, posible grabación/edición real del vídeo corto (brief `694ca7f`; pack documental: SPEC `f127ea1`, one-pager `8f19de6`, guion `b88237c`, checklist `ab1c4f8`, brief Canva `7d6fb05`, brief vídeo `694ca7f`). Sin conectar Vercel ni ejecutar deployment.
 
 Notas transversales:
 
@@ -819,4 +882,4 @@ Notas transversales:
 
 Alcance documentado: narrativa y guiones para enseñar PLEXAI (landing, formulario, flujo interno conceptual, límites honestos por sector); one-pager resumen; guion hablado imprimible; checklist operativo pre/post demo; brief de diseño para pieza visual del one-pager; brief/guion para vídeo corto de presentación (60 s / 90 s). **Pack documental MVP 4 completo.** Todo respaldado en GitHub (`origin/main`). Sin PDF, vídeo ni archivos binarios/multimedia en repo; sin deployment; Vercel no conectado.
 
-Pendiente en fases posteriores: email profesional del dominio `plexai.es`; decisión y ejecución de primer preview deploy o producción en Vercel (checklist `docs/checklist-vercel-deployment-mvp.md`; aún no ejecutado); creación real Canva/PDF del one-pager si se decide; grabación/edición real del vídeo corto si se decide; conversión PDF opcional de otros materiales. Datos legales principales en `/aviso-legal` y `/privacidad` completados (`8fbf0f9`). Hydration mismatch del hero corregido (`e58d36b`). No activar integraciones externas ni ampliar alcance sin SPEC previa.
+Pendiente en fases posteriores: email profesional del dominio `plexai.es`; SPEC y/o decisión y ejecución de primer preview deploy o producción en Vercel (checklist `docs/checklist-vercel-deployment-mvp.md`; validación local de producción OK; aún no ejecutado); creación real Canva/PDF del one-pager si se decide; grabación/edición real del vídeo corto si se decide; conversión PDF opcional de otros materiales. Datos legales principales en `/aviso-legal` y `/privacidad` completados (`8fbf0f9`). Hydration mismatch del hero corregido (`e58d36b`). Validación local de producción pre-deploy completada (build/start local OK). No activar integraciones externas ni ampliar alcance sin SPEC previa.
