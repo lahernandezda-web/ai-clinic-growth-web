@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Política de privacidad — PLEXAI",
   description:
-    "Información provisional sobre el tratamiento de datos en solicitudes de auditoría y contacto comercial de PLEXAI.",
+    "Información sobre el tratamiento de datos en solicitudes de auditoría y contacto comercial de PLEXAI (versión MVP).",
 };
 
 function LegalHeader() {
@@ -43,8 +43,8 @@ export default function PrivacidadPage() {
 
         <div className="mt-6 rounded-2xl border border-amber-500/25 bg-amber-950/20 px-4 py-3 text-sm leading-relaxed text-amber-100/90">
           <p>
-            Esta es una versión provisional con placeholders. Debe completarse con
-            los datos reales del titular antes de publicar en producción.
+            Texto informativo de versión MVP. No constituye asesoría legal
+            definitiva ni garantía de cumplimiento normativo completo.
           </p>
         </div>
 
@@ -52,24 +52,35 @@ export default function PrivacidadPage() {
           <section>
             <h2 className="text-lg font-semibold text-white">Responsable</h2>
             <p className="mt-3">
-              Responsable del tratamiento: [NOMBRE DEL TITULAR O RESPONSABLE].
+              Responsable del tratamiento: Luis Alejandro Hernandez de Andrade.
             </p>
             <p className="mt-2">
-              Contacto: [EMAIL DE CONTACTO].
+              Forma jurídica: autónomo / persona física profesional.
             </p>
             <p className="mt-2">
-              Domicilio / datos legales (si aplica): [DOMICILIO / DATOS LEGALES SI
-              APLICA].
+              Contacto de privacidad:{" "}
+              <a
+                href="mailto:l.a.hernandez.da@gmail.com"
+                className="text-violet-300 transition-colors hover:text-violet-200"
+              >
+                l.a.hernandez.da@gmail.com
+              </a>
+              .
             </p>
+            <p className="mt-2">
+              Domicilio: no publicado en esta versión MVP.
+            </p>
+            <p className="mt-2">Ámbito geográfico: España.</p>
           </section>
 
           <section>
             <h2 className="text-lg font-semibold text-white">Finalidad</h2>
             <p className="mt-3">
-              Los datos personales que nos facilites se tratarán para responder a
-              tu solicitud de auditoría gratuita y para el contacto comercial
-              relacionado con los servicios de análisis y automatización de
-              procesos ofrecidos por PLEXAI.
+              Los datos personales que nos facilites se tratarán para responder
+              a tu solicitud de auditoría gratuita, gestionar el contacto
+              comercial y realizar un análisis inicial de las necesidades de tu
+              negocio en relación con los servicios de análisis y automatización
+              ofrecidos por PLEXAI.
             </p>
           </section>
 
@@ -78,18 +89,19 @@ export default function PrivacidadPage() {
               Datos que recogemos
             </h2>
             <p className="mt-3">
-              A través del formulario de la web podemos recoger, según lo que
+              A través del formulario de la web podemos tratar, según lo que
               indiques:
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-zinc-400">
               <li>Nombre</li>
               <li>Email</li>
-              <li>Teléfono (opcional)</li>
+              <li>Teléfono, si lo aportas</li>
               <li>Tipo de negocio</li>
-              <li>Ciudad (opcional)</li>
-              <li>Web o Instagram (opcional)</li>
-              <li>Descripción del problema principal o proceso a mejorar</li>
-              <li>Área principal de interés</li>
+              <li>Ciudad, si la aportas</li>
+              <li>Web o Instagram, si los aportas</li>
+              <li>Problema principal o proceso a mejorar</li>
+              <li>Área principal de mejora</li>
+              <li>Mensaje enviado en el formulario</li>
             </ul>
           </section>
 
@@ -98,10 +110,11 @@ export default function PrivacidadPage() {
               Datos que no debes enviar
             </h2>
             <p className="mt-3">
-              No envíes datos clínicos, datos de pacientes ni información sensible
-              o especialmente protegida a través del formulario. El canal está
-              pensado para información general sobre tu negocio y tus procesos
-              operativos.
+              No envíes datos clínicos, datos de pacientes, datos de salud,
+              información especialmente sensible ni datos de terceros sin la
+              autorización correspondiente. El canal está pensado para
+              información general sobre tu negocio y tus procesos operativos, no
+              para información sanitaria ni clínica.
             </p>
           </section>
 
@@ -110,29 +123,34 @@ export default function PrivacidadPage() {
               Base legitimadora
             </h2>
             <p className="mt-3">
-              El tratamiento se basa en tu consentimiento al enviar el formulario y,
-              cuando corresponda, en el interés legítimo de atender solicitudes de
-              información y contacto comercial relacionadas con nuestros servicios.
+              El tratamiento se basa en tu consentimiento al enviar el formulario
+              de contacto o solicitud de auditoría.
             </p>
           </section>
 
           <section>
             <h2 className="text-lg font-semibold text-white">Conservación</h2>
             <p className="mt-3">
-              Conservaremos los datos el tiempo necesario para gestionar tu
-              solicitud y las comunicaciones derivadas, y después durante los plazos
-              legalmente aplicables o hasta que solicites su supresión cuando proceda.
+              Conservaremos los datos durante el tiempo necesario para gestionar
+              tu solicitud y las comunicaciones relacionadas, salvo que
+              solicites su supresión cuando proceda conforme a la normativa
+              aplicable.
             </p>
           </section>
 
           <section>
             <h2 className="text-lg font-semibold text-white">
-              Encargados y herramientas
+              Comunicación a terceros
             </h2>
             <p className="mt-3">
-              Para prestar el servicio podemos apoyarnos en proveedores que actúan
-              como encargados del tratamiento o prestadores técnicos, de forma
-              genérica:
+              No vendemos tus datos personales. Podemos utilizar proveedores
+              técnicos necesarios para el funcionamiento del servicio, el
+              hosting, la base de datos, la automatización de flujos internos o
+              el envío de comunicaciones operativas por email, siempre bajo una
+              finalidad operativa y de prestación del servicio.
+            </p>
+            <p className="mt-3">
+              De forma genérica, en el MVP pueden intervenir proveedores como:
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-zinc-400">
               <li>Proveedor de hosting de la web</li>
@@ -142,8 +160,8 @@ export default function PrivacidadPage() {
               <li>Google Sheets (registro operativo complementario)</li>
             </ul>
             <p className="mt-3">
-              Estos proveedores tratan los datos conforme a sus condiciones y a los
-              acuerdos aplicables. No se publican aquí URLs de webhooks ni
+              Estos proveedores tratan los datos conforme a sus condiciones y a
+              los acuerdos aplicables. No se publican aquí URLs de webhooks ni
               credenciales de acceso.
             </p>
           </section>
@@ -151,24 +169,31 @@ export default function PrivacidadPage() {
           <section>
             <h2 className="text-lg font-semibold text-white">Tus derechos</h2>
             <p className="mt-3">
-              Puedes ejercer, cuando corresponda, los derechos de acceso,
-              rectificación, supresión, oposición, limitación del tratamiento y, si
-              aplica, portabilidad de tus datos personales, escribiendo a [EMAIL DE
-              CONTACTO].
+              Puedes ejercer, cuando proceda, los derechos de acceso,
+              rectificación, supresión, oposición, limitación del tratamiento y
+              portabilidad de tus datos personales, escribiendo a{" "}
+              <a
+                href="mailto:l.a.hernandez.da@gmail.com"
+                className="text-violet-300 transition-colors hover:text-violet-200"
+              >
+                l.a.hernandez.da@gmail.com
+              </a>
+              .
             </p>
             <p className="mt-3">
-              También puedes presentar una reclamación ante la autoridad de control
-              competente si consideras que el tratamiento no se ajusta a la
-              normativa vigente.
+              También puedes presentar una reclamación ante la Agencia Española
+              de Protección de Datos u otra autoridad de control competente si
+              consideras que el tratamiento no se ajusta a la normativa
+              vigente.
             </p>
           </section>
 
           <section>
             <h2 className="text-lg font-semibold text-white">Actualizaciones</h2>
             <p className="mt-3">
-              Esta política puede actualizarse para reflejar cambios legales o
-              operativos. La versión publicada en la web será la aplicable en cada
-              momento.
+              Esta política puede actualizarse para reflejar cambios legales u
+              operativos. La versión publicada en la web será la aplicable en
+              cada momento.
             </p>
           </section>
         </article>
