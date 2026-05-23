@@ -12,7 +12,7 @@
 
 ## Current status
 
-**MVP 4 — Demo Comercial: SPEC creada, commiteada y pusheada (`f127ea1`). Sin implementación de código ni deployment.**
+**MVP 4 — Demo Comercial: SPEC (`f127ea1`) y one-pager comercial (`8f19de6`) creados, commiteados y pusheados. Sin implementación de código ni deployment.**
 
 - Landing MVP (MVP 1): completada y documentada.
 - Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
@@ -22,6 +22,7 @@
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
 - MVP 3B — n8n Lead Notification Workflow: completado, verificado en local y funcionando de extremo a extremo.
 - MVP 4 Demo Comercial — SPEC documental (`f127ea1`): `docs/spec-demo-commercial-mvp.md`; guiones demo, narrativa, objeciones y checklist pre-demo; sin código ni deployment.
+- MVP 4 Demo Comercial — One-pager documental (`8f19de6`): `docs/commercial-one-pager-mvp.md`; resumen comercial imprimible/convertible; sin código ni deployment.
 
 Commits de referencia (MVP auditoría):
 
@@ -50,9 +51,10 @@ Commits de referencia (deployment readiness):
 - `55113aa` — docs: add env readiness checkpoint
 - `3ec7d55` — docs: add Vercel deployment checklist
 
-Commit de referencia (MVP 4 Demo Comercial):
+Commits de referencia (MVP 4 Demo Comercial):
 
 - `f127ea1` — docs: add commercial demo spec
+- `8f19de6` — docs: add commercial one-pager
 
 ## Implemented so far
 
@@ -385,12 +387,54 @@ Estado del bloque:
 - SPEC comercial lista y pusheada a `origin/main`.
 - No se implementó código.
 - No hay deployment.
-- Pendiente crear materiales comerciales derivados:
+- Pendiente crear materiales comerciales derivados (one-pager completado — ver checkpoint One-pager):
   - PDF / guion imprimible.
-  - One-pager comercial.
   - Checklist operativo interno.
   - Posible vídeo corto de presentación.
   - Posible versión en Canva.
+
+Verificación:
+
+- Solo documentación; sin modificación de código.
+- Sin lectura ni exposición de `web/.env.local`.
+- Sin modificación de Supabase, n8n ni Google Sheets.
+- Sin deployment ni conexión a Vercel.
+
+## Checkpoint — MVP 4 Demo Comercial (One-pager)
+
+**Estado: ONE-PAGER COMERCIAL CREADO, COMMITEADO Y PUSHEADO (documental, sin implementación de código, sin deployment).**
+
+Commit:
+
+- `8f19de6` — docs: add commercial one-pager
+
+Archivo:
+
+- `docs/commercial-one-pager-mvp.md`
+
+Incluye:
+
+- Encabezado y mensaje central de PLEXAI.
+- Problema y propuesta de valor.
+- Qué hace PLEXAI y qué demuestra el MVP actual.
+- Sectores objetivo y ejemplos de automatización.
+- Beneficios, límites honestos y método de trabajo.
+- Cierre comercial con llamada a la acción (auditoría gratuita).
+- Nota de versión texto para conversión a PDF, Canva o presentación breve.
+
+Estado del bloque:
+
+- One-pager comercial creado y pusheado a `origin/main`.
+- MVP 4 comercial queda respaldado en remoto.
+- No se implementó código.
+- No se hizo deployment.
+- No se conectó Vercel.
+- Pendiente: completar datos legales reales antes de producción pública.
+- Pendiente crear materiales comerciales adicionales:
+  - PDF / guion imprimible de demo.
+  - Checklist operativo interno.
+  - Posible versión en Canva.
+  - Posible vídeo corto de presentación.
 
 Verificación:
 
@@ -419,7 +463,7 @@ Verificación:
 - Gestión avanzada de leads
 - Valores reales de variables de producción en el panel del hosting (Vercel u otro); la plantilla `web/.env.example` solo tiene nombres y comentarios
 - Datos clínicos o de pacientes en pruebas o flujos
-- Materiales comerciales derivados del MVP 4 (PDF/guion imprimible, one-pager, checklist operativo, vídeo corto, versión Canva)
+- Materiales comerciales derivados del MVP 4 pendientes (PDF/guion imprimible, checklist operativo, vídeo corto, versión Canva); one-pager completado en `docs/commercial-one-pager-mvp.md` (`8f19de6`)
 
 ## Environment (sin valores)
 
@@ -469,11 +513,11 @@ Verificación:
 
 ## Siguiente fase recomendada
 
-**Inmediato (post MVP 4 Demo Comercial — SPEC documental lista):**
+**Inmediato (post MVP 4 Demo Comercial — SPEC y one-pager documentales listos):**
 
 Decidir el siguiente paso entre estas opciones (no mutuamente excluyentes en el medio plazo, pero conviene priorizar una):
 
-- **A. Crear materiales comerciales del MVP 4** — según `docs/spec-demo-commercial-mvp.md` sección 13: PDF/guion imprimible, one-pager, checklist operativo interno, posible vídeo corto, posible versión Canva.
+- **A. Completar materiales comerciales restantes del MVP 4** — según `docs/spec-demo-commercial-mvp.md` sección 13: PDF/guion imprimible, checklist operativo interno, posible vídeo corto, posible versión Canva (one-pager completado en `docs/commercial-one-pager-mvp.md`, `8f19de6`).
 - **B. Completar datos legales reales** — sustituir placeholders en `/privacidad` y `/aviso-legal`; email de contacto legal/privacidad; requisito antes de producción pública.
 - **C. Preparar primer preview deploy en Vercel** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy.
 
@@ -486,6 +530,8 @@ Notas transversales:
 
 SPEC: `docs/spec-demo-commercial-mvp.md` (`f127ea1`).
 
-Alcance documentado: narrativa y guiones de demo para enseñar PLEXAI (landing, formulario, email, Google Sheets, límites honestos por sector).
+One-pager: `docs/commercial-one-pager-mvp.md` (`8f19de6`).
 
-Pendiente en fases posteriores: materiales comerciales derivados (PDF, one-pager, checklist operativo, vídeo, Canva). No activar integraciones externas ni ampliar alcance sin SPEC previa.
+Alcance documentado: narrativa y guiones de demo para enseñar PLEXAI (landing, formulario, email, Google Sheets, límites honestos por sector); resumen comercial one-pager para conversión a PDF, Canva o presentación breve.
+
+Pendiente en fases posteriores: materiales comerciales adicionales (PDF/guion imprimible, checklist operativo, vídeo, Canva). No activar integraciones externas ni ampliar alcance sin SPEC previa.
