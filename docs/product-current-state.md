@@ -12,7 +12,7 @@
 
 ## Current status
 
-**MVP 4 — Demo Comercial: pack documental (SPEC, one-pager, guion imprimible, checklist operativo, brief Canva/PDF one-pager) creado, commiteado y pusheado a `origin/main`. Sin implementación de código, sin PDF/binarios en repo, sin deployment; Vercel no conectado.**
+**MVP 4 — Demo Comercial: pack documental completo (SPEC, one-pager, guion imprimible, checklist operativo, brief Canva/PDF one-pager, brief/guion vídeo corto) creado, commiteado y pusheado a `origin/main`. Sin implementación de código, sin PDF/binarios/vídeo multimedia en repo, sin deployment; Vercel no conectado.**
 
 - Landing MVP (MVP 1): completada y documentada.
 - Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
@@ -26,6 +26,7 @@
 - MVP 4 Demo Comercial — Guion imprimible (`b88237c`): `docs/commercial-demo-script-mvp.md`; guion hablado 10 min / 20–30 min, límites y objeciones; cerrado y pusheado.
 - MVP 4 Demo Comercial — Checklist operativo (`ab1c4f8`): `docs/commercial-demo-checklist-mvp.md`; preparación pre-demo y post-demo; cerrado y pusheado.
 - MVP 4 Demo Comercial — Brief Canva/PDF one-pager (`7d6fb05`): `docs/commercial-one-pager-canva-brief-mvp.md`; guía de diseño visual; cerrado y pusheado; sin PDF ni archivo binario creado.
+- MVP 4 Demo Comercial — Brief/guion vídeo corto (`694ca7f`): `docs/commercial-short-video-brief-mvp.md`; guiones 60 s / 90 s, visuales, overlays y límites; cerrado y pusheado; sin vídeo real ni archivo multimedia.
 
 Commits de referencia (MVP auditoría):
 
@@ -64,6 +65,7 @@ Commits de referencia (MVP 4 Demo Comercial):
 - `ab1c4f8` — docs: add commercial demo checklist
 - `f95425d` — docs: update commercial pack checkpoint
 - `7d6fb05` — docs: add commercial canva brief
+- `694ca7f` — docs: add commercial short video brief
 
 ## Implemented so far
 
@@ -207,7 +209,7 @@ Estado del bloque:
 
 - Rediseño cerrado.
 - **Formulario end-to-end post-rediseño:** OK (revalidado 2026-05-23).
-- **Pendiente decidir siguiente fase:** materiales comerciales opcionales MVP 4, datos legales reales o preview deploy Vercel (ver pack MVP 4 Demo Comercial).
+- **Pendiente decidir siguiente fase:** datos legales reales, creación real Canva/PDF o grabación de vídeo si se decide, o preview deploy Vercel (pack documental MVP 4 completo — ver sección MVP 4).
 
 Verificación formulario post-rediseño (2026-05-23):
 
@@ -396,10 +398,10 @@ Estado del bloque:
 - SPEC comercial lista y pusheada a `origin/main`.
 - No se implementó código.
 - No hay deployment.
-- Pendiente crear materiales opcionales fuera del repo (brief Canva one-pager completado — ver checkpoint Brief Canva):
+- Pendiente fuera del repo (pack documental MVP 4 completo — ver checkpoints Brief Canva y Brief vídeo corto):
   - Posible creación real en Canva/PDF del one-pager si se decide.
   - Posible conversión a PDF / formato imprimible (guion, checklist) si se decide.
-  - Posible vídeo corto de presentación.
+  - Posible grabación/edición real del vídeo corto si se decide (brief/guion documental completado — `694ca7f`).
 
 Verificación:
 
@@ -438,9 +440,9 @@ Estado del bloque:
 - No se hizo deployment.
 - No se conectó Vercel.
 - Pendiente: completar datos legales reales antes de producción pública.
-- Pendiente crear materiales opcionales fuera del repo (brief Canva completado — ver checkpoint Brief Canva):
+- Pendiente fuera del repo (brief Canva y brief vídeo corto documentales completados):
   - Posible creación real en Canva/PDF del one-pager si se decide.
-  - Posible vídeo corto de presentación.
+  - Posible grabación/edición real del vídeo corto si se decide (brief `694ca7f`).
 
 Verificación:
 
@@ -551,6 +553,51 @@ Verificación:
 - Sin deployment ni conexión a Vercel.
 - Sin PDF ni archivos binarios añadidos al repo.
 
+## Checkpoint — MVP 4 Demo Comercial (Brief/guion vídeo corto)
+
+**Estado: BRIEF/GUION VÍDEO CORTO CREADO, COMMITEADO Y PUSHEADO (documental, sin vídeo real ni archivo multimedia en repo, sin deployment).**
+
+Commit:
+
+- `694ca7f` — docs: add commercial short video brief
+
+Archivo:
+
+- `docs/commercial-short-video-brief-mvp.md`
+
+Incluye:
+
+- Objetivo del documento y del vídeo; duración recomendada (45–60 s / ~90 s).
+- Público objetivo, mensaje central y tono (profesional, cercano, sin humo).
+- Guiones 60 s y 90 s; ideas visuales; textos para overlays.
+- Qué no decir (límites MVP); CTAs; checklist antes de grabar.
+- Estado explícito: vídeo real pendiente si el equipo decide grabar.
+
+Estado del bloque:
+
+- Brief/guion del vídeo corto **cerrado** y respaldado en `origin/main`.
+- **Pack comercial MVP 4 completo a nivel documental** (SPEC, one-pager, guion demo, checklist, brief Canva, brief vídeo corto).
+- **No** se creó vídeo real, audio ni archivo multimedia en el repositorio.
+- **No** se creó archivo binario en el repositorio.
+- No se implementó código.
+- No se hizo deployment.
+- No se conectó Vercel.
+
+Pendiente en fases posteriores (fuera de este bloque documental):
+
+- Datos legales reales antes de producción pública.
+- Creación real en Canva/PDF del one-pager si se decide.
+- Grabación/edición real del vídeo corto si se decide.
+- Decisión posterior sobre preview deploy en Vercel.
+
+Verificación:
+
+- Solo documentación; sin modificación de código.
+- Sin lectura ni exposición de `web/.env.local`.
+- Sin modificación de Supabase, n8n ni Google Sheets.
+- Sin deployment ni conexión a Vercel.
+- Sin vídeo ni archivos multimedia añadidos al repo.
+
 ## Current capabilities
 
 - La web presenta la propuesta comercial de PLEXAI y enlaces/anclas por secciones.
@@ -571,7 +618,7 @@ Verificación:
 - Gestión avanzada de leads
 - Valores reales de variables de producción en el panel del hosting (Vercel u otro); la plantilla `web/.env.example` solo tiene nombres y comentarios
 - Datos clínicos o de pacientes en pruebas o flujos
-- Materiales comerciales opcionales fuera del repo pendientes (creación real Canva/PDF del one-pager si se decide, conversión PDF de guion/checklist si se decide, vídeo corto); pack documental completado: SPEC (`f127ea1`), one-pager (`8f19de6`), guion (`b88237c`), checklist (`ab1c4f8`), brief Canva (`7d6fb05`); sin PDF/binarios versionados
+- Materiales comerciales opcionales fuera del repo pendientes (creación real Canva/PDF del one-pager si se decide, conversión PDF de guion/checklist si se decide, grabación/edición real del vídeo corto si se decide); pack documental MVP 4 **completo**: SPEC (`f127ea1`), one-pager (`8f19de6`), guion (`b88237c`), checklist (`ab1c4f8`), brief Canva (`7d6fb05`), brief vídeo corto (`694ca7f`); sin PDF/binarios/vídeo multimedia versionados
 
 ## Environment (sin valores)
 
@@ -621,11 +668,11 @@ Verificación:
 
 ## Siguiente fase recomendada
 
-**Inmediato (post MVP 4 Demo Comercial — pack documental base listo y pusheado):**
+**Inmediato (post MVP 4 Demo Comercial — pack documental completo y pusheado):**
 
 Decidir el siguiente paso entre estas opciones (no mutuamente excluyentes en el medio plazo, pero conviene priorizar una):
 
-- **A. Materiales comerciales opcionales fuera del repo** — según `docs/spec-demo-commercial-mvp.md` sección 13: posible creación real en Canva/PDF del one-pager (brief `7d6fb05`), posible conversión PDF de guion/checklist, posible vídeo corto (pack documental: SPEC `f127ea1`, one-pager `8f19de6`, guion `b88237c`, checklist `ab1c4f8`, brief Canva `7d6fb05`).
+- **A. Materiales comerciales opcionales fuera del repo** — según `docs/spec-demo-commercial-mvp.md` sección 13: posible creación real en Canva/PDF del one-pager (brief `7d6fb05`), posible conversión PDF de guion/checklist, posible grabación/edición real del vídeo corto (brief `694ca7f`; pack documental: SPEC `f127ea1`, one-pager `8f19de6`, guion `b88237c`, checklist `ab1c4f8`, brief Canva `7d6fb05`, brief vídeo `694ca7f`).
 - **B. Completar datos legales reales** — sustituir placeholders en `/privacidad` y `/aviso-legal`; email de contacto legal/privacidad; requisito antes de producción pública.
 - **C. Preparar primer preview deploy en Vercel** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy.
 
@@ -643,7 +690,8 @@ Notas transversales:
 | Guion imprimible | `docs/commercial-demo-script-mvp.md` | `b88237c` |
 | Checklist operativo | `docs/commercial-demo-checklist-mvp.md` | `ab1c4f8` |
 | Brief Canva/PDF one-pager | `docs/commercial-one-pager-canva-brief-mvp.md` | `7d6fb05` |
+| Brief/guion vídeo corto | `docs/commercial-short-video-brief-mvp.md` | `694ca7f` |
 
-Alcance documentado: narrativa y guiones para enseñar PLEXAI (landing, formulario, flujo interno conceptual, límites honestos por sector); one-pager resumen; guion hablado imprimible; checklist operativo pre/post demo; brief de diseño para pieza visual del one-pager. Todo respaldado en GitHub (`origin/main`). Sin PDF ni archivos binarios en repo; sin deployment; Vercel no conectado.
+Alcance documentado: narrativa y guiones para enseñar PLEXAI (landing, formulario, flujo interno conceptual, límites honestos por sector); one-pager resumen; guion hablado imprimible; checklist operativo pre/post demo; brief de diseño para pieza visual del one-pager; brief/guion para vídeo corto de presentación (60 s / 90 s). **Pack documental MVP 4 completo.** Todo respaldado en GitHub (`origin/main`). Sin PDF, vídeo ni archivos binarios/multimedia en repo; sin deployment; Vercel no conectado.
 
-Pendiente en fases posteriores: datos legales reales antes de producción pública; creación real Canva/PDF del one-pager si se decide; vídeo corto; conversión PDF opcional de otros materiales. No activar integraciones externas ni ampliar alcance sin SPEC previa.
+Pendiente en fases posteriores: datos legales reales antes de producción pública; creación real Canva/PDF del one-pager si se decide; grabación/edición real del vídeo corto si se decide; conversión PDF opcional de otros materiales; decisión posterior sobre preview deploy en Vercel. No activar integraciones externas ni ampliar alcance sin SPEC previa.
