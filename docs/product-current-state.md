@@ -12,11 +12,12 @@
 
 ## Current status
 
-**MVP 4 — Demo Comercial: pack documental completo (SPEC, one-pager, guion imprimible, checklist operativo, brief Canva/PDF one-pager, brief/guion vídeo corto) creado, commiteado y pusheado a `origin/main`. Sin implementación de código, sin PDF/binarios/vídeo multimedia en repo, sin deployment; Vercel no conectado.**
+**MVP 4 — Demo Comercial: pack documental completo (SPEC, one-pager, guion imprimible, checklist operativo, brief Canva/PDF one-pager, brief/guion vídeo corto) creado, commiteado y pusheado a `origin/main`. Legal Data Readiness: SPEC legal, páginas `/aviso-legal` y `/privacidad` con datos confirmados, validadas (lint/tsc), commiteadas (`8fbf0f9`) y pusheadas; repo `main` sincronizado con `origin/main`. Sin deployment; Vercel no conectado; proyecto sin publicación en producción.**
 
 - Landing MVP (MVP 1): completada y documentada.
 - Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
-- Deployment readiness — SPEC creada (`4a23225`); Bloque A + B reducido implementado (`9e27e50`): páginas legales provisionales, footer y consentimiento del formulario; Bloque C completado (`97bf97e`): plantilla `web/.env.example` versionada y variables de producción documentadas por nombre (sin valores reales); Bloque D completado a nivel documental (`3ec7d55`): checklist Vercel / deployment en `docs/checklist-vercel-deployment-mvp.md`; sin deployment; Vercel no conectado.
+- Deployment readiness — SPEC creada (`4a23225`); Bloque A + B reducido implementado (`9e27e50`): rutas legales, footer y consentimiento del formulario; Bloque C completado (`97bf97e`): plantilla `web/.env.example` versionada y variables de producción documentadas por nombre (sin valores reales); Bloque D completado a nivel documental (`3ec7d55`): checklist Vercel / deployment en `docs/checklist-vercel-deployment-mvp.md`; sin deployment; Vercel no conectado.
+- Legal Data Readiness — SPEC (`9c57ef5`): `docs/spec-legal-data-readiness-mvp.md`; implementación mínima en páginas legales (`8fbf0f9`): `/aviso-legal` y `/privacidad` con datos confirmados del titular; sin placeholders legales principales; domicilio no publicado en MVP; email profesional del dominio pendiente; `npm.cmd run lint` y `npx tsc --noEmit` OK; pusheado a `origin/main`; sin deployment; Vercel no conectado.
 - Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
 - Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
@@ -27,6 +28,11 @@
 - MVP 4 Demo Comercial — Checklist operativo (`ab1c4f8`): `docs/commercial-demo-checklist-mvp.md`; preparación pre-demo y post-demo; cerrado y pusheado.
 - MVP 4 Demo Comercial — Brief Canva/PDF one-pager (`7d6fb05`): `docs/commercial-one-pager-canva-brief-mvp.md`; guía de diseño visual; cerrado y pusheado; sin PDF ni archivo binario creado.
 - MVP 4 Demo Comercial — Brief/guion vídeo corto (`694ca7f`): `docs/commercial-short-video-brief-mvp.md`; guiones 60 s / 90 s, visuales, overlays y límites; cerrado y pusheado; sin vídeo real ni archivo multimedia.
+
+Commits de referencia (Legal Data Readiness):
+
+- `9c57ef5` — docs: add legal data readiness spec
+- `8fbf0f9` — feat: update legal pages with confirmed data
 
 Commits de referencia (MVP auditoría):
 
@@ -209,7 +215,7 @@ Estado del bloque:
 
 - Rediseño cerrado.
 - **Formulario end-to-end post-rediseño:** OK (revalidado 2026-05-23).
-- **Pendiente decidir siguiente fase:** datos legales reales, creación real Canva/PDF o grabación de vídeo si se decide, o preview deploy Vercel (pack documental MVP 4 completo — ver sección MVP 4).
+- **Pendiente decidir siguiente fase:** revisión visual local de rutas legales, preview deploy Vercel, creación real Canva/PDF o grabación de vídeo si se decide (pack documental MVP 4 completo; datos legales confirmados en páginas — ver checkpoint Legal Data Readiness).
 
 Verificación formulario post-rediseño (2026-05-23):
 
@@ -257,9 +263,9 @@ Verificación:
 - Sin modificación de Supabase, n8n ni Google Sheets
 - Sin lectura ni exposición de secretos (`web/.env.local` no tocado)
 
-Pendiente antes de producción:
+Pendiente antes de producción (histórico de este bloque; ver checkpoint Legal Data Readiness):
 
-- Completar datos reales del titular en páginas legales (sustituir placeholders).
+- ~~Completar datos reales del titular en páginas legales~~ — completado en `8fbf0f9` (checkpoint Legal Data Readiness).
 
 Siguiente bloque:
 
@@ -354,8 +360,8 @@ Estado del bloque:
 - Deployment checklist preparado y versionado en repo.
 - No se ha hecho deployment.
 - No se ha conectado Vercel.
-- Pendiente: completar datos legales reales antes de producción pública.
-- Pendiente: decidir si crear primer preview deploy en Vercel o completar primero datos reales/dominio.
+- Pendiente: email profesional del dominio `plexai.es` (configuración pendiente); publicación de domicilio si se decide en fase posterior.
+- Pendiente: decidir primer preview deploy en Vercel o revisión visual local de rutas legales antes.
 
 Verificación:
 
@@ -363,6 +369,67 @@ Verificación:
 - Sin lectura ni exposición de `web/.env.local`.
 - Sin modificación de Supabase, n8n ni Google Sheets.
 - Sin deployment ni conexión a Vercel.
+
+## Checkpoint — Legal Data Readiness (páginas legales MVP)
+
+**Estado: DATOS LEGALES CONFIRMADOS APLICADOS, VALIDADOS, COMMITEADOS Y PUSHEADOS (sin deployment, sin Vercel conectado, sin publicación en producción).**
+
+SPEC:
+
+- `9c57ef5` — docs: add legal data readiness spec (`docs/spec-legal-data-readiness-mvp.md`)
+
+Implementación:
+
+- `8fbf0f9` — feat: update legal pages with confirmed data
+
+Archivos:
+
+- `web/app/aviso-legal/page.tsx` — ruta `/aviso-legal`
+- `web/app/privacidad/page.tsx` — ruta `/privacidad`
+
+Datos confirmados aplicados (sin inventar domicilio):
+
+- Titular / responsable del tratamiento: Luis Alejandro Hernandez de Andrade.
+- Forma jurídica: autónomo / persona física profesional.
+- DNI/NIF: 17515047H.
+- Contacto general y privacidad: l.a.hernandez.da@gmail.com.
+- Ámbito: España.
+- Dominio previsto: plexai.es.
+- Email profesional del dominio: pendiente de configuración.
+- Domicilio: no publicado en esta versión MVP (texto explícito en ambas páginas).
+- Enfoque comercial: principalmente B2B / negocios, sin excluir otros contactos interesados.
+
+Incluye en páginas legales:
+
+- Ya no hay placeholders legales principales (`[NOMBRE...]`, `[EMAIL...]`, etc.) en `/aviso-legal` ni `/privacidad`.
+- Aviso MVP: texto informativo; no constituye asesoría legal definitiva ni garantía de cumplimiento normativo completo.
+- PLEXAI descrito como marca/proyecto comercial de automatización inteligente para negocios; no como servicio clínico ni sanitario.
+- Advertencia explícita: no enviar datos clínicos, datos de pacientes, datos de salud ni información especialmente sensible.
+- En aviso legal: no prometer funcionalidades, integraciones ni resultados no implementados en esta versión MVP.
+- En privacidad: finalidades (auditoría gratuita, contacto comercial, análisis inicial), legitimación por consentimiento del formulario, datos tratados, conservación, no venta de datos, proveedores técnicos operativos (listado genérico) y derechos con canal de contacto.
+
+Fuera de alcance de este bloque:
+
+- Modificación del formulario, APIs, Supabase, n8n, `.env.example` o `web/.env.local`.
+- Deployment y conexión a Vercel.
+- Publicación de domicilio físico.
+- Email profesional en dominio propio (pendiente).
+
+Verificación técnica (pre-commit documentado):
+
+- `npm.cmd run lint`: OK
+- `npx tsc --noEmit`: OK
+- Revisión del diff: OK (sin placeholders restantes, sin domicilio inventado, sin promesas fuera de alcance detectadas en el alcance revisado)
+
+Estado Git:
+
+- Commit `8fbf0f9` pusheado a `origin/main`.
+- `## main...origin/main` (sincronizado).
+
+Próximo paso posible (no ejecutado):
+
+- Revisar visualmente `/aviso-legal` y `/privacidad` en local (`npm.cmd run dev`), o
+- Decidir primer preview deploy en Vercel según `docs/checklist-vercel-deployment-mvp.md` (requiere configurar email profesional del dominio y demás precondiciones del checklist cuando corresponda).
 
 ## Checkpoint — MVP 4 Demo Comercial (SPEC)
 
@@ -439,7 +506,7 @@ Estado del bloque:
 - No se implementó código.
 - No se hizo deployment.
 - No se conectó Vercel.
-- Pendiente: completar datos legales reales antes de producción pública.
+- Pendiente antes de producción pública: email profesional del dominio; preview/producción según checklist Vercel (datos legales principales ya en páginas — `8fbf0f9`).
 - Pendiente fuera del repo (brief Canva y brief vídeo corto documentales completados):
   - Posible creación real en Canva/PDF del one-pager si se decide.
   - Posible grabación/edición real del vídeo corto si se decide (brief `694ca7f`).
@@ -585,7 +652,7 @@ Estado del bloque:
 
 Pendiente en fases posteriores (fuera de este bloque documental):
 
-- Datos legales reales antes de producción pública.
+- Email profesional del dominio `plexai.es` y decisión preview deploy / producción (datos legales principales en páginas — `8fbf0f9`).
 - Creación real en Canva/PDF del one-pager si se decide.
 - Grabación/edición real del vídeo corto si se decide.
 - Decisión posterior sobre preview deploy en Vercel.
@@ -605,13 +672,15 @@ Verificación:
 - Tras guardar un lead, el backend emite el evento `audit_request.created` hacia n8n cuando la integración está configurada y activada.
 - n8n puede validar seguridad, validar payload, enviar email interno, registrar el lead en Google Sheets y responder éxito.
 - **No están activados:** WhatsApp, calendario, chatbot ni voz.
+- Las rutas `/aviso-legal` y `/privacidad` publican datos legales confirmados del titular (MVP; domicilio no publicado; aviso no vinculante).
 - **No hay:** login, dashboard, multi-tenant ni deployment público automatizado desde este estado documentado.
 
 ## Not implemented yet
 
 - Gestión interna de leads / flujo de revisión post-envío (más allá del guardado)
 - Deployment (Vercel u otro), dominio dedicado y publicación en producción
-- Datos legales reales del titular en `/privacidad` y `/aviso-legal` (placeholders sustituidos)
+- Email profesional del dominio `plexai.es` (pendiente de configuración)
+- Publicación de domicilio en páginas legales (no incluido en MVP actual; solo si el titular lo decide en fase posterior)
 - Integraciones de mensajería, agenda o asistentes
 - Chatbot PLEXAI
 - Dashboard interno de leads
@@ -668,13 +737,13 @@ Verificación:
 
 ## Siguiente fase recomendada
 
-**Inmediato (post MVP 4 Demo Comercial — pack documental completo y pusheado):**
+**Inmediato (post Legal Data Readiness — páginas legales con datos confirmados, pusheadas):**
 
 Decidir el siguiente paso entre estas opciones (no mutuamente excluyentes en el medio plazo, pero conviene priorizar una):
 
-- **A. Materiales comerciales opcionales fuera del repo** — según `docs/spec-demo-commercial-mvp.md` sección 13: posible creación real en Canva/PDF del one-pager (brief `7d6fb05`), posible conversión PDF de guion/checklist, posible grabación/edición real del vídeo corto (brief `694ca7f`; pack documental: SPEC `f127ea1`, one-pager `8f19de6`, guion `b88237c`, checklist `ab1c4f8`, brief Canva `7d6fb05`, brief vídeo `694ca7f`).
-- **B. Completar datos legales reales** — sustituir placeholders en `/privacidad` y `/aviso-legal`; email de contacto legal/privacidad; requisito antes de producción pública.
-- **C. Preparar primer preview deploy en Vercel** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy.
+- **A. Revisión visual local de rutas legales** — `npm.cmd run dev` y comprobar `/aviso-legal` y `/privacidad` antes de cualquier preview público.
+- **B. Materiales comerciales opcionales fuera del repo** — según `docs/spec-demo-commercial-mvp.md` sección 13: posible creación real en Canva/PDF del one-pager (brief `7d6fb05`), posible conversión PDF de guion/checklist, posible grabación/edición real del vídeo corto (brief `694ca7f`; pack documental: SPEC `f127ea1`, one-pager `8f19de6`, guion `b88237c`, checklist `ab1c4f8`, brief Canva `7d6fb05`, brief vídeo `694ca7f`).
+- **C. Preparar primer preview deploy en Vercel** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy. Precondición legal mínima de placeholders cumplida (`8fbf0f9`); pendiente email profesional del dominio si se desea antes de producción.
 
 Notas transversales:
 
@@ -694,4 +763,4 @@ Notas transversales:
 
 Alcance documentado: narrativa y guiones para enseñar PLEXAI (landing, formulario, flujo interno conceptual, límites honestos por sector); one-pager resumen; guion hablado imprimible; checklist operativo pre/post demo; brief de diseño para pieza visual del one-pager; brief/guion para vídeo corto de presentación (60 s / 90 s). **Pack documental MVP 4 completo.** Todo respaldado en GitHub (`origin/main`). Sin PDF, vídeo ni archivos binarios/multimedia en repo; sin deployment; Vercel no conectado.
 
-Pendiente en fases posteriores: datos legales reales antes de producción pública; creación real Canva/PDF del one-pager si se decide; grabación/edición real del vídeo corto si se decide; conversión PDF opcional de otros materiales; decisión posterior sobre preview deploy en Vercel. No activar integraciones externas ni ampliar alcance sin SPEC previa.
+Pendiente en fases posteriores: email profesional del dominio `plexai.es`; preview deploy o producción en Vercel (checklist `docs/checklist-vercel-deployment-mvp.md`); creación real Canva/PDF del one-pager si se decide; grabación/edición real del vídeo corto si se decide; conversión PDF opcional de otros materiales. Datos legales principales en `/aviso-legal` y `/privacidad` completados (`8fbf0f9`). No activar integraciones externas ni ampliar alcance sin SPEC previa.
