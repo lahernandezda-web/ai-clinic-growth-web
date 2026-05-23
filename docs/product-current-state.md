@@ -12,7 +12,7 @@
 
 ## Current status
 
-**MVP 3B — n8n Lead Notification Workflow completado, verificado en local y funcionando de extremo a extremo.**
+**MVP 4 — Demo Comercial: SPEC creada, commiteada y pusheada (`f127ea1`). Sin implementación de código ni deployment.**
 
 - Landing MVP (MVP 1): completada y documentada.
 - Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
@@ -20,6 +20,8 @@
 - Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
 - Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
+- MVP 3B — n8n Lead Notification Workflow: completado, verificado en local y funcionando de extremo a extremo.
+- MVP 4 Demo Comercial — SPEC documental (`f127ea1`): `docs/spec-demo-commercial-mvp.md`; guiones demo, narrativa, objeciones y checklist pre-demo; sin código ni deployment.
 
 Commits de referencia (MVP auditoría):
 
@@ -47,6 +49,10 @@ Commits de referencia (deployment readiness):
 - `97bf97e` — chore: document production env variables
 - `55113aa` — docs: add env readiness checkpoint
 - `3ec7d55` — docs: add Vercel deployment checklist
+
+Commit de referencia (MVP 4 Demo Comercial):
+
+- `f127ea1` — docs: add commercial demo spec
 
 ## Implemented so far
 
@@ -190,7 +196,7 @@ Estado del bloque:
 
 - Rediseño cerrado.
 - **Formulario end-to-end post-rediseño:** OK (revalidado 2026-05-23).
-- **Pendiente decidir siguiente fase:** optimización ligera, RGPD/deployment readiness o demo comercial (MVP 4).
+- **Pendiente decidir siguiente fase:** materiales comerciales MVP 4, datos legales reales o preview deploy Vercel (ver checkpoint MVP 4 Demo Comercial).
 
 Verificación formulario post-rediseño (2026-05-23):
 
@@ -345,6 +351,54 @@ Verificación:
 - Sin modificación de Supabase, n8n ni Google Sheets.
 - Sin deployment ni conexión a Vercel.
 
+## Checkpoint — MVP 4 Demo Comercial (SPEC)
+
+**Estado: SPEC COMERCIAL LISTA (documental, sin implementación de código, sin deployment).**
+
+Commit:
+
+- `f127ea1` — docs: add commercial demo spec
+
+Archivo:
+
+- `docs/spec-demo-commercial-mvp.md`
+
+Incluye:
+
+- Objetivo de demo comercial.
+- Público objetivo.
+- Mensaje central.
+- Qué se puede mostrar en la demo actual.
+- Qué no se debe prometer.
+- Guion demo corto (10 minutos).
+- Guion demo extendido (20–30 minutos).
+- Narrativa comercial.
+- Casos de uso por sector.
+- Objeciones frecuentes.
+- Checklist antes de demo.
+- Cierre comercial sugerido.
+- Materiales pendientes.
+- Criterios de aceptación.
+
+Estado del bloque:
+
+- SPEC comercial lista y pusheada a `origin/main`.
+- No se implementó código.
+- No hay deployment.
+- Pendiente crear materiales comerciales derivados:
+  - PDF / guion imprimible.
+  - One-pager comercial.
+  - Checklist operativo interno.
+  - Posible vídeo corto de presentación.
+  - Posible versión en Canva.
+
+Verificación:
+
+- Solo documentación; sin modificación de código.
+- Sin lectura ni exposición de `web/.env.local`.
+- Sin modificación de Supabase, n8n ni Google Sheets.
+- Sin deployment ni conexión a Vercel.
+
 ## Current capabilities
 
 - La web presenta la propuesta comercial de PLEXAI y enlaces/anclas por secciones.
@@ -365,6 +419,7 @@ Verificación:
 - Gestión avanzada de leads
 - Valores reales de variables de producción en el panel del hosting (Vercel u otro); la plantilla `web/.env.example` solo tiene nombres y comentarios
 - Datos clínicos o de pacientes en pruebas o flujos
+- Materiales comerciales derivados del MVP 4 (PDF/guion imprimible, one-pager, checklist operativo, vídeo corto, versión Canva)
 
 ## Environment (sin valores)
 
@@ -414,27 +469,23 @@ Verificación:
 
 ## Siguiente fase recomendada
 
-**Inmediato (post Bloque D — deployment checklist documental listo):**
+**Inmediato (post MVP 4 Demo Comercial — SPEC documental lista):**
 
 Decidir el siguiente paso entre estas opciones (no mutuamente excluyentes en el medio plazo, pero conviene priorizar una):
 
-- **A. Completar datos legales reales** — sustituir placeholders en `/privacidad` y `/aviso-legal`; email de contacto legal/privacidad; requisito antes de producción pública.
-- **B. Preparar primer preview deploy en Vercel** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy.
-- **C. Preparar demo comercial MVP 4** — narrativa y guion de demo antes de publicar (ver MVP 4 abajo).
+- **A. Crear materiales comerciales del MVP 4** — según `docs/spec-demo-commercial-mvp.md` sección 13: PDF/guion imprimible, one-pager, checklist operativo interno, posible vídeo corto, posible versión Canva.
+- **B. Completar datos legales reales** — sustituir placeholders en `/privacidad` y `/aviso-legal`; email de contacto legal/privacidad; requisito antes de producción pública.
+- **C. Preparar primer preview deploy en Vercel** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy.
 
 Notas transversales:
 
 - Al desplegar (cuando se decida): configurar valores reales de variables solo en el panel del hosting; no commitear secretos.
 - Optimización ligera de landing (performance, SEO básico, pulido) sigue disponible como mejora incremental.
 
-**MVP 4 — Demo Polish / Zoom Demo Script**
+**MVP 4 — Demo Comercial (referencia)**
 
-Descripción: preparar una demo comercial vendible para enseñar PLEXAI:
+SPEC: `docs/spec-demo-commercial-mvp.md` (`f127ea1`).
 
-- Narrativa de la demo.
-- Qué mostrar en la landing.
-- Cómo enseñar formulario, email y Google Sheets.
-- Cómo explicar valor para clínica dental, estética, podología, fisioterapia, academia o negocio local.
-- Límites honestos de lo que ya está implementado y lo que todavía no.
+Alcance documentado: narrativa y guiones de demo para enseñar PLEXAI (landing, formulario, email, Google Sheets, límites honestos por sector).
 
-No activar integraciones externas ni ampliar alcance sin SPEC previa.
+Pendiente en fases posteriores: materiales comerciales derivados (PDF, one-pager, checklist operativo, vídeo, Canva). No activar integraciones externas ni ampliar alcance sin SPEC previa.
