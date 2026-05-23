@@ -15,6 +15,7 @@
 **MVP 3B — n8n Lead Notification Workflow completado, verificado en local y funcionando de extremo a extremo.**
 
 - Landing MVP (MVP 1): completada y documentada.
+- Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); pendiente revalidar formulario end-to-end y decidir siguiente fase.
 - Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
 - Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
@@ -33,12 +34,17 @@ Commit de referencia (MVP 3A):
 
 - `d858373` — feat: emit audit request automation event
 
+Commit de referencia (rediseño landing):
+
+- `2b5c185` — feat: redesign plexai landing
+
 ## Implemented so far
 
-**Landing `/` (MVP 1)**
+**Landing `/` (MVP 1 + rediseño visual/comercial)**
 
 - Header con navegación por anclas, hero, problema, propuesta de valor, audiencias, automatización, método, demo conceptual, servicios, bloque de auditoría, FAQ, CTA final
-- Metadata/lang en layout; smooth scroll y ajustes globales mínimos en CSS
+- Metadata/lang en layout; smooth scroll y estilos globales en `web/app/globals.css`
+- Rediseño premium/tecnológico: copy generalista (negocios de servicios), alternancia oscuro/claro, hero con SVG animado (`web/public/plexai-flow-hero.svg`), CTA «Pide una auditoría gratuita» y formulario de auditoría conservados (ver checkpoint rediseño)
 
 **MVP 2 — Audit request**
 
@@ -145,6 +151,37 @@ Fuera de alcance:
 - Gestión avanzada de leads.
 - Datos clínicos o de pacientes.
 
+## Checkpoint — Rediseño visual/comercial landing
+
+**Estado: COMPLETADO Y VERIFICADO (revisión visual OK).**
+
+Commit:
+
+- `2b5c185` — feat: redesign plexai landing
+
+Archivos principales:
+
+- `web/app/page.tsx`
+- `web/app/globals.css`
+- `web/public/plexai-flow-hero.svg`
+
+Cambios realizados:
+
+- Landing más premium, tecnológica y comercial.
+- Enfoque más generalista, menos clínico/paciente.
+- Copy orientado a negocios de servicios.
+- CTA «Pide una auditoría gratuita» conservado.
+- Formulario de auditoría mantenido (sin cambios de API/integración en este bloque).
+- SVG animado integrado en hero.
+- Secciones con alternancia visual oscuro/claro.
+- Estética tipo agencia premium / tecnología creativa.
+
+Estado del bloque:
+
+- Rediseño cerrado.
+- **Pendiente:** verificar formulario end-to-end después del rediseño (flujo MVP 3B no revalidado post-rediseño).
+- **Pendiente decidir siguiente fase:** optimización ligera, RGPD/deployment readiness o demo comercial (MVP 4).
+
 ## Current capabilities
 
 - La web presenta la propuesta comercial de PLEXAI y enlaces/anclas por secciones.
@@ -176,6 +213,17 @@ Fuera de alcance:
 
 ## Verification (último checkpoint documentado)
 
+**Rediseño landing (`2b5c185`):**
+
+- `npm.cmd run lint`: OK
+- `npx tsc --noEmit`: OK
+- `npm.cmd run build`: OK
+- `npm.cmd run start` en `http://localhost:3000`: OK
+- Revisión visual manual: OK
+- Formulario end-to-end post-rediseño: pendiente
+
+**MVP 3B (flujo n8n):**
+
 - Prueba manual desde `http://localhost:3000/#auditoria`: OK
 - UI mostró éxito.
 - `POST /api/audit-requests`: OK.
@@ -200,6 +248,14 @@ Fuera de alcance:
 - Integraciones nuevas requieren SPEC previa.
 
 ## Siguiente fase recomendada
+
+**Inmediato (post-rediseño):**
+
+1. Revalidar formulario de auditoría end-to-end tras el rediseño (Supabase + n8n + email + Sheets).
+2. Elegir una de estas líneas (no mutuamente excluyentes a largo plazo):
+   - Optimización ligera de landing (performance, SEO básico, pulido).
+   - RGPD / deployment readiness (legal, Vercel, dominio).
+   - Demo comercial (MVP 4 abajo).
 
 **MVP 4 — Demo Polish / Zoom Demo Script**
 
