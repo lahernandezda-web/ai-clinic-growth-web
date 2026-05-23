@@ -15,7 +15,7 @@
 **MVP 3B — n8n Lead Notification Workflow completado, verificado en local y funcionando de extremo a extremo.**
 
 - Landing MVP (MVP 1): completada y documentada.
-- Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); pendiente revalidar formulario end-to-end y decidir siguiente fase.
+- Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23); pendiente decidir siguiente fase.
 - Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
 - Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
@@ -179,8 +179,18 @@ Cambios realizados:
 Estado del bloque:
 
 - Rediseño cerrado.
-- **Pendiente:** verificar formulario end-to-end después del rediseño (flujo MVP 3B no revalidado post-rediseño).
+- **Formulario end-to-end post-rediseño:** OK (revalidado 2026-05-23).
 - **Pendiente decidir siguiente fase:** optimización ligera, RGPD/deployment readiness o demo comercial (MVP 4).
+
+Verificación formulario post-rediseño (2026-05-23):
+
+- URL usada: `http://localhost:3001/#auditoria` (puerto 3001; 3000 ocupado).
+- Resultado general: OK.
+- UI éxito: OK.
+- n8n Success: OK (Webhook Trigger → Validate Security → Check Security → Validate Payload → Send Internal Email → Append Lead to Google Sheets → Respond Success).
+- Email interno: OK.
+- Google Sheets: OK.
+- Datos de prueba: nombre «Test Post Rediseño», email `test.post.redesign@example.com`, teléfono `600000000`, tipo `dental_clinic`, ciudad «A Coruña», web `https://example.com`, área `follow_up`.
 
 ## Current capabilities
 
@@ -220,7 +230,7 @@ Estado del bloque:
 - `npm.cmd run build`: OK
 - `npm.cmd run start` en `http://localhost:3000`: OK
 - Revisión visual manual: OK
-- Formulario end-to-end post-rediseño: pendiente
+- Formulario end-to-end post-rediseño: OK (2026-05-23, `http://localhost:3001/#auditoria`)
 
 **MVP 3B (flujo n8n):**
 
@@ -251,8 +261,7 @@ Estado del bloque:
 
 **Inmediato (post-rediseño):**
 
-1. Revalidar formulario de auditoría end-to-end tras el rediseño (Supabase + n8n + email + Sheets).
-2. Elegir una de estas líneas (no mutuamente excluyentes a largo plazo):
+1. Elegir una de estas líneas (no mutuamente excluyentes a largo plazo):
    - Optimización ligera de landing (performance, SEO básico, pulido).
    - RGPD / deployment readiness (legal, Vercel, dominio).
    - Demo comercial (MVP 4 abajo).
