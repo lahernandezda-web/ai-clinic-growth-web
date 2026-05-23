@@ -12,7 +12,7 @@
 
 ## Current status
 
-**MVP 4 — Demo Comercial: pack documental (SPEC, one-pager, guion imprimible, checklist operativo) creado, commiteado y pusheado a `origin/main`. Sin implementación de código ni deployment; Vercel no conectado.**
+**MVP 4 — Demo Comercial: pack documental (SPEC, one-pager, guion imprimible, checklist operativo, brief Canva/PDF one-pager) creado, commiteado y pusheado a `origin/main`. Sin implementación de código, sin PDF/binarios en repo, sin deployment; Vercel no conectado.**
 
 - Landing MVP (MVP 1): completada y documentada.
 - Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
@@ -25,6 +25,7 @@
 - MVP 4 Demo Comercial — One-pager documental (`8f19de6`): `docs/commercial-one-pager-mvp.md`; resumen comercial imprimible/convertible; sin código ni deployment.
 - MVP 4 Demo Comercial — Guion imprimible (`b88237c`): `docs/commercial-demo-script-mvp.md`; guion hablado 10 min / 20–30 min, límites y objeciones; cerrado y pusheado.
 - MVP 4 Demo Comercial — Checklist operativo (`ab1c4f8`): `docs/commercial-demo-checklist-mvp.md`; preparación pre-demo y post-demo; cerrado y pusheado.
+- MVP 4 Demo Comercial — Brief Canva/PDF one-pager (`7d6fb05`): `docs/commercial-one-pager-canva-brief-mvp.md`; guía de diseño visual; cerrado y pusheado; sin PDF ni archivo binario creado.
 
 Commits de referencia (MVP auditoría):
 
@@ -61,6 +62,8 @@ Commits de referencia (MVP 4 Demo Comercial):
 - `4257726` — docs: add commercial one-pager checkpoint
 - `b88237c` — docs: add commercial demo script
 - `ab1c4f8` — docs: add commercial demo checklist
+- `f95425d` — docs: update commercial pack checkpoint
+- `7d6fb05` — docs: add commercial canva brief
 
 ## Implemented so far
 
@@ -393,10 +396,10 @@ Estado del bloque:
 - SPEC comercial lista y pusheada a `origin/main`.
 - No se implementó código.
 - No hay deployment.
-- Pendiente crear materiales comerciales derivados opcionales (one-pager, guion y checklist operativo completados — ver checkpoints correspondientes):
-  - Posible conversión a PDF / formato imprimible (guion, checklist, one-pager) si se decide.
+- Pendiente crear materiales opcionales fuera del repo (brief Canva one-pager completado — ver checkpoint Brief Canva):
+  - Posible creación real en Canva/PDF del one-pager si se decide.
+  - Posible conversión a PDF / formato imprimible (guion, checklist) si se decide.
   - Posible vídeo corto de presentación.
-  - Posible versión en Canva del one-pager.
 
 Verificación:
 
@@ -435,9 +438,8 @@ Estado del bloque:
 - No se hizo deployment.
 - No se conectó Vercel.
 - Pendiente: completar datos legales reales antes de producción pública.
-- Pendiente crear materiales comerciales opcionales (guion y checklist completados — ver checkpoints Guion y Checklist):
-  - Posible conversión a PDF / formato imprimible si se decide.
-  - Posible versión en Canva del one-pager.
+- Pendiente crear materiales opcionales fuera del repo (brief Canva completado — ver checkpoint Brief Canva):
+  - Posible creación real en Canva/PDF del one-pager si se decide.
   - Posible vídeo corto de presentación.
 
 Verificación:
@@ -514,6 +516,41 @@ Verificación:
 - Sin modificación de Supabase, n8n ni Google Sheets.
 - Sin deployment ni conexión a Vercel.
 
+## Checkpoint — MVP 4 Demo Comercial (Brief Canva/PDF one-pager)
+
+**Estado: BRIEF CANVA/PDF CREADO, COMMITEADO Y PUSHEADO (documental, sin PDF ni archivo binario en repo, sin deployment).**
+
+Commit:
+
+- `7d6fb05` — docs: add commercial canva brief
+
+Archivo:
+
+- `docs/commercial-one-pager-canva-brief-mvp.md`
+
+Incluye:
+
+- Formato recomendado (A4 / 16:9), estilo visual y jerarquía de la pieza.
+- Copy breve visual derivado del one-pager; bloques e iconografía sugeridos.
+- Advertencias comerciales, titulares/cierres alternativos y checklist pre-diseño Canva.
+- Estado explícito: pendiente creación real en Canva/PDF si se decide.
+
+Estado del bloque:
+
+- Brief Canva/PDF del one-pager **cerrado** y respaldado en `origin/main`.
+- **No** se creó PDF real ni archivo binario en el repositorio.
+- No se implementó código.
+- No se hizo deployment.
+- No se conectó Vercel.
+
+Verificación:
+
+- Solo documentación; sin modificación de código.
+- Sin lectura ni exposición de `web/.env.local`.
+- Sin modificación de Supabase, n8n ni Google Sheets.
+- Sin deployment ni conexión a Vercel.
+- Sin PDF ni archivos binarios añadidos al repo.
+
 ## Current capabilities
 
 - La web presenta la propuesta comercial de PLEXAI y enlaces/anclas por secciones.
@@ -534,7 +571,7 @@ Verificación:
 - Gestión avanzada de leads
 - Valores reales de variables de producción en el panel del hosting (Vercel u otro); la plantilla `web/.env.example` solo tiene nombres y comentarios
 - Datos clínicos o de pacientes en pruebas o flujos
-- Materiales comerciales opcionales del MVP 4 pendientes (conversión PDF/formato imprimible si se decide, vídeo corto, versión Canva del one-pager); pack base completado: SPEC (`f127ea1`), one-pager (`8f19de6`), guion (`b88237c`), checklist (`ab1c4f8`)
+- Materiales comerciales opcionales fuera del repo pendientes (creación real Canva/PDF del one-pager si se decide, conversión PDF de guion/checklist si se decide, vídeo corto); pack documental completado: SPEC (`f127ea1`), one-pager (`8f19de6`), guion (`b88237c`), checklist (`ab1c4f8`), brief Canva (`7d6fb05`); sin PDF/binarios versionados
 
 ## Environment (sin valores)
 
@@ -588,7 +625,7 @@ Verificación:
 
 Decidir el siguiente paso entre estas opciones (no mutuamente excluyentes en el medio plazo, pero conviene priorizar una):
 
-- **A. Materiales comerciales opcionales del MVP 4** — según `docs/spec-demo-commercial-mvp.md` sección 13: posible conversión a PDF/formato imprimible (guion, checklist, one-pager), posible vídeo corto, posible versión Canva del one-pager (pack base: SPEC `f127ea1`, one-pager `8f19de6`, guion `b88237c`, checklist `ab1c4f8`).
+- **A. Materiales comerciales opcionales fuera del repo** — según `docs/spec-demo-commercial-mvp.md` sección 13: posible creación real en Canva/PDF del one-pager (brief `7d6fb05`), posible conversión PDF de guion/checklist, posible vídeo corto (pack documental: SPEC `f127ea1`, one-pager `8f19de6`, guion `b88237c`, checklist `ab1c4f8`, brief Canva `7d6fb05`).
 - **B. Completar datos legales reales** — sustituir placeholders en `/privacidad` y `/aviso-legal`; email de contacto legal/privacidad; requisito antes de producción pública.
 - **C. Preparar primer preview deploy en Vercel** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy.
 
@@ -605,7 +642,8 @@ Notas transversales:
 | One-pager | `docs/commercial-one-pager-mvp.md` | `8f19de6` |
 | Guion imprimible | `docs/commercial-demo-script-mvp.md` | `b88237c` |
 | Checklist operativo | `docs/commercial-demo-checklist-mvp.md` | `ab1c4f8` |
+| Brief Canva/PDF one-pager | `docs/commercial-one-pager-canva-brief-mvp.md` | `7d6fb05` |
 
-Alcance documentado: narrativa y guiones para enseñar PLEXAI (landing, formulario, flujo interno conceptual, límites honestos por sector); one-pager resumen; guion hablado imprimible; checklist operativo pre/post demo. Todo respaldado en GitHub (`origin/main`). Sin deployment; Vercel no conectado.
+Alcance documentado: narrativa y guiones para enseñar PLEXAI (landing, formulario, flujo interno conceptual, límites honestos por sector); one-pager resumen; guion hablado imprimible; checklist operativo pre/post demo; brief de diseño para pieza visual del one-pager. Todo respaldado en GitHub (`origin/main`). Sin PDF ni archivos binarios en repo; sin deployment; Vercel no conectado.
 
-Pendiente en fases posteriores: datos legales reales antes de producción pública; materiales opcionales (PDF/formato imprimible, vídeo corto, Canva). No activar integraciones externas ni ampliar alcance sin SPEC previa.
+Pendiente en fases posteriores: datos legales reales antes de producción pública; creación real Canva/PDF del one-pager si se decide; vídeo corto; conversión PDF opcional de otros materiales. No activar integraciones externas ni ampliar alcance sin SPEC previa.
