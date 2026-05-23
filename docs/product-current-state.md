@@ -16,7 +16,7 @@
 
 - Landing MVP (MVP 1): completada y documentada.
 - Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
-- Deployment readiness — SPEC creada (`4a23225`); Bloque A + B reducido implementado (`9e27e50`): páginas legales provisionales, footer y consentimiento del formulario; sin deployment.
+- Deployment readiness — SPEC creada (`4a23225`); Bloque A + B reducido implementado (`9e27e50`): páginas legales provisionales, footer y consentimiento del formulario; Bloque C completado (`97bf97e`): plantilla `web/.env.example` versionada y variables de producción documentadas por nombre (sin valores reales); sin deployment.
 - Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
 - Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
@@ -43,6 +43,8 @@ Commits de referencia (deployment readiness):
 
 - `4a23225` — docs: add deployment readiness spec
 - `9e27e50` — feat: add legal pages and privacy consent
+- `1ffae37` — docs: add legal pages verification checkpoint
+- `97bf97e` — chore: document production env variables
 
 ## Implemented so far
 
@@ -238,10 +240,9 @@ Pendiente antes de producción:
 
 - Completar datos reales del titular en páginas legales (sustituir placeholders).
 
-Siguiente bloque a decidir:
+Siguiente bloque:
 
-- **Bloque C:** variables de producción / `.env.example`
-- **Bloque D:** Vercel / deployment checklist
+- **Bloque D:** Vercel / deployment checklist (ver checkpoint Bloque C)
 
 ### Verificación visual/manual y funcional post Bloque A + B reducido (2026-05-23)
 
@@ -266,6 +267,43 @@ Siguiente bloque a decidir:
 - Sin deployment.
 - Sin cambios en Supabase, n8n ni Google Sheets.
 
+## Checkpoint — Deployment readiness (Bloque C)
+
+**Estado: PREPARACIÓN DE VARIABLES DE PRODUCCIÓN DOCUMENTADA (sin valores reales, sin deployment).**
+
+Commit:
+
+- `97bf97e` — chore: document production env variables
+
+Archivos:
+
+- `web/.env.example` — creado y versionado (plantilla sin secretos)
+- `web/.gitignore` — excepción `!.env.example` para permitir versionar la plantilla sin versionar `web/.env.local`
+
+Incluye:
+
+- Variables documentadas por nombre (sin valores reales en el repo):
+  - `AI_PROVIDER=stub`
+  - `ANTHROPIC_API_KEY=`
+  - `ANTHROPIC_MODEL=claude-haiku-4-5`
+  - `NEXT_PUBLIC_SUPABASE_URL=`
+  - `NEXT_PUBLIC_SUPABASE_ANON_KEY=`
+  - `SUPABASE_SERVICE_ROLE_KEY=`
+  - `AUTOMATIONS_ENABLED=false`
+  - `N8N_WEBHOOK_URL=`
+  - `N8N_WEBHOOK_SECRET=`
+- Notas en plantilla: no commitear `web/.env.local`; no pegar claves en chats; producción en panel del hosting (p. ej. Vercel); plantilla sin secretos.
+- `SUPABASE_SERVICE_ROLE_KEY` y `N8N_WEBHOOK_SECRET`: solo servidor.
+- `N8N_WEBHOOK_URL`: no documentar valor real en el repo.
+- `NEXT_PUBLIC_*`: variables públicas expuestas al navegador (revisar RLS/permisos).
+- `web/.env.local` no leído ni tocado en este bloque.
+
+Estado del bloque:
+
+- Documentación de variables de producción completada en repo.
+- Pendiente: configurar valores reales solo en el panel del hosting cuando llegue el deployment.
+- Pendiente: **Bloque D** — Vercel / deployment checklist.
+
 ## Current capabilities
 
 - La web presenta la propuesta comercial de PLEXAI y enlaces/anclas por secciones.
@@ -284,17 +322,18 @@ Siguiente bloque a decidir:
 - Chatbot PLEXAI
 - Dashboard interno de leads
 - Gestión avanzada de leads
-- Variables de entorno reales documentadas en repo (por diseño: no deben aparecer valores secretos)
+- Valores reales de variables de producción en el panel del hosting (Vercel u otro); la plantilla `web/.env.example` solo tiene nombres y comentarios
 - Datos clínicos o de pacientes en pruebas o flujos
 
 ## Environment (sin valores)
 
+- Plantilla versionada: `web/.env.example` (nombres y comentarios; sin secretos). Copiar a `web/.env.local` en desarrollo.
 - `web/.env.local` puede existir en máquinas de desarrollo para ejecutar API y cliente; **no debe versionarse** ni documentarse con valores reales.
 - No exponer ni listar secretos en documentación ni en commits.
-- Variables locales necesarias para MVP 3B, solo nombres:
-  - `AUTOMATIONS_ENABLED`
-  - `N8N_WEBHOOK_URL`
-  - `N8N_WEBHOOK_SECRET`
+- Variables documentadas en `web/.env.example` (solo nombres aquí):
+  - `AI_PROVIDER`, `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL`
+  - `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`
+  - `AUTOMATIONS_ENABLED`, `N8N_WEBHOOK_URL`, `N8N_WEBHOOK_SECRET`
 
 ## Verification (último checkpoint documentado)
 
@@ -334,14 +373,12 @@ Siguiente bloque a decidir:
 
 ## Siguiente fase recomendada
 
-**Inmediato (post Bloque A + B reducido):**
+**Inmediato (post Bloque C):**
 
-1. Completar placeholders legales con datos reales del titular antes de producción.
-2. Elegir siguiente bloque de deployment readiness:
-   - **Bloque C:** variables producción / `.env.example`
-   - **Bloque D:** Vercel / deployment checklist
-   - O revisión visual/manual de `/privacidad` y `/aviso-legal`
-3. Otras líneas (no mutuamente excluyentes):
+1. **Bloque D:** Vercel / deployment checklist (`docs/spec-deployment-readiness-mvp.md`, sección Bloque D).
+2. Antes de deploy real: completar datos legales reales del titular (sustituir placeholders en `/privacidad` y `/aviso-legal`).
+3. Al desplegar: configurar valores reales de variables solo en el panel del hosting (p. ej. Vercel); no commitear secretos.
+4. Otras líneas (no mutuamente excluyentes):
    - Optimización ligera de landing (performance, SEO básico, pulido).
    - Demo comercial (MVP 4 abajo).
 
