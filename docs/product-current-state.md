@@ -242,7 +242,29 @@ Siguiente bloque a decidir:
 
 - **Bloque C:** variables de producción / `.env.example`
 - **Bloque D:** Vercel / deployment checklist
-- O revisión visual/manual de páginas legales
+
+### Verificación visual/manual y funcional post Bloque A + B reducido (2026-05-23)
+
+**Revisión visual/manual:**
+
+- Landing visual: OK.
+- Footer legal: OK.
+- `/privacidad`: OK (placeholders legales visibles y claros; sin datos legales inventados).
+- `/aviso-legal`: OK (placeholders legales visibles y claros; sin datos legales inventados).
+- Consentimiento del formulario: OK.
+- Enlace a política de privacidad desde el consentimiento: OK.
+
+**Revisión funcional (formulario end-to-end tras cambio de consentimiento):**
+
+- URL: `http://localhost:3000/#auditoria`
+- Datos de prueba: nombre «Test Legal Consent», email `test.legal.consent@example.com`, teléfono `600000000`, tipo `aesthetic_clinic`, ciudad «A Coruña», web `https://example.com`, área `follow_up`; problema principal: comprobar que el formulario sigue funcionando después de páginas legales y consentimiento.
+- Formulario end-to-end: OK.
+- UI éxito: OK.
+- n8n Success: OK (Webhook Trigger → Validate Security → Check Security → Validate Payload → Send Internal Email → Append Lead to Google Sheets → Respond Success).
+- Email interno: OK.
+- Google Sheets: OK.
+- Sin deployment.
+- Sin cambios en Supabase, n8n ni Google Sheets.
 
 ## Current capabilities
 
