@@ -12,7 +12,7 @@
 
 ## Current status
 
-**MVP 4 — Demo Comercial: SPEC (`f127ea1`) y one-pager comercial (`8f19de6`) creados, commiteados y pusheados. Sin implementación de código ni deployment.**
+**MVP 4 — Demo Comercial: pack documental (SPEC, one-pager, guion imprimible, checklist operativo) creado, commiteado y pusheado a `origin/main`. Sin implementación de código ni deployment; Vercel no conectado.**
 
 - Landing MVP (MVP 1): completada y documentada.
 - Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
@@ -21,8 +21,10 @@
 - Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
 - MVP 3B — n8n Lead Notification Workflow: completado, verificado en local y funcionando de extremo a extremo.
-- MVP 4 Demo Comercial — SPEC documental (`f127ea1`): `docs/spec-demo-commercial-mvp.md`; guiones demo, narrativa, objeciones y checklist pre-demo; sin código ni deployment.
+- MVP 4 Demo Comercial — SPEC documental (`f127ea1`): `docs/spec-demo-commercial-mvp.md`; guiones demo, narrativa, objeciones y checklist pre-demo en SPEC; sin código ni deployment.
 - MVP 4 Demo Comercial — One-pager documental (`8f19de6`): `docs/commercial-one-pager-mvp.md`; resumen comercial imprimible/convertible; sin código ni deployment.
+- MVP 4 Demo Comercial — Guion imprimible (`b88237c`): `docs/commercial-demo-script-mvp.md`; guion hablado 10 min / 20–30 min, límites y objeciones; cerrado y pusheado.
+- MVP 4 Demo Comercial — Checklist operativo (`ab1c4f8`): `docs/commercial-demo-checklist-mvp.md`; preparación pre-demo y post-demo; cerrado y pusheado.
 
 Commits de referencia (MVP auditoría):
 
@@ -54,7 +56,11 @@ Commits de referencia (deployment readiness):
 Commits de referencia (MVP 4 Demo Comercial):
 
 - `f127ea1` — docs: add commercial demo spec
+- `7873a92` — docs: add commercial demo checkpoint
 - `8f19de6` — docs: add commercial one-pager
+- `4257726` — docs: add commercial one-pager checkpoint
+- `b88237c` — docs: add commercial demo script
+- `ab1c4f8` — docs: add commercial demo checklist
 
 ## Implemented so far
 
@@ -198,7 +204,7 @@ Estado del bloque:
 
 - Rediseño cerrado.
 - **Formulario end-to-end post-rediseño:** OK (revalidado 2026-05-23).
-- **Pendiente decidir siguiente fase:** materiales comerciales MVP 4, datos legales reales o preview deploy Vercel (ver checkpoint MVP 4 Demo Comercial).
+- **Pendiente decidir siguiente fase:** materiales comerciales opcionales MVP 4, datos legales reales o preview deploy Vercel (ver pack MVP 4 Demo Comercial).
 
 Verificación formulario post-rediseño (2026-05-23):
 
@@ -387,11 +393,10 @@ Estado del bloque:
 - SPEC comercial lista y pusheada a `origin/main`.
 - No se implementó código.
 - No hay deployment.
-- Pendiente crear materiales comerciales derivados (one-pager completado — ver checkpoint One-pager):
-  - PDF / guion imprimible.
-  - Checklist operativo interno.
+- Pendiente crear materiales comerciales derivados opcionales (one-pager, guion y checklist operativo completados — ver checkpoints correspondientes):
+  - Posible conversión a PDF / formato imprimible (guion, checklist, one-pager) si se decide.
   - Posible vídeo corto de presentación.
-  - Posible versión en Canva.
+  - Posible versión en Canva del one-pager.
 
 Verificación:
 
@@ -430,11 +435,77 @@ Estado del bloque:
 - No se hizo deployment.
 - No se conectó Vercel.
 - Pendiente: completar datos legales reales antes de producción pública.
-- Pendiente crear materiales comerciales adicionales:
-  - PDF / guion imprimible de demo.
-  - Checklist operativo interno.
-  - Posible versión en Canva.
+- Pendiente crear materiales comerciales opcionales (guion y checklist completados — ver checkpoints Guion y Checklist):
+  - Posible conversión a PDF / formato imprimible si se decide.
+  - Posible versión en Canva del one-pager.
   - Posible vídeo corto de presentación.
+
+Verificación:
+
+- Solo documentación; sin modificación de código.
+- Sin lectura ni exposición de `web/.env.local`.
+- Sin modificación de Supabase, n8n ni Google Sheets.
+- Sin deployment ni conexión a Vercel.
+
+## Checkpoint — MVP 4 Demo Comercial (Guion imprimible)
+
+**Estado: GUION IMPRIMIBLE CREADO, COMMITEADO Y PUSHEADO (documental, sin implementación de código, sin deployment).**
+
+Commit:
+
+- `b88237c` — docs: add commercial demo script
+
+Archivo:
+
+- `docs/commercial-demo-script-mvp.md`
+
+Incluye:
+
+- Objetivo, duraciones (10 min / 20–30 min) y mensaje central.
+- Checklist previo, guion de apertura y estructura minuto a minuto / por bloques.
+- Qué mostrar y qué no prometer; frases útiles; objeciones con respuestas honestas.
+- Cierre comercial, notas internas y estado (pendiente PDF/Canva si se decide).
+
+Estado del bloque:
+
+- Guion imprimible de demo **cerrado** y respaldado en `origin/main`.
+- No se implementó código.
+- No se hizo deployment.
+- No se conectó Vercel.
+
+Verificación:
+
+- Solo documentación; sin modificación de código.
+- Sin lectura ni exposición de `web/.env.local`.
+- Sin modificación de Supabase, n8n ni Google Sheets.
+- Sin deployment ni conexión a Vercel.
+
+## Checkpoint — MVP 4 Demo Comercial (Checklist operativo)
+
+**Estado: CHECKLIST OPERATIVO INTERNO CREADO, COMMITEADO Y PUSHEADO (documental, sin implementación de código, sin deployment).**
+
+Commit:
+
+- `ab1c4f8` — docs: add commercial demo checklist
+
+Archivo:
+
+- `docs/commercial-demo-checklist-mvp.md`
+
+Incluye:
+
+- Cuándo usar el checklist; preparación técnica y comercial.
+- Límites del MVP antes de la demo; flujo recomendado.
+- Validación antes de compartir pantalla (sin secretos ni datos reales).
+- Tareas post-demo y criterio de demo exitosa.
+- Notas internas y referencias al pack comercial MVP 4.
+
+Estado del bloque:
+
+- Checklist operativo interno **cerrado** y respaldado en `origin/main`.
+- No se implementó código.
+- No se hizo deployment.
+- No se conectó Vercel.
 
 Verificación:
 
@@ -463,7 +534,7 @@ Verificación:
 - Gestión avanzada de leads
 - Valores reales de variables de producción en el panel del hosting (Vercel u otro); la plantilla `web/.env.example` solo tiene nombres y comentarios
 - Datos clínicos o de pacientes en pruebas o flujos
-- Materiales comerciales derivados del MVP 4 pendientes (PDF/guion imprimible, checklist operativo, vídeo corto, versión Canva); one-pager completado en `docs/commercial-one-pager-mvp.md` (`8f19de6`)
+- Materiales comerciales opcionales del MVP 4 pendientes (conversión PDF/formato imprimible si se decide, vídeo corto, versión Canva del one-pager); pack base completado: SPEC (`f127ea1`), one-pager (`8f19de6`), guion (`b88237c`), checklist (`ab1c4f8`)
 
 ## Environment (sin valores)
 
@@ -513,11 +584,11 @@ Verificación:
 
 ## Siguiente fase recomendada
 
-**Inmediato (post MVP 4 Demo Comercial — SPEC y one-pager documentales listos):**
+**Inmediato (post MVP 4 Demo Comercial — pack documental base listo y pusheado):**
 
 Decidir el siguiente paso entre estas opciones (no mutuamente excluyentes en el medio plazo, pero conviene priorizar una):
 
-- **A. Completar materiales comerciales restantes del MVP 4** — según `docs/spec-demo-commercial-mvp.md` sección 13: PDF/guion imprimible, checklist operativo interno, posible vídeo corto, posible versión Canva (one-pager completado en `docs/commercial-one-pager-mvp.md`, `8f19de6`).
+- **A. Materiales comerciales opcionales del MVP 4** — según `docs/spec-demo-commercial-mvp.md` sección 13: posible conversión a PDF/formato imprimible (guion, checklist, one-pager), posible vídeo corto, posible versión Canva del one-pager (pack base: SPEC `f127ea1`, one-pager `8f19de6`, guion `b88237c`, checklist `ab1c4f8`).
 - **B. Completar datos legales reales** — sustituir placeholders en `/privacidad` y `/aviso-legal`; email de contacto legal/privacidad; requisito antes de producción pública.
 - **C. Preparar primer preview deploy en Vercel** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy.
 
@@ -526,12 +597,15 @@ Notas transversales:
 - Al desplegar (cuando se decida): configurar valores reales de variables solo en el panel del hosting; no commitear secretos.
 - Optimización ligera de landing (performance, SEO básico, pulido) sigue disponible como mejora incremental.
 
-**MVP 4 — Demo Comercial (referencia)**
+**MVP 4 — Demo Comercial (referencia — pack documental)**
 
-SPEC: `docs/spec-demo-commercial-mvp.md` (`f127ea1`).
+| Material | Archivo | Commit |
+|----------|---------|--------|
+| SPEC | `docs/spec-demo-commercial-mvp.md` | `f127ea1` |
+| One-pager | `docs/commercial-one-pager-mvp.md` | `8f19de6` |
+| Guion imprimible | `docs/commercial-demo-script-mvp.md` | `b88237c` |
+| Checklist operativo | `docs/commercial-demo-checklist-mvp.md` | `ab1c4f8` |
 
-One-pager: `docs/commercial-one-pager-mvp.md` (`8f19de6`).
+Alcance documentado: narrativa y guiones para enseñar PLEXAI (landing, formulario, flujo interno conceptual, límites honestos por sector); one-pager resumen; guion hablado imprimible; checklist operativo pre/post demo. Todo respaldado en GitHub (`origin/main`). Sin deployment; Vercel no conectado.
 
-Alcance documentado: narrativa y guiones de demo para enseñar PLEXAI (landing, formulario, email, Google Sheets, límites honestos por sector); resumen comercial one-pager para conversión a PDF, Canva o presentación breve.
-
-Pendiente en fases posteriores: materiales comerciales adicionales (PDF/guion imprimible, checklist operativo, vídeo, Canva). No activar integraciones externas ni ampliar alcance sin SPEC previa.
+Pendiente en fases posteriores: datos legales reales antes de producción pública; materiales opcionales (PDF/formato imprimible, vídeo corto, Canva). No activar integraciones externas ni ampliar alcance sin SPEC previa.
