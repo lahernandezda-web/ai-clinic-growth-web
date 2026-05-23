@@ -706,14 +706,31 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-white/10 bg-zinc-950 px-4 py-10 sm:px-6">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-center text-xs text-zinc-500 sm:flex-row sm:text-left">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 text-center text-xs text-zinc-500 sm:flex-row sm:items-start sm:text-left">
           <span className="font-mono font-semibold tracking-[0.18em] text-zinc-300">
             PLEXAI
           </span>
-          <p>
+          <p className="max-w-md">
             Automatización inteligente para negocios, procesos y equipos que
             quieren operar con más orden.
           </p>
+          <nav
+            className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:justify-end"
+            aria-label="Enlaces legales"
+          >
+            <Link
+              href="/privacidad"
+              className="transition-colors hover:text-zinc-300"
+            >
+              Política de privacidad
+            </Link>
+            <Link
+              href="/aviso-legal"
+              className="transition-colors hover:text-zinc-300"
+            >
+              Aviso legal
+            </Link>
+          </nav>
         </div>
       </footer>
     </div>

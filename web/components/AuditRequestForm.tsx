@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useCallback, useState } from "react";
 
 const BUSINESS_TYPE_OPTIONS = [
@@ -358,9 +359,16 @@ export function AuditRequestForm() {
             htmlFor="audit-consent"
             className="text-sm leading-relaxed text-zinc-300"
           >
-            <span className="text-violet-400">*</span>{" "}
-            Acepto que PLEXAI me contacte para revisar mi solicitud de auditoría
-            gratuita.
+            <span className="text-violet-400">*</span> He leído y acepto la{" "}
+            <Link
+              href="/privacidad"
+              className="font-medium text-violet-300 underline decoration-violet-400/40 underline-offset-2 transition-colors hover:text-violet-200"
+            >
+              política de privacidad
+            </Link>
+            . Los datos se usarán para responder a mi solicitud de auditoría
+            gratuita y contacto relacionado. No incluyas datos clínicos, de
+            pacientes ni información sensible.
           </label>
         </div>
 
