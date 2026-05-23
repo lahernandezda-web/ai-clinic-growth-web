@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { AuditRequestForm } from "@/components/AuditRequestForm";
+import { HeroSvgBackground } from "@/components/HeroSvgBackground";
 
 const auditHref = "#auditoria";
 
@@ -346,14 +347,7 @@ export default function Home() {
             aria-hidden={true}
             className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_10%,rgba(168,85,247,0.28),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(217,70,239,0.18),transparent_26%),linear-gradient(135deg,#09090b_0%,#181020_48%,#09090b_100%)]"
           />
-          <div className="plexai-hero-svg-frame" aria-hidden={true}>
-            <iframe
-              src="/plexai-flow-hero.svg"
-              title="PLEXAI animated background"
-              tabIndex={-1}
-              className="plexai-hero-svg-iframe"
-            />
-          </div>
+          <HeroSvgBackground />
           <div
             aria-hidden={true}
             className="absolute inset-0 z-[2] bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:72px_72px] opacity-20"
