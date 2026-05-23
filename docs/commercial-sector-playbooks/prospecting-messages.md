@@ -4,6 +4,10 @@
 
 **Límites:** no prometer WhatsApp activo, voz, CRM completo ni calendario integrado. No pedir datos clínicos ni de pacientes.
 
+**Antes de enviar:** `docs/commercial-quality-system/claim-review-checklist.md` y `forbidden-and-approved-phrases.md`.
+
+**Velocidad:** hablar de **aviso interno al equipo** en el flujo demostrable; no prometer SLA fijo ni respuesta automática al cliente final.
+
 ---
 
 ## LinkedIn (10 mensajes)
@@ -15,7 +19,7 @@ Hola [Nombre], vi que liderás [Negocio]. Muchos negocios de [sector] pierden op
 [Nombre], en equipos pequeños de [sector] el cuello de botella suele ser copiar datos y avisar tarde al responsable. Trabajamos procesos, no “IA por moda”. ¿15 min para ver si encaja en [Negocio]?
 
 ### 3
-Hola, soy [tu nombre]. Ayudo a negocios locales a que las peticiones desde la web avisen al equipo al instante y queden en un registro ordenado — sin prometer CRM ni WhatsApp automático. ¿Os interesa un ejemplo rápido?
+Hola, soy [tu nombre]. Ayudo a negocios locales a que las peticiones desde la web generen **aviso interno al equipo** y queden en un registro ordenado (flujo que mostramos en demo) — sin prometer CRM ni WhatsApp automático al cliente. ¿Os interesa un ejemplo rápido?
 
 ### 4
 [Nombre], si en [Negocio] las consultas se reparten entre teléfono, redes y web, es fácil que alguna se enfríe. PLEXAI diseña un flujo medible (captura → aviso → seguimiento). ¿Hablamos esta semana?
@@ -49,7 +53,7 @@ Hola, soy [nombre] de PLEXAI. Ayudamos a negocios de [sector] a que las solicitu
 Hola [Negocio], vi vuestro perfil. ¿Respondéis consultas de precio/cita por DM? Si a veces se os escapan, tengo un flujo simple que podemos enseñar en 10 min (sin prometer WhatsApp automático).
 
 ### 3
-Buenas — trabajo en procesos para negocios locales. Un formulario web + aviso instantáneo al dueño suele ahorrar copiar datos a mano. ¿Te interesa ver un ejemplo?
+Buenas — trabajo en procesos para negocios locales. Un formulario web + **aviso interno** al responsable (en el MVP demostrable) suele reducir copiar datos a mano. ¿Te interesa ver un ejemplo?
 
 ### 4
 Hola, no vendo seguidores 😊. Ordeno cómo entran las peticiones de clientes (web → aviso → lista). ¿Te encaja una llamada corta?

@@ -6,6 +6,8 @@
 - Datos de prueba ficticios; no datos reales de pacientes ni clínicos.
 - Recordar: no WhatsApp activo, no voz, no calendario, no CRM completo.
 - Cerrar con auditoría gratuita o piloto de un flujo + métrica.
+- Al cliente: preferir “registro” y “automatización del aviso interno”; mencionar Supabase/n8n solo si preguntan por detalle técnico.
+- Reglas de tono y claims: `docs/commercial-quality-system/commercial-safety-rules.md`.
 
 ---
 
@@ -31,7 +33,7 @@
 
 **Qué mostrar:** Mismo flujo; destacar campos nombre, teléfono, motivo (sin datos clínicos).
 
-**Qué decir:** Aviso al móvil/email del responsable comercial en segundos.
+**Qué decir:** Aviso al email (o canal acordado) del responsable comercial en poco tiempo en el entorno de demo — **sin prometer SLA fijo** en producción hasta medir con vosotros.
 
 **Cierre:** Auditoría para definir campos (tipo tratamiento).
 

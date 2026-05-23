@@ -2,6 +2,8 @@
 
 **Principio:** cada oferta resuelve un problema acotado, con criterios de éxito medibles y exclusiones explícitas. Los importes se acuerdan en propuesta formal, no en este documento.
 
+**Fase 2 e integraciones:** solo “se puede valorar” o “previa revisión” tras MVP estable — nunca como compromiso automático.
+
 ---
 
 ## 1. Auditoría gratuita de procesos

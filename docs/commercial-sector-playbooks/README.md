@@ -6,6 +6,8 @@ Este directorio contiene **playbooks comerciales internos** para vender PLEXAI p
 
 El pack complementa el material MVP 4 existente (one-pager, guion de demo, checklist) con **ángulos sectoriales**: prospección, reuniones, objeciones, escenarios de demo y propuestas iniciales pequeñas y medibles.
 
+**Control de calidad:** antes de enviar textos al cliente, usar `docs/commercial-quality-system/` (checklist, frases prohibidas, reglas de seguridad). Mapa completo: `commercial-quality-system/master-commercial-map.md`.
+
 **No es documentación de producto ni manual técnico.** Describe cómo hablar y vender; no describe código ni despliegue.
 
 ---

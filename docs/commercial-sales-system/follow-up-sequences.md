@@ -2,6 +2,10 @@
 
 **Reglas:** personalizar nombre y negocio; no prometer WhatsApp/calendario/voz activos; no presionar con amenazas; máximo 3–4 toques por canal antes de pausar 30 días.
 
+**Antes de enviar cada mensaje:** `docs/commercial-quality-system/claim-review-checklist.md` y buscar la frase en `forbidden-and-approved-phrases.md`.
+
+**Canales no activos en MVP:** WhatsApp/calendario/voz/CRM completo solo como **fase posterior** previa revisión — nunca como incluidos hoy.
+
 **Leyenda de tono:** **C** = corto directo | **Q** = consultivo / valor
 
 ---

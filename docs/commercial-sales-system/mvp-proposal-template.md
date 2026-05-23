@@ -2,6 +2,8 @@
 
 **Uso:** documento comercial previo al contrato. Completar tras auditoría o demo. **No incluir precios inventados** — dejar campos en blanco o “a acordar”.
 
+**Antes de enviar al cliente:** `docs/commercial-quality-system/claim-review-checklist.md` + revisar exclusiones (WhatsApp, calendario, voz, CRM, datos clínicos).
+
 ---
 
 ## Portada textual

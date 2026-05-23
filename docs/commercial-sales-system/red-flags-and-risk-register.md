@@ -2,6 +2,8 @@
 
 **Uso:** evaluar leads y proyectos; respuestas tipo sin comprometer límites. Mínimo 25 riesgos documentados.
 
+**Complemento:** reglas y frases en `docs/commercial-quality-system/commercial-safety-rules.md` y `forbidden-and-approved-phrases.md`.
+
 ---
 
 ## Cómo usar este registro

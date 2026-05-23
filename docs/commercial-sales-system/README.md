@@ -18,8 +18,9 @@ No es un CRM, no es software y **no sustituye** contrato firmado, propuesta econ
 |---------|-----------|---------|
 | **Playbooks sectoriales** | `docs/commercial-sector-playbooks/` | Lenguaje, dolores, mensajes y demos por tipo de negocio (dental, podología, estética, etc.) |
 | **Sistema comercial-operativo** | `docs/commercial-sales-system/` (este pack) | Proceso transversal: cualificación → auditoría → informe → propuesta → kickoff → control de alcance |
+| **Calidad comercial** | `docs/commercial-quality-system/` | Reglas, checklist pre-envío, tono y frases prohibidas |
 
-**Regla práctica:** primero cualifica y diagnostica con este pack; cuando sepas el sector, abre el playbook correspondiente para personalizar mensajes, objeciones y escenarios de demo.
+**Regla práctica:** primero cualifica y diagnostica con este pack; cuando sepas el sector, abre el playbook correspondiente para personalizar mensajes, objeciones y escenarios de demo. **Antes de enviar algo al cliente,** pasa el checklist de calidad.
 
 ---
 

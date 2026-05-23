@@ -4,6 +4,8 @@
 
 **Nota:** automatizaciones con control humano; sin datos clínicos; sin prometer WhatsApp/calendario/voz salvo F2 explícito.
 
+**Cumplimiento comercial:** al citar un UC al cliente, pasar `docs/commercial-quality-system/claim-review-checklist.md`. En clínicas y veterinaria: solo datos **comerciales** (contacto, servicio solicitado), nunca historial clínico.
+
 ---
 
 ## Captación y entrada

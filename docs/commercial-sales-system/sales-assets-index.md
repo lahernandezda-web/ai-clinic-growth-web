@@ -4,12 +4,23 @@
 
 ---
 
-## Mapa de dos packs
+## Mapa de tres packs
 
 | Pack | Ruta | Contenido |
 |------|------|-----------|
+| Calidad comercial | `docs/commercial-quality-system/` | Reglas, checklist, tono, frases, revisión |
 | Sistema comercial-operativo | `docs/commercial-sales-system/` | Proceso transversal venta → entrega |
 | Playbooks sectoriales | `docs/commercial-sector-playbooks/` | Mensajes, demos y objeciones por sector |
+
+Ver también: `docs/commercial-quality-system/master-commercial-map.md`.
+
+---
+
+## Antes de enviar algo a un cliente
+
+1. `docs/commercial-quality-system/claim-review-checklist.md`  
+2. `docs/commercial-quality-system/forbidden-and-approved-phrases.md`  
+3. Si es propuesta: `mvp-proposal-template.md` exclusiones confirmadas  
 
 ---
 
@@ -39,11 +50,12 @@
 
 ## Antes de una demo
 
-1. `lead-qualification-framework.md` — confirmar score ≥ 66 o excepción justificada.  
-2. Playbook del sector — `demo-scenarios.md` + escenario concreto.  
-3. `red-flags-and-risk-register.md` — repaso rápido de límites.  
-4. `discovery-call-scripts.md` — cierre con siguiente paso.  
-5. `value-metrics-library.md` — una métrica para mencionar sin prometer ROI mágico.
+1. `docs/commercial-quality-system/commercial-safety-rules.md` — repaso límites.  
+2. `lead-qualification-framework.md` — confirmar score ≥ 66 o excepción justificada.  
+3. Playbook del sector — `demo-scenarios.md` + escenario concreto.  
+4. `red-flags-and-risk-register.md` — repaso rápido de límites.  
+5. `discovery-call-scripts.md` — cierre con siguiente paso.  
+6. `value-metrics-library.md` — una métrica para mencionar sin prometer ROI mágico.
 
 **No usar en demo:** prometer WhatsApp, calendario, voz, CRM completo.
 
@@ -126,6 +138,19 @@
 | 50 casos de uso | `docs/commercial-sales-system/use-case-library.md` |
 | Riesgos | `docs/commercial-sales-system/red-flags-and-risk-register.md` |
 | Ofertas | `docs/commercial-sales-system/offer-packaging.md` |
+
+### Calidad comercial (`docs/commercial-quality-system/`)
+
+| Archivo | Uso |
+|---------|-----|
+| `README.md` | Introducción al pack |
+| `commercial-safety-rules.md` | Reglas estrictas |
+| `claim-review-checklist.md` | Pre-envío obligatorio |
+| `message-tone-guide.md` | Tono |
+| `forbidden-and-approved-phrases.md` | 90 frases |
+| `commercial-review-report.md` | Informe de revisión |
+| `master-commercial-map.md` | Mapa maestro |
+| `night-work-plan.md` | Plan de mantenimiento docs |
 
 ---
 

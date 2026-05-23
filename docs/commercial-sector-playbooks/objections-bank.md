@@ -2,6 +2,8 @@
 
 **Uso:** adaptar al sector con el playbook correspondiente. Respuestas cortas para llamada; ampliar si piden detalle.
 
+**Revisión pre-envío:** si adaptáis una respuesta por escrito, pasad `docs/commercial-quality-system/claim-review-checklist.md`.
+
 ---
 
 ## Precio y presupuesto
@@ -19,7 +21,7 @@
 | # | Objeción | Respuesta |
 |---|----------|-----------|
 | 6 | “Ahora no es el momento.” | Entendido. ¿Retomamos después de [fecha/evento]? Dejo auditoría disponible cuando queráis. |
-| 7 | “Estamos muy liados.” | Precisamente cuando estáis liados se pierden leads; un aviso automático interno quita carga mental. |
+| 7 | “Estamos muy liados.” | Cuando estáis liados se pierden solicitudes; un **aviso interno** (reglas acordadas) puede quitar carga, sin sustituir a la persona que responde. |
 | 8 | “Llámame en tres meses.” | Perfecto. ¿Os envío un recordatorio? Mientras, ¿un enlace de auditoría para ir documentando procesos? |
 | 9 | “No tengo tiempo para reuniones.” | La demo son 10–15 min; la auditoría 20. Menos que una hora perdida contestando lo mismo. |
 | 10 | “Ya lo haremos internamente.” | Bien si tenéis capacidad; nosotros aceleramos el diseño del flujo y la parte técnica demostrable. |
