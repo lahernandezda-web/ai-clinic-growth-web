@@ -16,7 +16,7 @@
 
 - Landing MVP (MVP 1): completada y documentada.
 - Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
-- Deployment readiness — SPEC creada (`4a23225`); Bloque A + B reducido implementado (`9e27e50`): páginas legales provisionales, footer y consentimiento del formulario; Bloque C completado (`97bf97e`): plantilla `web/.env.example` versionada y variables de producción documentadas por nombre (sin valores reales); sin deployment.
+- Deployment readiness — SPEC creada (`4a23225`); Bloque A + B reducido implementado (`9e27e50`): páginas legales provisionales, footer y consentimiento del formulario; Bloque C completado (`97bf97e`): plantilla `web/.env.example` versionada y variables de producción documentadas por nombre (sin valores reales); Bloque D completado a nivel documental (`3ec7d55`): checklist Vercel / deployment en `docs/checklist-vercel-deployment-mvp.md`; sin deployment; Vercel no conectado.
 - Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
 - Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
@@ -45,6 +45,8 @@ Commits de referencia (deployment readiness):
 - `9e27e50` — feat: add legal pages and privacy consent
 - `1ffae37` — docs: add legal pages verification checkpoint
 - `97bf97e` — chore: document production env variables
+- `55113aa` — docs: add env readiness checkpoint
+- `3ec7d55` — docs: add Vercel deployment checklist
 
 ## Implemented so far
 
@@ -302,7 +304,46 @@ Estado del bloque:
 
 - Documentación de variables de producción completada en repo.
 - Pendiente: configurar valores reales solo en el panel del hosting cuando llegue el deployment.
-- Pendiente: **Bloque D** — Vercel / deployment checklist.
+- **Bloque D** completado a nivel documental (ver checkpoint Bloque D).
+
+## Checkpoint — Deployment readiness (Bloque D)
+
+**Estado: CHECKLIST VERCEL / DEPLOYMENT PREPARADO (documental, sin deployment, sin Vercel conectado).**
+
+Commit:
+
+- `3ec7d55` — docs: add Vercel deployment checklist
+
+Archivo:
+
+- `docs/checklist-vercel-deployment-mvp.md` — creado
+
+Incluye:
+
+- Precondiciones ya completadas antes de deployment.
+- Datos faltantes antes de producción (titular legal, dominio, n8n/Sheets prod, etc.).
+- Configuración prevista en Vercel (repo, root `web/`, Next.js, build, política de deploy/preview).
+- Variables de entorno en Vercel documentadas por nombre (sin valores reales).
+- Checklist de seguridad pre-deploy.
+- Checklist funcional post-deploy.
+- Riesgos específicos del deployment.
+- Plan futuro de ejecución (no ejecutado).
+- Criterios de aceptación del Bloque D.
+
+Estado del bloque:
+
+- Deployment checklist preparado y versionado en repo.
+- No se ha hecho deployment.
+- No se ha conectado Vercel.
+- Pendiente: completar datos legales reales antes de producción pública.
+- Pendiente: decidir si crear primer preview deploy en Vercel o completar primero datos reales/dominio.
+
+Verificación:
+
+- Solo documentación; sin modificación de código.
+- Sin lectura ni exposición de `web/.env.local`.
+- Sin modificación de Supabase, n8n ni Google Sheets.
+- Sin deployment ni conexión a Vercel.
 
 ## Current capabilities
 
@@ -373,14 +414,18 @@ Estado del bloque:
 
 ## Siguiente fase recomendada
 
-**Inmediato (post Bloque C):**
+**Inmediato (post Bloque D — deployment checklist documental listo):**
 
-1. **Bloque D:** Vercel / deployment checklist (`docs/spec-deployment-readiness-mvp.md`, sección Bloque D).
-2. Antes de deploy real: completar datos legales reales del titular (sustituir placeholders en `/privacidad` y `/aviso-legal`).
-3. Al desplegar: configurar valores reales de variables solo en el panel del hosting (p. ej. Vercel); no commitear secretos.
-4. Otras líneas (no mutuamente excluyentes):
-   - Optimización ligera de landing (performance, SEO básico, pulido).
-   - Demo comercial (MVP 4 abajo).
+Decidir el siguiente paso entre estas opciones (no mutuamente excluyentes en el medio plazo, pero conviene priorizar una):
+
+- **A. Completar datos legales reales** — sustituir placeholders en `/privacidad` y `/aviso-legal`; email de contacto legal/privacidad; requisito antes de producción pública.
+- **B. Preparar primer preview deploy en Vercel** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy.
+- **C. Preparar demo comercial MVP 4** — narrativa y guion de demo antes de publicar (ver MVP 4 abajo).
+
+Notas transversales:
+
+- Al desplegar (cuando se decida): configurar valores reales de variables solo en el panel del hosting; no commitear secretos.
+- Optimización ligera de landing (performance, SEO básico, pulido) sigue disponible como mejora incremental.
 
 **MVP 4 — Demo Polish / Zoom Demo Script**
 
