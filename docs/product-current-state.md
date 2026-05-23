@@ -15,7 +15,8 @@
 **MVP 3B — n8n Lead Notification Workflow completado, verificado en local y funcionando de extremo a extremo.**
 
 - Landing MVP (MVP 1): completada y documentada.
-- Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23); pendiente decidir siguiente fase.
+- Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
+- Deployment readiness — SPEC creada (`4a23225`); Bloque A + B reducido implementado (`9e27e50`): páginas legales provisionales, footer y consentimiento del formulario; sin deployment.
 - Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
 - Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
@@ -37,6 +38,11 @@ Commit de referencia (MVP 3A):
 Commit de referencia (rediseño landing):
 
 - `2b5c185` — feat: redesign plexai landing
+
+Commits de referencia (deployment readiness):
+
+- `4a23225` — docs: add deployment readiness spec
+- `9e27e50` — feat: add legal pages and privacy consent
 
 ## Implemented so far
 
@@ -192,6 +198,52 @@ Verificación formulario post-rediseño (2026-05-23):
 - Google Sheets: OK.
 - Datos de prueba: nombre «Test Post Rediseño», email `test.post.redesign@example.com`, teléfono `600000000`, tipo `dental_clinic`, ciudad «A Coruña», web `https://example.com`, área `follow_up`.
 
+## Checkpoint — Deployment readiness (Bloque A + B reducido)
+
+**Estado: PREPARACIÓN LEGAL MÍNIMA INICIAL COMPLETADA (provisional, sin deployment).**
+
+SPEC de referencia:
+
+- `4a23225` — docs: add deployment readiness spec (`docs/spec-deployment-readiness-mvp.md`)
+
+Implementación:
+
+- `9e27e50` — feat: add legal pages and privacy consent
+
+Archivos:
+
+- `web/app/privacidad/page.tsx` — ruta `/privacidad`
+- `web/app/aviso-legal/page.tsx` — ruta `/aviso-legal`
+- `web/app/page.tsx` — enlaces legales en footer
+- `web/components/AuditRequestForm.tsx` — texto de consentimiento actualizado
+
+Incluye:
+
+- `/privacidad` provisional con placeholders (`[NOMBRE DEL TITULAR O RESPONSABLE]`, `[EMAIL DE CONTACTO]`, `[DOMICILIO / DATOS LEGALES SI APLICA]`).
+- `/aviso-legal` provisional con placeholders (`[NIF/CIF SI APLICA]`, etc.).
+- Enlaces en footer: Política de privacidad y Aviso legal.
+- Consentimiento del formulario con enlace a `/privacidad` y advertencia de no enviar datos clínicos, de pacientes ni información sensible.
+- Sin URLs de webhook ni secretos en las páginas legales.
+
+Verificación:
+
+- `npm.cmd run lint`: OK
+- `npx tsc --noEmit`: OK
+- `npm.cmd run build`: OK (rutas estáticas `/privacidad` y `/aviso-legal`)
+- Sin deployment
+- Sin modificación de Supabase, n8n ni Google Sheets
+- Sin lectura ni exposición de secretos (`web/.env.local` no tocado)
+
+Pendiente antes de producción:
+
+- Completar datos reales del titular en páginas legales (sustituir placeholders).
+
+Siguiente bloque a decidir:
+
+- **Bloque C:** variables de producción / `.env.example`
+- **Bloque D:** Vercel / deployment checklist
+- O revisión visual/manual de páginas legales
+
 ## Current capabilities
 
 - La web presenta la propuesta comercial de PLEXAI y enlaces/anclas por secciones.
@@ -204,7 +256,8 @@ Verificación formulario post-rediseño (2026-05-23):
 ## Not implemented yet
 
 - Gestión interna de leads / flujo de revisión post-envío (más allá del guardado)
-- Deployment (Vercel u otro), dominio dedicado y legal/pages legales en producción
+- Deployment (Vercel u otro), dominio dedicado y publicación en producción
+- Datos legales reales del titular en `/privacidad` y `/aviso-legal` (placeholders sustituidos)
 - Integraciones de mensajería, agenda o asistentes
 - Chatbot PLEXAI
 - Dashboard interno de leads
@@ -259,11 +312,15 @@ Verificación formulario post-rediseño (2026-05-23):
 
 ## Siguiente fase recomendada
 
-**Inmediato (post-rediseño):**
+**Inmediato (post Bloque A + B reducido):**
 
-1. Elegir una de estas líneas (no mutuamente excluyentes a largo plazo):
+1. Completar placeholders legales con datos reales del titular antes de producción.
+2. Elegir siguiente bloque de deployment readiness:
+   - **Bloque C:** variables producción / `.env.example`
+   - **Bloque D:** Vercel / deployment checklist
+   - O revisión visual/manual de `/privacidad` y `/aviso-legal`
+3. Otras líneas (no mutuamente excluyentes):
    - Optimización ligera de landing (performance, SEO básico, pulido).
-   - RGPD / deployment readiness (legal, Vercel, dominio).
    - Demo comercial (MVP 4 abajo).
 
 **MVP 4 — Demo Polish / Zoom Demo Script**
