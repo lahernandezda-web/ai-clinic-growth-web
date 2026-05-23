@@ -12,12 +12,13 @@
 
 ## Current status
 
-**MVP 4 — Demo Comercial: pack documental completo (SPEC, one-pager, guion imprimible, checklist operativo, brief Canva/PDF one-pager, brief/guion vídeo corto) creado, commiteado y pusheado a `origin/main`. Legal Data Readiness: SPEC legal, páginas `/aviso-legal` y `/privacidad` con datos confirmados, validadas (lint/tsc), commiteadas (`8fbf0f9`) y pusheadas; repo `main` sincronizado con `origin/main`. Sin deployment; Vercel no conectado; proyecto sin publicación en producción.**
+**MVP 4 — Demo Comercial: pack documental completo (SPEC, one-pager, guion imprimible, checklist operativo, brief Canva/PDF one-pager, brief/guion vídeo corto) creado, commiteado y pusheado a `origin/main`. Legal Data Readiness: SPEC legal, páginas `/aviso-legal` y `/privacidad` con datos confirmados, validadas (lint/tsc), commiteadas (`8fbf0f9`) y pusheadas. Corrección técnica hydration mismatch hero SVG background: iframe decorativo extraído a Client Component (`e58d36b`), validada (lint/tsc), commiteada y pusheada; repo `main` sincronizado con `origin/main`. Sin deployment; Vercel no conectado; proyecto sin publicación en producción.**
 
 - Landing MVP (MVP 1): completada y documentada.
 - Rediseño visual/comercial de landing (post-MVP 3B): completado y commiteado (`2b5c185`); formulario end-to-end post-rediseño revalidado (2026-05-23).
 - Deployment readiness — SPEC creada (`4a23225`); Bloque A + B reducido implementado (`9e27e50`): rutas legales, footer y consentimiento del formulario; Bloque C completado (`97bf97e`): plantilla `web/.env.example` versionada y variables de producción documentadas por nombre (sin valores reales); Bloque D completado a nivel documental (`3ec7d55`): checklist Vercel / deployment en `docs/checklist-vercel-deployment-mvp.md`; sin deployment; Vercel no conectado.
 - Legal Data Readiness — SPEC (`9c57ef5`): `docs/spec-legal-data-readiness-mvp.md`; implementación mínima en páginas legales (`8fbf0f9`): `/aviso-legal` y `/privacidad` con datos confirmados del titular; sin placeholders legales principales; domicilio no publicado en MVP; email profesional del dominio pendiente; `npm.cmd run lint` y `npx tsc --noEmit` OK; pusheado a `origin/main`; sin deployment; Vercel no conectado.
+- Hydration mismatch hero SVG background — corrección mínima (`e58d36b`): `web/components/HeroSvgBackground.tsx` (Client Component); iframe animado del hero ya no se renderiza directamente en SSR; `web/app/page.tsx` sustituye bloque inline por `<HeroSvgBackground />`; sin cambio de copy, formulario, páginas legales ni APIs; sin dependencias nuevas; lint/tsc OK; verificación local OK; pusheado a `origin/main`; sin deployment; Vercel no conectado.
 - Formulario de auditoría gratuita, API de persistencia e integración en landing: implementados y verificados en local.
 - Emisión server-side del evento `audit_request.created`: implementada en MVP 3A y verificada ahora dentro del flujo MVP 3B.
 - Workflow n8n para notificación interna y Google Sheets: configurado y verificado en local.
@@ -33,6 +34,11 @@ Commits de referencia (Legal Data Readiness):
 
 - `9c57ef5` — docs: add legal data readiness spec
 - `8fbf0f9` — feat: update legal pages with confirmed data
+- `eeb06f9` — docs: add legal data readiness checkpoint
+
+Commits de referencia (hydration mismatch hero):
+
+- `e58d36b` — fix: avoid hero iframe hydration mismatch
 
 Commits de referencia (MVP auditoría):
 
@@ -79,7 +85,7 @@ Commits de referencia (MVP 4 Demo Comercial):
 
 - Header con navegación por anclas, hero, problema, propuesta de valor, audiencias, automatización, método, demo conceptual, servicios, bloque de auditoría, FAQ, CTA final
 - Metadata/lang en layout; smooth scroll y estilos globales en `web/app/globals.css`
-- Rediseño premium/tecnológico: copy generalista (negocios de servicios), alternancia oscuro/claro, hero con SVG animado (`web/public/plexai-flow-hero.svg`), CTA «Pide una auditoría gratuita» y formulario de auditoría conservados (ver checkpoint rediseño)
+- Rediseño premium/tecnológico: copy generalista (negocios de servicios), alternancia oscuro/claro, hero con SVG animado (`web/public/plexai-flow-hero.svg`) montado en cliente vía `web/components/HeroSvgBackground.tsx` (ver checkpoints rediseño e hydration mismatch hero), CTA «Pide una auditoría gratuita» y formulario de auditoría conservados
 
 **MVP 2 — Audit request**
 
@@ -431,6 +437,56 @@ Próximo paso posible (no ejecutado):
 - Revisar visualmente `/aviso-legal` y `/privacidad` en local (`npm.cmd run dev`), o
 - Decidir primer preview deploy en Vercel según `docs/checklist-vercel-deployment-mvp.md` (requiere configurar email profesional del dominio y demás precondiciones del checklist cuando corresponda).
 
+## Checkpoint — Hydration mismatch hero SVG background
+
+**Estado: CORRECCIÓN MÍNIMA APLICADA, VALIDADA, COMMITEADA Y PUSHEADA (sin deployment, sin Vercel conectado, sin publicación en producción).**
+
+Problema detectado:
+
+- Hydration mismatch en desarrollo asociado al iframe decorativo del hero SVG background (`/plexai-flow-hero.svg`) renderizado directamente en SSR dentro de `web/app/page.tsx`.
+- No rompía la carga de la landing, pero generaba overlay de hydration mismatch en desarrollo al interactuar con `#auditoria` y debía corregirse antes de un preview deploy.
+
+Implementación:
+
+- `e58d36b` — fix: avoid hero iframe hydration mismatch
+
+Archivos:
+
+- `web/components/HeroSvgBackground.tsx` — creado (Client Component; iframe montado solo en cliente con `useSyncExternalStore`)
+- `web/app/page.tsx` — modificado (sustituye bloque inline del iframe por `<HeroSvgBackground />`)
+
+Alcance de la corrección:
+
+- Corrección mínima y acotada al fondo animado del hero.
+- El iframe del SVG animado ya no se renderiza directamente en SSR.
+- Sin cambio de copy comercial.
+- Sin modificación del formulario.
+- Sin modificación de páginas legales.
+- Sin modificación de APIs.
+- Sin instalación de dependencias nuevas.
+- Sin secretos ni URLs privadas añadidas.
+
+Fuera de alcance de este bloque:
+
+- Modificación de formulario, páginas legales, APIs, Supabase, n8n, `.env.example` o `web/.env.local`.
+- Deployment y conexión a Vercel.
+
+Verificación técnica:
+
+- `npm.cmd run lint`: OK
+- `npx tsc --noEmit`: OK
+- Verificación local: OK (`/`, `/#auditoria`, `/privacidad`, `/aviso-legal`)
+- Hydration mismatch del iframe del hero: corregido en código (iframe fuera de SSR)
+
+Estado Git:
+
+- Commit `e58d36b` pusheado a `origin/main`.
+- `## main...origin/main` (sincronizado).
+
+Próximo paso posible (no ejecutado):
+
+- Decidir primer preview deploy en Vercel según `docs/checklist-vercel-deployment-mvp.md` cuando corresponda (proyecto más preparado técnicamente para esa decisión; aún no ejecutado).
+
 ## Checkpoint — MVP 4 Demo Comercial (SPEC)
 
 **Estado: SPEC COMERCIAL LISTA (documental, sin implementación de código, sin deployment).**
@@ -737,13 +793,13 @@ Verificación:
 
 ## Siguiente fase recomendada
 
-**Inmediato (post Legal Data Readiness — páginas legales con datos confirmados, pusheadas):**
+**Inmediato (post Legal Data Readiness y corrección hydration mismatch hero — `8fbf0f9`, `e58d36b`; ambos pusheados; repo sincronizado con `origin/main`):**
 
 Decidir el siguiente paso entre estas opciones (no mutuamente excluyentes en el medio plazo, pero conviene priorizar una):
 
-- **A. Revisión visual local de rutas legales** — `npm.cmd run dev` y comprobar `/aviso-legal` y `/privacidad` antes de cualquier preview público.
+- **A. Revisión visual local final pre-deploy** — `npm.cmd run dev` y comprobar `/`, `/#auditoria`, `/aviso-legal` y `/privacidad` (incl. ausencia de overlay de hydration mismatch del hero en desarrollo).
 - **B. Materiales comerciales opcionales fuera del repo** — según `docs/spec-demo-commercial-mvp.md` sección 13: posible creación real en Canva/PDF del one-pager (brief `7d6fb05`), posible conversión PDF de guion/checklist, posible grabación/edición real del vídeo corto (brief `694ca7f`; pack documental: SPEC `f127ea1`, one-pager `8f19de6`, guion `b88237c`, checklist `ab1c4f8`, brief Canva `7d6fb05`, brief vídeo `694ca7f`).
-- **C. Preparar primer preview deploy en Vercel** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy. Precondición legal mínima de placeholders cumplida (`8fbf0f9`); pendiente email profesional del dominio si se desea antes de producción.
+- **C. Decidir primer preview deploy en Vercel (aún no ejecutado)** — seguir `docs/checklist-vercel-deployment-mvp.md`: crear proyecto, root `web/`, variables en panel (sin commitear secretos), preview deploy y checklist funcional post-deploy. Precondición legal mínima cumplida (`8fbf0f9`); corrección técnica hydration mismatch hero aplicada (`e58d36b`); el proyecto queda más preparado para esta decisión, pero **no se ha hecho deployment ni se ha conectado Vercel**; pendiente email profesional del dominio si se desea antes de producción.
 
 Notas transversales:
 
@@ -763,4 +819,4 @@ Notas transversales:
 
 Alcance documentado: narrativa y guiones para enseñar PLEXAI (landing, formulario, flujo interno conceptual, límites honestos por sector); one-pager resumen; guion hablado imprimible; checklist operativo pre/post demo; brief de diseño para pieza visual del one-pager; brief/guion para vídeo corto de presentación (60 s / 90 s). **Pack documental MVP 4 completo.** Todo respaldado en GitHub (`origin/main`). Sin PDF, vídeo ni archivos binarios/multimedia en repo; sin deployment; Vercel no conectado.
 
-Pendiente en fases posteriores: email profesional del dominio `plexai.es`; preview deploy o producción en Vercel (checklist `docs/checklist-vercel-deployment-mvp.md`); creación real Canva/PDF del one-pager si se decide; grabación/edición real del vídeo corto si se decide; conversión PDF opcional de otros materiales. Datos legales principales en `/aviso-legal` y `/privacidad` completados (`8fbf0f9`). No activar integraciones externas ni ampliar alcance sin SPEC previa.
+Pendiente en fases posteriores: email profesional del dominio `plexai.es`; decisión y ejecución de primer preview deploy o producción en Vercel (checklist `docs/checklist-vercel-deployment-mvp.md`; aún no ejecutado); creación real Canva/PDF del one-pager si se decide; grabación/edición real del vídeo corto si se decide; conversión PDF opcional de otros materiales. Datos legales principales en `/aviso-legal` y `/privacidad` completados (`8fbf0f9`). Hydration mismatch del hero corregido (`e58d36b`). No activar integraciones externas ni ampliar alcance sin SPEC previa.
