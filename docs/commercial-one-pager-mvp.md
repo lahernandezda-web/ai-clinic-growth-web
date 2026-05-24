@@ -42,7 +42,7 @@ La demo funcional actual muestra capacidad real de ejecución, no un producto ce
 | **Landing comercial** | Propuesta de valor, sectores, método y llamada a la acción |
 | **Formulario de auditoría gratuita** | Captura estructurada de interesados desde la web |
 | **Registro del lead** | La solicitud queda guardada de forma centralizada |
-| **Automatización n8n** | El flujo se dispara sin intervención manual tras el envío |
+| **Automatización interna** | El flujo se dispara sin intervención manual tras el envío (alcance según MVP acordado) |
 | **Email interno** | El responsable recibe aviso de un lead nuevo |
 | **Google Sheets** | Registro ordenado para seguimiento comercial |
 | **Páginas legales provisionales** | Aviso legal, privacidad y protección de datos |
@@ -78,7 +78,7 @@ Cuatro ejemplos breves de lo que se puede diseñar por proceso (el MVP actual de
    Los datos llegan estructurados (nombre, contacto, tipo de consulta) para que el equipo priorice sin buscar en varios sitios.
 
 3. **Lead nuevo → email interno al responsable**  
-   Quien debe actuar lo sabe en segundos, no cuando alguien revisa la web al final del día.
+   Quien debe actuar recibe aviso interno dentro del flujo acordado, no solo cuando alguien revisa la web al final del día (sin prometer tiempos exactos de respuesta).
 
 4. **Base de interesados → seguimiento ordenado**  
    Una lista única para llamar, responder o cerrar, en lugar de leads repartidos entre chats y notas.

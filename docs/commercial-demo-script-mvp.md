@@ -54,7 +54,7 @@ Checklist breve (revisar el mismo día o 30 minutos antes):
 - [ ] **No pedir ni usar** datos clínicos, datos de pacientes ni información sensible en la demo (solo datos ficticios de prueba).
 - [ ] Tener abierta la **landing** (`/` o `/#auditoria` según el momento del guion).
 - [ ] Tener claro el **CTA**: pedir **auditoría gratuita** (formulario o acuerdo de seguimiento).
-- [ ] (Opcional, demo extendida) Supabase, n8n, email o Sheets preparados en pestañas de fondo — **sin mostrar secretos ni `.env.local`**.
+- [ ] (Opcional, demo técnica interna) Registro, automatización, email o Sheets preparados en pestañas de fondo — **sin mostrar secretos ni `.env.local`**; al cliente, narrar formulario → registro → aviso → hoja.
 - [ ] Zoom / pantalla compartida y audio probados.
 
 ---
@@ -118,8 +118,8 @@ Estructura **minuto a minuto**. Ajusta si el interlocutor interrumpe con pregunt
 *Narrativa conceptual; mostrar backend solo si está preparado y no alarga demasiado.*
 
 - Flujo verbal: **formulario → registro centralizado → aviso al equipo → seguimiento ordenado** (email interno + hoja, según entorno demo).
-- Beneficio: en segundos alguien sabe que hay un lead nuevo, sin revisar la web a mano al final del día.
-- Si muestras Supabase/n8n/Sheets: una captura o pestaña, sin secretos ni URLs sensibles.
+- Beneficio: mejor control del seguimiento — el equipo sabe que hay una solicitud nueva sin revisar la web a mano al final del día (sin prometer tiempos exactos).
+- Si muestras paneles técnicos (solo demo interna): una captura o pestaña, sin secretos ni URLs sensibles; al cliente, mantener lenguaje de negocio.
 
 ### Minuto 9–10 — Cierre y siguiente paso
 
@@ -167,7 +167,7 @@ Estructura por **bloques**. Duración orientativa por bloque; flexibiliza según
 Formulario PLEXAI
   → API (guardado del lead)
   → Registro centralizado
-  → Automatización (n8n)
+  → Automatización interna supervisada
   → Email interno + registro en hoja (Sheets)
 ```
 
@@ -214,7 +214,7 @@ Elementos **alineados con el MVP actual** (local o entorno preparado):
 | **Formulario de auditoría gratuita** | Captura estructurada; consentimiento; sin datos clínicos |
 | **Flujo conceptual** | Formulario → registro → aviso interno → seguimiento comercial |
 | **Demo en vivo del envío** | Mensaje de éxito en UI |
-| **Backend (opcional)** | Nueva fila en base de datos; ejecución n8n; email o Sheets |
+| **Registro interno (opcional, demo técnica)** | Nueva solicitud registrada; aviso al equipo; hoja de seguimiento |
 | **One-pager comercial** | `docs/commercial-one-pager-mvp.md` — resumen para dejar o enviar después (versión interna; convertir a PDF si aplica) |
 | **Páginas legales provisionales** | Si preguntan; con aviso de placeholders |
 
@@ -263,7 +263,7 @@ Frases cortas para usar cuando encaje el momento:
 - *"El tiempo que recuperáis es el que hoy se va en tareas que no requieren criterio humano completo."*
 
 **Seguimiento comercial**
-- *"Cuando alguien rellena el formulario, el equipo lo sabe en segundos, no al final del día."*
+- *"Cuando alguien rellena el formulario, el equipo recibe aviso interno con registro ordenado — no al final del día revisando la web a mano."*
 - *"Un solo sitio donde ver interesados nuevos antes de que se enfríen."*
 
 **IA útil vs. IA por moda**
@@ -282,7 +282,7 @@ No. PLEXAI quita carga repetitiva (avisar, copiar datos, revisar la web a mano) 
 
 ### «¿Esto ya funciona con WhatsApp?»
 
-En el MVP actual **no** hay WhatsApp conectado. Lo que sí demostramos es captura desde la web y aviso interno inmediato. Si WhatsApp es crítico para vosotros, lo tratamos en la auditoría para ver si merece ser el siguiente paso y con qué prioridad.
+En el MVP actual **no** hay WhatsApp conectado. Lo que sí demostramos es captura desde la web y aviso interno configurado según el alcance del MVP. Si WhatsApp es crítico para vosotros, lo tratamos en la auditoría para ver si merece ser el siguiente paso y con qué prioridad.
 
 ### «¿Puede conectarse con mi CRM?»
 

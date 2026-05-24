@@ -121,7 +121,7 @@ En clínicas, academias y negocios locales pasa lo mismo: consultas por web, tel
 
 ### Qué tipo de tareas se pueden revisar (40–55 s)
 
-En una auditoría miramos cosas como: cómo llegan las solicitudes desde la web, quién debe enterarse primero, qué datos se copian a mano, cómo se hace el seguimiento comercial o qué consultas se repiten sin necesidad. El MVP que tenemos hoy **demuestra** captura desde la web y aviso interno inmediato — no es un CRM completo ni software clínico.
+En una auditoría miramos cosas como: cómo llegan las solicitudes desde la web, quién debe enterarse primero, qué datos se copian a mano, cómo se hace el seguimiento comercial o qué consultas se repiten sin necesidad. El MVP que tenemos hoy **demuestra** captura desde la web y aviso interno dentro del flujo de trabajo — no es un CRM completo ni software clínico.
 
 ### Por qué empezar pequeño (55–68 s)
 
