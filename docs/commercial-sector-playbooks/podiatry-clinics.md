@@ -45,7 +45,7 @@ Equipos de 1–5 personas. El podólogo a menudo combina consulta con gestión. 
 | Área | Enfoque prudente |
 |------|------------------|
 | Captura web estructurada | Campos cerrados: motivo, pie doloroso sí/no (sin diagnóstico), contacto |
-| Aviso interno inmediato | Email al podólogo o recepción al llegar solicitud |
+| Aviso interno configurado según MVP | Email al podólogo o recepción al llegar solicitud |
 | Registro en hoja | Vista única para seguimiento comercial |
 | Priorización | Urgencia vs revisión vs presupuesto plantillas |
 | Plantillas internas | Respuestas tipo para FAQs no clínicas |
@@ -56,7 +56,7 @@ La IA solo tiene sentido para **clasificar texto de motivo** o resumir solicitud
 
 ## 6. Ejemplos de automatizaciones pequeñas y medibles
 
-1. **Landing + formulario “Pedir información / primera visita”** → Supabase/registro + n8n → email + Sheets (flujo MVP demostrable).
+1. **Landing + formulario “Pedir información / primera visita”** → registro interno → aviso al equipo → hoja de seguimiento (flujo MVP demostrable).
 
 2. **Campo “Motivo principal”** con opciones → orden de llamada sugerido en hoja.
 
@@ -166,7 +166,7 @@ Podemos enseñar en demo lo ya implementado y proponer una auditoría gratuita d
 
 ### Mensaje post-demo
 
-Gracias por la demo. Resumen: un interesado puede dejar datos estructurados desde la web y vuestro equipo recibe aviso al instante para llamar. Siguiente paso recomendado: definir campos del formulario (motivo, urgencia) y medir tiempo hasta primer contacto. ¿Os paso el enlace de auditoría?
+Gracias por la demo. Resumen: un interesado puede dejar datos estructurados desde la web y vuestro equipo recibe aviso interno para llamar con mejor control del seguimiento. Siguiente paso recomendado: definir campos del formulario (motivo, urgencia) y medir tiempo hasta primer contacto. ¿Os paso el enlace de auditoría?
 
 ---
 
@@ -216,7 +216,7 @@ Suele ser el **podólogo titular** con doble rol clínico-administrativo. Valora
 ### Conversación ejemplo (extracto)
 
 **Prospecto:** “Todo me llega por WhatsApp.”  
-**Tú:** “Tiene sentido. Hoy podemos enseñar un flujo web que avisa al instante y deja registro; WhatsApp lo valoramos después de ordenar un canal, sin prometerlo como activo ahora.”
+**Tú:** “Tiene sentido. Hoy podemos enseñar un flujo web con registro ordenado y aviso interno al equipo; WhatsApp lo valoramos después de ordenar un canal, sin prometerlo como activo ahora.”
 
 **Prospecto:** “¿Y si pregunta por dolor agudo?”  
 **Tú:** “El formulario puede tener urgencia para **priorizar la llamada humana**, no para diagnosticar.”

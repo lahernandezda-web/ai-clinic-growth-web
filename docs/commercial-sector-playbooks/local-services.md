@@ -153,7 +153,7 @@ Si contestáis tarde, el cliente llama al siguiente del Maps. PLEXAI diseña aut
 
 ### Mensaje post-demo
 
-Gracias. Lo visto es aplicable a “pedir presupuesto” en vuestra web: aviso inmediato y hoja de seguimiento. Siguiente paso: auditoría para adaptar campos (servicio, urgencia) y medir tiempo de respuesta.
+Gracias. Lo visto es aplicable a “pedir presupuesto” en vuestra web: aviso interno y hoja de seguimiento. Siguiente paso: auditoría para adaptar campos (servicio, urgencia) y medir tiempo de respuesta.
 
 ---
 

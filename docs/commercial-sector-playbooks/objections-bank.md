@@ -41,7 +41,7 @@
 | # | Objeción | Respuesta |
 |---|----------|-----------|
 | 16 | “Ya tenemos CRM.” | No sustituimos CRM; ordenamos el primer contacto o un flujo que no usáis. |
-| 17 | “Usamos Google Forms.” | Bien; falta aviso instantáneo y registro único sin copiar filas a mano. |
+| 17 | “Usamos Google Forms.” | Bien; falta aviso interno dentro del flujo de trabajo y registro único sin copiar filas a mano. |
 | 18 | “No tenemos web.” | Valoramos landing mínima o enlace de formulario; la auditoría define el primer canal. |
 | 19 | “Somos poco digitales.” | Empezamos con email y hoja que ya usáis; el formulario es un paso opcional más. |
 | 20 | “No queremos más herramientas.” | Objetivo: menos herramientas nuevas, menos trabajo manual repetido. |

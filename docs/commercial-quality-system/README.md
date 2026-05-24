@@ -1,5 +1,7 @@
 # Sistema de calidad comercial — PLEXAI
 
+> **USO INTERNO:** Material de trabajo. No enviar directamente a clientes sin revisión humana, adaptación al caso concreto y comprobación de promesas, alcance e integraciones activas.
+
 ## Qué es
 
 Capa de **control de calidad** sobre el material comercial ya existente:

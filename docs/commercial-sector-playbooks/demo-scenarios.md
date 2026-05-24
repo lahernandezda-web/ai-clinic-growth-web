@@ -2,11 +2,11 @@
 
 **Reglas para todas las demos**
 
-- Mostrar solo lo implementado: landing, formulario de auditoría/solicitud, registro, automatización n8n, email interno, Google Sheets, páginas legales si preguntan.
+- Mostrar solo lo implementado: landing, formulario de auditoría/solicitud, registro interno, automatización interna supervisada, email interno, Google Sheets, páginas legales si preguntan.
 - Datos de prueba ficticios; no datos reales de pacientes ni clínicos.
 - Recordar: no WhatsApp activo, no voz, no calendario, no CRM completo.
 - Cerrar con auditoría gratuita o piloto de un flujo + métrica.
-- Al cliente: preferir “registro” y “automatización del aviso interno”; mencionar Supabase/n8n solo si preguntan por detalle técnico.
+- Al cliente: narrar **formulario → registro interno → aviso al equipo → hoja de seguimiento**; herramientas técnicas solo en demo interna o si el interlocutor las pide explícitamente.
 - Reglas de tono y claims: `docs/commercial-quality-system/commercial-safety-rules.md`.
 
 ---
@@ -19,7 +19,7 @@
 
 **Dolor:** Interesados en ortodoncia que no reciben llamada en 48 h.
 
-**Qué mostrar:** Envío formulario “Solicitud de información” → éxito UI → Supabase → ejecución n8n → email interno → fila Sheets.
+**Qué mostrar:** Envío formulario “Solicitud de información” → éxito UI → registro interno → aviso al equipo → fila en hoja de seguimiento.
 
 **Qué decir:** “Esto no es vuestra agenda; es el primer eslabón para que recepción llame con datos ya estructurados.”
 
@@ -181,7 +181,7 @@
 
 **Dolor:** Respuesta el lunes = matrícula en otro sitio.
 
-**Qué mostrar:** Aviso instantáneo al comercial.
+**Qué mostrar:** Aviso interno al comercial dentro del flujo demostrable en el MVP (sin prometer tiempos exactos).
 
 **Cierre:** Tiempo de respuesta como KPI.
 
@@ -227,7 +227,7 @@
 
 **Contexto:** Prospecto frío; 10 minutos.
 
-**Flujo:** Landing → `#auditoria` → envío prueba → backend → n8n → email → Sheets.
+**Flujo:** Landing → `#auditoria` → envío prueba → registro interno → aviso al equipo → hoja de seguimiento.
 
 **Cierre:** Enlace para que rellenen auditoría real.
 
@@ -253,7 +253,7 @@
 
 - [ ] `AUTOMATIONS_ENABLED=true` solo en entorno de demo acordado
 - [ ] Email de prueba preparado
-- [ ] Supabase y n8n abiertos en pestañas
+- [ ] (Solo demo técnica interna) Registro y automatización preparados en pestañas de fondo, sin secretos
 - [ ] Hoja Sheets vacía o marcada para pruebas
 - [ ] Playbook del sector leído
 - [ ] Datos ficticios listos

@@ -45,7 +45,7 @@ Decisiones rápidas del dueño/marketing. Competencia alta en la zona: la veloci
 | Oportunidad | Valor |
 |-------------|-------|
 | Formulario de valoración / información | Captura estructurada fuera del DM |
-| Aviso inmediato al comercial | Respuesta en minutos, no horas |
+| Aviso interno al comercial | Seguimiento más ágil y trazable (sin prometer tiempos exactos) |
 | Campo “tratamiento de interés” | Priorización y preparación de llamada |
 | Registro único en hoja | Visibilidad para dueño |
 | Resumen interno del texto libre | IA opcional con revisión humana |
@@ -153,7 +153,7 @@ Tras una promoción, muchos mensajes no pasan a lista de llamadas. PLEXAI propon
 
 ### Mensaje post-demo
 
-Quedó claro el flujo: lead estructurado + aviso instantáneo a vuestro comercial. Siguiente paso: auditoría para adaptar campos (tratamiento, origen campaña) y acordar métrica de tiempo de respuesta. ¿Os envío el enlace?
+Quedó claro el flujo: solicitud estructurada + aviso interno a vuestro comercial. Siguiente paso: auditoría para adaptar campos (tratamiento, origen campaña) y acordar métrica de tiempo de respuesta. ¿Os envío el enlace?
 
 ---
 

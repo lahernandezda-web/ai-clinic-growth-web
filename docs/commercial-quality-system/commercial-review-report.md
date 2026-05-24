@@ -1,16 +1,54 @@
 # Informe de revisión comercial — PLEXAI
 
-**Fecha de revisión:** trabajo nocturno en rama `docs/commercial-sector-playbooks`  
-**Alcance revisado:** `docs/commercial-sector-playbooks/`, `docs/commercial-sales-system/`  
-**Método:** lectura completa de archivos prioritarios + búsqueda de patrones de riesgo + checklist `claim-review-checklist.md`
+**Fecha de revisión:** 2026-05-24 (bloque de limpieza documental)  
+**Rama:** `docs/commercial-sector-playbooks`  
+**Alcance revisado:** `docs/commercial-*` (playbooks, sales-system, quality-system, one-pagers, guiones demo)  
+**Método:** búsqueda de patrones de riesgo (velocidad/SLA, jerga técnica en demo) + endurecimiento quirúrgico + checklist `claim-review-checklist.md`
+
+---
+
+## Aviso de uso
+
+- **Material interno de trabajo.** No enviar a clientes sin revisión humana, adaptación al caso y comprobación de promesas, alcance e **integraciones realmente activas**.
+- **No implica** promesas de integración activa (WhatsApp, calendario, voz, CRM, etc.) salvo lo verificado en el MVP del momento.
+- **No sustituye** contrato, propuesta económica cerrada ni asesoría legal.
+- **La rama no debe mergearse a `main` sin** revisión humana de muestra y decisión explícita de merge.
 
 ---
 
 ## Resumen ejecutivo
 
-El material existente es **sólido en límites explícitos** (tablas “no prometer” en READMEs, objeciones 23–27, post-demo en prospección). Los principales riesgos residuales son **matices de velocidad** (“instantáneo”, “en segundos”), **referencias técnicas** en demos (Supabase/n8n) sin traducir a lenguaje cliente, y **repetición** entre packs que puede desalinear versiones si solo se edita uno.
+El material tiene **alto valor** como base interna (límites explícitos, objeciones, tablas “no prometer”). Una revisión anterior **marcó como corregidos** algunos archivos (p. ej. `prospecting-messages.md`, escenario D2 en `demo-scenarios.md`) pero **persistían** formulaciones de velocidad (“instantáneo”, “al instante”, “en segundos”, “inmediato”) y menciones **Supabase/n8n** en guiones orientados a demo comercial.
 
-Se recomienda usar el nuevo **commercial-quality-system** como capa obligatoria pre-envío. Correcciones quirúrgicas aplicadas en 8 archivos de Fase 3; playbooks sectoriales individuales (dental, etc.) **no reescritos** — revisión humana muestral sugerida.
+En este bloque se aplicó **limpieza quirúrgica** en playbooks sectoriales, guiones MVP, one-pagers y READMEs. **No** se reescribió el sistema completo.
+
+---
+
+## Correcciones aplicadas en este bloque (2026-05-24)
+
+| Área | Archivos tocados | Qué se hizo |
+|------|------------------|-------------|
+| Velocidad / SLA | 6 playbooks sectoriales, `objections-bank.md`, `demo-scenarios.md`, one-pagers, `commercial-demo-script-mvp.md`, `follow-up-sequences.md`, `use-case-library.md`, `short-video-brief-mvp.md` | Sustitución de “instantáneo”, “al instante”, “en segundos”, “inmediato”, “respuesta en minutos” por lenguaje prudente (aviso interno, flujo demostrable, sin tiempos exactos) |
+| Demo / jerga técnica | `demo-scenarios.md`, `podiatry-clinics.md`, `physio-osteopathy.md`, `commercial-demo-script-mvp.md`, `commercial-one-pager-mvp.md`, README sectorial | Narrativa cliente: formulario → registro interno → aviso al equipo → hoja de seguimiento |
+| USO INTERNO | READMEs de playbooks, sales-system, quality-system, test-lab | Aviso reforzado en cabecera |
+| Este informe | `commercial-review-report.md` | Estado real; corrección de filas que decían “Corregido” sin serlo en toda la rama |
+
+**Ya estaban endurecidos antes de este bloque (verificado):** `prospecting-messages.md` (sin patrones de velocidad); escenario D2 en `demo-scenarios.md` (matiz demo sin SLA fijo).
+
+---
+
+## Pendiente / revisión humana
+
+| ID | Tema | Nota |
+|----|------|------|
+| H1 | `docs/commercial-test-lab/` | “Quiere voz inmediata” en señales rojas describe **expectativa del lead ficticio**, no promesa PLEXAI — revisar si unificar redacción |
+| H2 | `forbidden-and-approved-phrases.md`, `commercial-safety-rules.md`, `night-work-plan.md` | Mencionan patrones prohibidos **a propósito** — no son claims comerciales |
+| H3 | `sales-assets-index.md` | “encontrar en segundos” = índice interno, no SLA al cliente — bajo riesgo |
+| H4 | `commercial-demo-checklist-mvp.md`, `short-video-brief-mvp.md` | Aún listan Supabase/n8n en checklist **interno** (no mostrar al cliente) — coherente |
+| H5 | `mvp-proposal-template.md`, `objections-bank.md` (Zapier/n8n) | Contexto técnico interno o objeción — OK con revisión al copiar al cliente |
+| H6 | Playbooks sectoriales | Revisión muestral línea a línea antes de primer envío real |
+| H7 | URLs `[enlace]` / `[URL]` | Sustituir por URLs públicas antes de envío |
+| H8 | Merge a `main` | **No recomendado** hasta QA humano y alineación con estado real del producto |
 
 ---
 
@@ -20,131 +58,72 @@ Se recomienda usar el nuevo **commercial-quality-system** como capa obligatoria 
 
 | Documento | Fortaleza |
 |-----------|-----------|
-| `README.md` | Tabla límites comercial clara; enlaces de uso |
+| `README.md` | Tabla límites comercial; aviso USO INTERNO |
 | `objections-bank.md` | 45+ objeciones con respuestas alineadas a MVP |
-| `prospecting-messages.md` | Límites en cabecera; mensajes post-demo con WhatsApp/calendario |
+| `prospecting-messages.md` | Sin patrones de velocidad detectados en búsqueda |
 | `demo-scenarios.md` | Reglas globales demo; narrativa por sector |
-| `prospecting-messages.md` § post-demo | Refuerzo datos no clínicos |
 
-### Riesgos detectados
+### Riesgos (estado tras limpieza)
 
-| ID | Archivo | Riesgo | Severidad | Acción |
+| ID | Archivo | Riesgo | Severidad | Estado |
 |----|---------|--------|-----------|--------|
-| P1 | `prospecting-messages.md` | “al instante” / “aviso instantáneo” puede leerse como SLA al cliente final | Media | Endurecido → “aviso interno en flujo demostrable” |
-| P2 | `demo-scenarios.md` | “en segundos” (escenario D2) | Media | Endurecido → matiz demo, sin SLA |
-| P3 | `demo-scenarios.md` | Mención Supabase/n8n en guion demo | Baja | OK para demo interna; al cliente preferir “registro” y “automatización” |
-| P4 | `prospecting-messages.md` | “liderás” en LinkedIn | Baja | Tono corporativo leve; aceptable |
-| P5 | Playbooks sectoriales (6 archivos) | Posible vocabulario “paciente” en contexto comercial | Media | Revisión humana: distinguir “cliente/persona interesada” vs dato clínico |
-| P6 | `demo-scenarios.md` | “Landing mínima” en P3 podía sonar promesa web | Baja | Mantener “patrón” / “se valora” |
-
-### Repeticiones
-
-- Límites WhatsApp/calendario/voz repetidos en README, demo-scenarios, objections — **coherente**, no redundancia problemática.  
-- Mensaje central repetido — **deseable** para refuerzo.
-
-### Mejoras de tono sugeridas (no todas aplicadas)
-
-- Unificar “lead” vs “solicitud” en español cliente (preferir **solicitud**).  
-- En IG DM mensaje 4 emoji — aceptable; no abusar en email frío.
-
-### Documentos más fuertes
-
-1. `objections-bank.md`  
-2. `README.md` (sectorial)  
-3. `demo-scenarios.md`
-
-### Requiere revisión humana
-
-- Los 6 playbooks sectoriales línea a línea (tiempo estimado 2–3 h).  
-- Coherencia con `docs/commercial-demo-script-mvp.md` fuera de este commit (no modificado).  
-- URLs reales de landing en mensajes `[enlace]` antes de enviar.
+| P1 | Varios playbooks | Velocidad tipo SLA | Media | Endurecido en este bloque |
+| P2 | `demo-scenarios.md` | Jerga Supabase/n8n en guion cliente | Baja | Endurecido → lenguaje negocio |
+| P3 | Playbooks sectoriales | Vocabulario “paciente” vs interesado | Media | Revisión humana muestral |
+| P4 | `demo-scenarios.md` L2 | “Primera respuesta en <2 h como meta” | Baja | Es meta acordada con cliente, no SLA del producto — matizar al usar |
 
 ---
 
 ## docs/commercial-sales-system/
 
-### Fortalezas
+### Riesgos (estado tras limpieza)
 
-| Documento | Fortaleza |
-|-----------|-----------|
-| `red-flags-and-risk-register.md` | 32 riesgos con respuesta |
-| `mvp-proposal-template.md` | Exclusiones explícitas |
-| `follow-up-sequences.md` | Sección 9 WhatsApp/calendario/voz honesta |
-| `use-case-library.md` | “No debe” por caso; MVP vs F2 |
-| `lead-qualification-framework.md` | Scoring y señales rojas |
-| `scope-control-playbook.md` | Scope creep bien documentado |
-
-### Riesgos detectados
-
-| ID | Archivo | Riesgo | Severidad | Acción |
-|----|---------|--------|-----------|--------|
-| S1 | `follow-up-sequences.md` | Volumen alto de mensajes; riesgo copiar sin personalizar | Media | Refuerzo reglas + enlace quality system |
-| S2 | `use-case-library.md` | UC49 veterinaria — aclarar solo comercial | Baja | Nota cabecera reforzada |
-| S3 | `offer-packaging.md` | “Fase 2 integraciones” podría leerse como compromiso | Baja | Matiz “previa revisión” |
-| S4 | `mvp-proposal-template.md` | Campos precio en blanco — bien; riesgo rellenar apresurado | Media | Checklist pre-envío añadido |
-| S5 | Varios | “CRM ligero” — OK si no se vende como CRM completo | Baja | Mantener |
-
-### Repeticiones
-
-- Flujo web → aviso → hoja aparece en 10+ archivos — coherente con mensaje central.  
-- `sales-assets-index.md` y README — solapamiento útil; actualizar índice con quality pack.
-
-### Documentos más fuertes
-
-1. `red-flags-and-risk-register.md`  
-2. `scope-control-playbook.md`  
-3. `lead-qualification-framework.md`
-
-### Requiere revisión humana
-
-- `discovery-call-scripts.md` — ensayo con rol-play.  
-- `value-metrics-library.md` — validar métricas con primer cliente real.  
-- `audit-report-template.md` — ejemplo relleno interno antes de enviar a cliente real.
+| ID | Archivo | Riesgo | Estado |
+|----|---------|--------|--------|
+| S1 | `follow-up-sequences.md` | Volumen alto; copiar sin personalizar | Sin cambio estructural |
+| S2 | `use-case-library.md` | UC con aviso de guardia | Endurecido (sin SLA) |
+| S3 | Resto del pack | Coherencia con MVP | Revisión humana pre-envío |
 
 ---
 
-## Frases que podían sonar demasiado prometedoras (corregidas o mitigadas)
+## Frases de velocidad — historial
 
-| Frase original (aprox.) | Ubicación | Estado |
-|-------------------------|-----------|--------|
-| “al instante” | prospecting-messages | Corregido |
-| “aviso instantáneo” | prospecting-messages | Corregido |
-| “en segundos” | demo-scenarios D2 | Corregido |
-| “demo gratis” sin matiz | IG prospección | Aceptable; significa sin coste de demo, no producto gratis |
+| Frase (aprox.) | Ubicación | Estado |
+|----------------|-----------|--------|
+| “al instante” / “aviso instantáneo” | `prospecting-messages.md` | Corregido **antes** de este bloque |
+| “en segundos” | `demo-scenarios.md` D2 | Corregido **antes** (matiz demo) |
+| “instantáneo”, “inmediato”, “en segundos” | Playbooks, guiones, one-pagers | Corregido **en este bloque** |
+| “aviso interno inmediato” | `commercial-demo-script-mvp.md`, etc. | Corregido **en este bloque** |
 
 ---
 
 ## Coherencia entre packs
 
-| Tema | ¿Alineado? | Nota |
-|------|------------|------|
-| WhatsApp no activo | Sí | |
-| Calendario no activo | Sí | |
-| Voz no activa | Sí | |
-| No datos clínicos | Sí | |
-| Control humano | Sí | |
-| No precios en frío | Sí | |
-| Quality system referenciado | Tras este commit | READMEs + índices |
+| Tema | ¿Alineado? |
+|------|------------|
+| WhatsApp no activo | Sí |
+| Calendario no activo | Sí |
+| Voz no activa | Sí |
+| Sin SLA de tiempo en copy comercial | Mejorado; vigilar copias nuevas |
+| USO INTERNO en READMEs principales | Sí (tras este bloque) |
 
 ---
 
-## Acciones realizadas en esta revisión
+## Acciones realizadas (cronología)
 
-1. Creado `docs/commercial-quality-system/` completo.  
-2. Endurecimiento quirúrgico de 8 archivos Fase 3.  
-3. `master-commercial-map.md` + enlaces en READMEs/índice.  
-4. Este informe para seguimiento humano.
+1. Creación previa de `docs/commercial-quality-system/` y packs sales / test-lab.  
+2. Endurecimiento parcial Fase 3 (8 archivos; `prospecting-messages`, D2).  
+3. **Este bloque:** endurecimiento en ~20 archivos bajo `docs/` + informe actualizado + avisos README.
 
 ---
 
 ## Pendientes post-revisión (humano)
 
-- [ ] Revisar 6 playbooks sectoriales con `claim-review-checklist.md`  
-- [ ] Sustituir `[URL]` por URLs públicas reales antes de envío  
-- [ ] Primer envío real con revisión de frase en `forbidden-and-approved-phrases.md`  
-- [ ] Actualizar este informe tras primer cliente piloto con lecciones aprendidas  
-- [ ] Decidir si unificar término “lead” → “solicitud” en segunda pasada
+- [ ] Revisión muestral de los 6 playbooks sectoriales con `claim-review-checklist.md`  
+- [ ] Decidir merge a `main` solo tras QA y estado producto  
+- [ ] Primer envío real con paso por `forbidden-and-approved-phrases.md`  
+- [ ] Actualizar este informe tras primer cliente piloto  
 
 ---
 
-*Informe interno PLEXAI — no enviar al cliente.*
+*Informe interno PLEXAI — no enviar al cliente. No usar como contrato ni propuesta final sin adaptación.*

@@ -1,5 +1,7 @@
 # Pack comercial sectorial — PLEXAI
 
+> **USO INTERNO:** Material de trabajo. No enviar directamente a clientes sin revisión humana, adaptación al caso concreto y comprobación de promesas, alcance e integraciones activas.
+
 ## Qué es este pack
 
 Este directorio contiene **playbooks comerciales internos** para vender PLEXAI por sector. Cada documento traduce el mensaje central de la marca — *analizamos procesos, detectamos tareas repetitivas y diseñamos automatizaciones con IA solo donde aportan valor* — a lenguaje, dolores y conversaciones concretas de cada tipo de negocio.
@@ -24,7 +26,7 @@ El pack complementa el material MVP 4 existente (one-pager, guion de demo, check
 ### Demos (Zoom o presencial)
 
 1. Revisa `demo-scenarios.md` y elige el escenario del sector.
-2. Muestra solo lo **implementado en el MVP**: landing, formulario de auditoría, registro del lead, automatización n8n, email interno y Google Sheets.
+2. Muestra solo lo **implementado en el MVP**: landing, formulario de auditoría, registro del lead, automatización interna supervisada, email interno y Google Sheets (sin prometer tiempos exactos de respuesta).
 3. Usa el guion de 10 o 20 minutos del playbook sectorial.
 4. Cierra con siguiente paso claro (auditoría, piloto pequeño, segunda reunión).
 

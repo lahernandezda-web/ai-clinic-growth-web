@@ -47,7 +47,7 @@ Aplicar IA y automatización **solo donde hay volumen repetitivo y reglas claras
 | Oportunidad | Criterio |
 |-------------|----------|
 | Centralizar solicitudes web en un registro | Alto impacto, bajo riesgo si no se piden datos clínicos |
-| Aviso interno inmediato al responsable comercial | Evita leads fríos por olvido |
+| Aviso interno al responsable comercial (flujo MVP) | Evita leads fríos por olvido |
 | Clasificación asistida del tipo de consulta | Útil si el formulario captura categoría cerrada |
 | Recordatorio interno de seguimiento | Solo si hay SLA acordado (ej. contactar en 24 h) |
 | Plantillas de respuesta para FAQs no clínicas | Horarios, ubicación, documentación para primera visita |
@@ -177,7 +177,7 @@ No gestionamos historias clínicas ni sustituimos vuestra agenda. El primer paso
 
 ### Mensaje post-demo
 
-Gracias por el tiempo hoy. Como resumen: el flujo que vimos centraliza la solicitud comercial y avisa a vuestro equipo al instante; el siguiente paso natural sería definir con recepción qué campos necesitáis y medir el tiempo hasta la primera llamada. ¿Os envío el enlace de auditoría gratuita para documentar procesos antes de un piloto?
+Gracias por el tiempo hoy. Como resumen: el flujo que vimos centraliza la solicitud comercial y deja aviso interno al equipo con registro ordenado; el siguiente paso natural sería definir con recepción qué campos necesitáis y medir el tiempo hasta la primera llamada. ¿Os envío el enlace de auditoría gratuita para documentar procesos antes de un piloto?
 
 ---
 

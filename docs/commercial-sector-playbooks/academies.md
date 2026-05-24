@@ -45,7 +45,7 @@ Leads por web, formularios de Meta, llamadas, WhatsApp del centro y visitas sin 
 | Oportunidad | Notas |
 |-------------|-------|
 | Formulario “Información / prueba gratuita” | Alto ROI, bajo riesgo |
-| Aviso al comercial al instante | Crítico en temporada matrícula |
+| Aviso interno al comercial en flujo demostrable | Crítico en temporada matrícula |
 | Etiqueta curso y nivel | Mejora la llamada |
 | Hoja única de pipeline simple | Sin CRM pesado |
 | Resumen diario de pendientes | Email interno automatizado |
@@ -153,7 +153,7 @@ En temporada alta, cada lead sin llamar a tiempo es una plaza que puede ir a la 
 
 ### Mensaje post-demo
 
-Gracias. El patrón visto sirve para “solicitar información”: aviso inmediato a vuestro comercial. Recomiendo auditoría para definir cursos en el formulario y medir tiempo de primera llamada antes del próximo pico de matrículas.
+Gracias. El patrón visto sirve para “solicitar información”: aviso interno a vuestro comercial dentro del flujo de trabajo. Recomiendo auditoría para definir cursos en el formulario y medir tiempo de primera llamada antes del próximo pico de matrículas.
 
 ---
 
@@ -161,7 +161,7 @@ Gracias. El patrón visto sirve para “solicitar información”: aviso inmedia
 
 | Objeción | Respuesta |
 |----------|-----------|
-| “Usamos Google Forms.” | Bien; falta aviso instantáneo y registro único sin copiar. |
+| “Usamos Google Forms.” | Bien; falta aviso interno configurado y registro único sin copiar. |
 | “Los padres llaman por teléfono.” | El formulario es para quien prefiere escribir de noche; el teléfono sigue. |
 | “Ya tenemos CRM educativo.” | Complementamos el primer contacto o un flujo que no usáis; no sustituimos notas. |
 | “Tratamos datos de menores.” | Solo datos comerciales mínimos; el detalle lo define vuestra política y el formulario. |

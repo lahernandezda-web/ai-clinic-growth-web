@@ -63,7 +63,7 @@
 ### UC07 — Solicitudes fuera de horario
 - **Problema:** Nadie ve hasta el lunes.
 - **Sector:** Retail salud, academias.
-- **Automatización:** Aviso inmediato al responsable de guardia.
+- **Automatización:** Aviso interno al responsable de guardia (configurado según alcance del MVP; sin SLA de tiempo).
 - **Datos:** timestamp.
 - **No debe:** chatbot 24/7 al cliente sin supervisión.
 - **B** | **MVP**
@@ -419,7 +419,7 @@
 
 ## Índice rápido por complejidad MVP
 
-| MVP inmediato (B, marcado MVP) | Fase 2 |
+| MVP prioritario (B, marcado MVP) | Fase 2 |
 |------------------------------|--------|
 | UC01,02,03,04,06,07,09–12,15,18,21,24–25,27,29,31–33,38,41,43–49 | UC05,08,13–14,16–17,19–20,22–23,26,28,30,34–37,39–40,42,50 |
 

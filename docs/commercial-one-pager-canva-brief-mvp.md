@@ -118,7 +118,7 @@ Versión **breve y visual**. Frases cortas; no copiar párrafos largos del one-p
 
 - Solicitud web → aviso interno → registro ordenado.
 - Lead estructurado → priorización sin buscar en varios sitios.
-- Interés nuevo → el responsable lo sabe en segundos.
+- Interés nuevo → el responsable recibe aviso interno (sin prometer tiempos exactos).
 - Base de interesados → seguimiento comercial claro.
 
 ### Sectores (lista compacta)

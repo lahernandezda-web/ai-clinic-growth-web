@@ -1,5 +1,7 @@
 # Sistema comercial-operativo PLEXAI
 
+> **USO INTERNO:** Material de trabajo. No enviar directamente a clientes sin revisión humana, adaptación al caso concreto y comprobación de promesas, alcance e integraciones activas.
+
 ## Qué es este sistema
 
 Este directorio contiene la **documentación interna de venta y operación comercial** de PLEXAI: cómo cualificar leads, ejecutar auditorías gratuitas, redactar informes, preparar propuestas MVP, conducir llamadas, hacer seguimiento, incorporar clientes y controlar alcance.

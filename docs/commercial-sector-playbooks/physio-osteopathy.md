@@ -46,7 +46,7 @@ Ciclos de tratamiento largos una vez dentro, pero el **cuello de botella comerci
 |---------|-------------------------|
 | Solicitud de cita / información | Formulario + registro + aviso |
 | Clasificación por área | Select en formulario, no IA clínica |
-| Aviso a recepción | Email o notificación interna inmediata |
+| Aviso a recepción | Email o notificación interna según alcance del MVP |
 | Hoja de leads y lista de espera comercial | Sheets o equivalente acordado |
 | Resumen de texto libre | IA con revisión humana si volumen alto |
 
@@ -56,7 +56,7 @@ Siempre **control humano** para confirmar cita, mutua y urgencia real.
 
 ## 6. Ejemplos de automatizaciones pequeñas y medibles
 
-1. **Formulario “Solicitar cita o información”** con área de interés → flujo MVP (registro + n8n + email + Sheets).
+1. **Formulario “Solicitar cita o información”** con área de interés → flujo MVP (formulario → registro interno → aviso al equipo → hoja de seguimiento).
 
 2. **Campo mutua sí/no/privado** para que recepción prepare documentación antes de llamar.
 
@@ -133,7 +133,7 @@ Mapa de journey del paciente nuevo (solo hasta cita confirmada). Identificar 2 t
 
 ### LinkedIn corto
 
-[Nombre], en centros de fisioterapia el teléfono suena mientras estáis en tratamiento y las solicitudes se enfrían. PLEXAI ayuda a capturar y avisar al equipo al instante, sin datos clínicos en el formulario base. ¿15 min con [Centro]?
+[Nombre], en centros de fisioterapia el teléfono suena mientras estáis en tratamiento y las solicitudes se enfrían. PLEXAI ayuda a capturar y avisar al equipo con seguimiento más trazable, sin datos clínicos en el formulario base. ¿15 min con [Centro]?
 
 ### Instagram DM
 

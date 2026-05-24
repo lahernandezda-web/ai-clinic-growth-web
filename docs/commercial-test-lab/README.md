@@ -1,5 +1,7 @@
 # Laboratorio comercial de pruebas — PLEXAI
 
+> **USO INTERNO:** Material de trabajo. No enviar directamente a clientes sin revisión humana, adaptación al caso concreto y comprobación de promesas, alcance e integraciones activas.
+
 ## Qué es
 
 `docs/commercial-test-lab/` es un **laboratorio documental** con datos **100 % ficticios** para entrenar, revisar y auditar el sistema comercial de PLEXAI sin usar contactos reales ni información sensible.

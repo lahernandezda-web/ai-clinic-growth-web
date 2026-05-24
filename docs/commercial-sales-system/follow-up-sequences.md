@@ -195,7 +195,7 @@
 72. Calendario integrado no está en fase 1; la persona sigue cerrando cita; nosotros aseguramos que no se pierda la solicitud.
 
 ### C
-73. No prometo WhatsApp activo en piloto; sí aviso interno inmediato.
+73. No prometo WhatsApp activo en piloto; sí aviso interno dentro del flujo acordado en el MVP.
 74. Voz/telefonía IA: fuera de alcance actual.
 
 ### LinkedIn — Q
