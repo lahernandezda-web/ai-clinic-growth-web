@@ -29,6 +29,148 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
+/* Fondos suaves — frío + acentos cálidos de baja saturación */
+.plexai-section-sky {
+  background:
+    radial-gradient(ellipse 85% 60% at 8% 5%, rgba(125, 211, 252, 0.32), transparent 58%),
+    radial-gradient(ellipse 68% 48% at 88% 78%, rgba(255, 231, 214, 0.28), transparent 52%),
+    radial-gradient(ellipse 72% 52% at 92% 22%, rgba(167, 139, 250, 0.14), transparent 52%),
+    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(110, 231, 183, 0.1), transparent 50%),
+    linear-gradient(175deg, #e8f4fc 0%, #f5f0ea 42%, #f8f6fc 100%);
+}
+
+.plexai-section-mint {
+  background:
+    radial-gradient(ellipse 78% 58% at 88% 8%, rgba(94, 234, 212, 0.26), transparent 54%),
+    radial-gradient(ellipse 62% 46% at 18% 28%, rgba(253, 230, 138, 0.14), transparent 50%),
+    radial-gradient(ellipse 68% 48% at 6% 72%, rgba(196, 181, 253, 0.18), transparent 50%),
+    radial-gradient(ellipse 50% 38% at 42% 40%, rgba(252, 231, 243, 0.12), transparent 48%),
+    linear-gradient(160deg, #e8faf4 0%, #faf5ee 50%, #f3f0fa 100%);
+}
+
+.plexai-section-lavender {
+  background:
+    radial-gradient(ellipse 74% 52% at 82% 88%, rgba(255, 199, 182, 0.22), transparent 50%),
+    radial-gradient(ellipse 58% 44% at 22% 82%, rgba(253, 230, 138, 0.12), transparent 48%),
+    radial-gradient(ellipse 70% 50% at 12% 18%, rgba(165, 180, 252, 0.28), transparent 54%),
+    radial-gradient(ellipse 48% 42% at 55% 55%, rgba(103, 232, 249, 0.1), transparent 48%),
+    linear-gradient(150deg, #f0ecfa 0%, #faf3eb 48%, #ecf9f4 100%);
+}
+
+.plexai-section-faq {
+  background:
+    radial-gradient(ellipse 68% 48% at 92% 12%, rgba(216, 180, 254, 0.2), transparent 52%),
+    radial-gradient(ellipse 58% 42% at 72% 88%, rgba(255, 231, 214, 0.2), transparent 50%),
+    radial-gradient(ellipse 62% 52% at 8% 78%, rgba(147, 197, 253, 0.18), transparent 50%),
+    radial-gradient(ellipse 45% 35% at 50% 50%, rgba(252, 231, 243, 0.1), transparent 45%),
+    linear-gradient(180deg, #edf4fc 0%, #faf6f0 55%, #eef8f4 100%);
+}
+
+.plexai-card-light {
+  border-color: rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 12px 32px -8px rgba(30, 41, 59, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.plexai-card-light:hover {
+  border-color: rgba(251, 191, 36, 0.22);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 20px 40px -12px rgba(251, 146, 60, 0.1),
+    0 20px 40px -12px rgba(79, 70, 229, 0.1);
+}
+
+/* Paneles editoriales — sección productividad */
+.plexai-panel-tile {
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 16px 40px -12px rgba(30, 41, 59, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.plexai-panel-tile:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 24px 48px -14px rgba(30, 41, 59, 0.14);
+}
+
+.plexai-panel-sky {
+  background: linear-gradient(145deg, #dbeafe 0%, #e0f2fe 48%, #fff7ed 100%);
+}
+
+.plexai-panel-mint {
+  background: linear-gradient(145deg, #ccfbf1 0%, #d1fae5 45%, #ffe7d6 100%);
+}
+
+.plexai-panel-aqua {
+  background: linear-gradient(145deg, #cffafe 0%, #a5f3fc 38%, #fff7ed 100%);
+}
+
+.plexai-panel-lavender {
+  background: linear-gradient(145deg, #e9d5ff 0%, #fce7f3 42%, #fff7ed 100%);
+}
+
+.plexai-panel-peach {
+  background: linear-gradient(145deg, #ffe7d6 0%, #ffc7b6 38%, #fff7ed 100%);
+}
+
+.plexai-panel-rose {
+  background: linear-gradient(145deg, #fce7f3 0%, #ffe7d6 45%, #fff7ed 100%);
+}
+
+.plexai-warm-blob {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 231, 214, 0.75) 0%,
+    rgba(252, 231, 243, 0.55) 45%,
+    rgba(253, 230, 138, 0.35) 100%
+  );
+}
+
+.plexai-improvement-compact {
+  border-color: rgba(148, 163, 184, 0.3);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 8px 24px -10px rgba(30, 41, 59, 0.08);
+}
+
+.plexai-improvement-compact:hover {
+  border-color: rgba(251, 191, 36, 0.2);
+  box-shadow:
+    0 8px 24px -10px rgba(251, 146, 60, 0.08),
+    0 8px 24px -10px rgba(30, 41, 59, 0.08);
+}
+
+.plexai-situation-featured {
+  border-color: rgba(251, 191, 36, 0.22);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 247, 237, 0.65) 45%,
+    rgba(224, 242, 254, 0.5) 100%
+  );
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 20px 44px -12px rgba(251, 146, 60, 0.08),
+    0 20px 44px -12px rgba(79, 70, 229, 0.08);
+}
+
+.plexai-step-rail {
+  background: linear-gradient(
+    180deg,
+    rgba(56, 189, 248, 0.5) 0%,
+    rgba(253, 186, 140, 0.45) 38%,
+    rgba(167, 139, 250, 0.45) 62%,
+    rgba(52, 211, 153, 0.4) 100%
+  );
+}
+
 .plexai-float {
   animation: plexai-float 7s ease-in-out infinite;
 }
