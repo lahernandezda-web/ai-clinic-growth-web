@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { LandingDemoChatbot } from "@/components/LandingDemoChatbot";
 import { AuditRequestForm } from "@/components/AuditRequestForm";
 import { HeroSvgBackground } from "@/components/HeroSvgBackground";
 
@@ -912,6 +913,8 @@ export default function Home() {
           </nav>
         </div>
       </footer>
+
+      <LandingDemoChatbot />
     </div>
   );
 }
